@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://fgyw7ma7u1g2" path="res://icon.svg" id="1_80vhd"]
 [ext_resource type="PackedScene" uid="uid://dmnt0yl2bixsg" path="res://player/player.tscn" id="2_hjsbj"]
+[ext_resource type="PackedScene" uid="uid://2gxnw828d1pt" path="res://scenery/fpphorrorhouse.tscn" id="3_cwqvt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hjsbj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -41,8 +42,11 @@ material_override = SubResource("StandardMaterial3D_hjsbj")
 mesh = SubResource("BoxMesh_80vhd")
 
 [node name="player" parent="." unique_id=2111338812 instance=ExtResource("2_hjsbj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6652994, 1.5, 2.7493749)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1224103, 1.5, -0.35910964)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=983188807]
 transform = Transform3D(0.99557036, 0.06591919, -0.0670425, 1.919877e-08, 0.7130548, 0.7011085, 0.09402159, -0.6980027, 0.70989597, -0.022856712, 2.3747716, 0)
 shadow_enabled = true
+
+[node name="fpphorrorhouse" parent="." unique_id=560793250 instance=ExtResource("3_cwqvt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.516664, 2.9517767, 14.971718)
