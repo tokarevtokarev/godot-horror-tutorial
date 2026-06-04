@@ -18,13 +18,8 @@ public partial class fp_cam : Node3D
         // Handle mouse motion for camera rotation
         if (@event is InputEventMouseMotion mouseMotion)
         {
-
-            GetParentNode3D().RotateY(Mathf.DegToRad(-mouseMotion.Relative.X * sensitivity));
-            RotateX(Mathf.DegToRad(-mouseMotion.Relative.Y * sensitivity));
-
-            var rotation = RotationDegrees;
-            rotation.X = Mathf.Clamp(rotation.X, MinPitchDeg, MaxPitchDeg);
-            RotationDegrees = rotation;
+            if (Input.MouseMode == Input.MouseModeEnum.Captured)
+                HandleCameraRotation(mouseMotion);
         }
 
         // Exit mouse capture on Escape key press
@@ -35,6 +30,16 @@ public partial class fp_cam : Node3D
             else
                 Input.MouseMode = Input.MouseModeEnum.Captured;
         }
+    }
+
+    private void HandleCameraRotation(InputEventMouseMotion mouseMotion)
+    {
+        GetParentNode3D().RotateY(Mathf.DegToRad(-mouseMotion.Relative.X * sensitivity));
+        RotateX(Mathf.DegToRad(-mouseMotion.Relative.Y * sensitivity));
+
+        var rotation = RotationDegrees;
+        rotation.X = Mathf.Clamp(rotation.X, MinPitchDeg, MaxPitchDeg);
+        RotationDegrees = rotation;
     }
 
 }
