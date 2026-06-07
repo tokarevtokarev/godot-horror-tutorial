@@ -1,6 +1,11 @@
 [gd_scene format=4 uid="uid://2gxnw828d1pt"]
 
+[ext_resource type="Material" uid="uid://dh7p080u26sab" path="res://materials/house_material.tres" id="1_inj6e"]
 [ext_resource type="PackedScene" uid="uid://xghfvkqnvhkl" path="res://scenery/staircase.tscn" id="1_ke2i2"]
+[ext_resource type="Material" uid="uid://kfwoaedkred0" path="res://materials/house_material2.tres" id="2_k04ie"]
+[ext_resource type="PackedScene" uid="uid://d280ac3c01ut3" path="res://scenery/table.tscn" id="4_y17hn"]
+[ext_resource type="PackedScene" uid="uid://dthby4jbjftc5" path="res://scenery/chair.tscn" id="5_y17hn"]
+[ext_resource type="PackedScene" uid="uid://cj81llk43d3dn" path="res://scenery/drawer.tscn" id="6_px1eg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlqch"]
 resource_name = "Material"
@@ -230,6 +235,7 @@ points = PackedVector3Array(1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1
 
 [node name="Cube" type="MeshInstance3D" parent="meshes" unique_id=89582845]
 transform = Transform3D(21, 0, 0, 0, 5.5, 0, 0, 0, 15, 0, 0, 0)
+material_override = ExtResource("1_inj6e")
 mesh = SubResource("ArrayMesh_1lmxf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="meshes/Cube" unique_id=467205413]
@@ -239,6 +245,7 @@ shape = SubResource("ConcavePolygonShape3D_66033")
 
 [node name="Cube_001" type="MeshInstance3D" parent="meshes" unique_id=1957427849]
 transform = Transform3D(7.1900954, 0, 0, 0, 5.187962, 0, 0, 0, 6.987508, -13.576579, 0.31545544, 7.7481894)
+material_override = ExtResource("1_inj6e")
 mesh = SubResource("ArrayMesh_2q1hf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="meshes/Cube_001" unique_id=668339233]
@@ -248,6 +255,7 @@ shape = SubResource("ConcavePolygonShape3D_ke2i2")
 
 [node name="Cube_002" type="MeshInstance3D" parent="meshes" unique_id=120777622]
 transform = Transform3D(7.1900954, 0, 0, 0, 5.187962, 0, 0, 0, 6.987508, 0.72647345, 0.31545544, 7.7481894)
+material_override = ExtResource("1_inj6e")
 mesh = SubResource("ArrayMesh_e8c6c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="meshes/Cube_002" unique_id=52835493]
@@ -257,6 +265,7 @@ shape = SubResource("ConcavePolygonShape3D_inj6e")
 
 [node name="Cube_003" type="MeshInstance3D" parent="meshes" unique_id=864581768]
 transform = Transform3D(5.3750806, 0, 0, 0, 5.187962, 0, 0, 0, 5.386463, -15.1243305, 0.31545544, -9.257523)
+material_override = ExtResource("1_inj6e")
 mesh = SubResource("ArrayMesh_peewm")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="meshes/Cube_003" unique_id=546423836]
@@ -266,6 +275,7 @@ shape = SubResource("ConcavePolygonShape3D_k04ie")
 
 [node name="Cube_004" type="MeshInstance3D" parent="meshes" unique_id=135281767]
 transform = Transform3D(21, 0, 0, 0, 4.020811, 0, 0, 0, 15, 0, -9.3229, 0)
+material_override = ExtResource("2_k04ie")
 mesh = SubResource("ArrayMesh_8lmk8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="meshes/Cube_004" unique_id=586558362]
@@ -309,4 +319,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.348645, 5.9604645e-08, -8
 omni_range = 8.462268
 
 [node name="staircase" parent="." unique_id=1785204360 instance=ExtResource("1_ke2i2")]
-transform = Transform3D(-1.2075895, 0, -2.4478726e-07, 0, 2.0482953, 0, 1.8234094e-07, 0, -1.6211526, -2.6038513, -9.092291, -6.9842916)
+transform = Transform3D(-1.2075895, 0, -2.4478726e-07, 0, 2.0482953, 0, 1.8234094e-07, 0, -1.6211526, -2.6032019, -9.106103, -6.98309)
+
+[node name="table" parent="." unique_id=579415119 instance=ExtResource("4_y17hn")]
+transform = Transform3D(-1.1806137e-07, 0, -3.164346, 0, 2, 0, 2.7009294, 0, -1.3831796e-07, 14.476425, -3.055051, 6.4192486)
+
+[node name="chair" parent="." unique_id=931717039 instance=ExtResource("5_y17hn")]
+transform = Transform3D(-6.9501105e-08, 0, -1.59, 0, 1.3177387, 0, 1.59, 0, -6.9501105e-08, 12.435448, -3.6220875, 5.0808353)
+
+[node name="chair2" parent="." unique_id=728859513 instance=ExtResource("5_y17hn")]
+transform = Transform3D(-6.9501105e-08, 0, -1.59, 0, 1.3177387, 0, 1.59, 0, -6.9501105e-08, 12.435448, -3.6220875, 7.483968)
+
+[node name="drawer" parent="." unique_id=966692071 instance=ExtResource("6_px1eg")]
+transform = Transform3D(-3.4531997e-08, 0, 0.79, 0, 0.79, 0, -0.79, 0, -3.4531997e-08, -3.6722765, -3.6224978, 13.272419)

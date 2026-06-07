@@ -1,5 +1,12 @@
 [gd_scene format=4 uid="uid://xghfvkqnvhkl"]
 
+[ext_resource type="Texture2D" uid="uid://dhb31x3w5nqv3" path="res://textures/wall1.jpg" id="1_5cap4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iwvrk"]
+albedo_color = Color(0.8431838, 0.8431839, 0.84318364, 1)
+albedo_texture = ExtResource("1_5cap4")
+uv1_scale = Vector3(3.215, 4, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8febf"]
 resource_name = "Material"
 cull_mode = 2
@@ -45,6 +52,7 @@ points = PackedVector3Array(-0.9984596, -1, -0.99865484, 1.0156307, -0.7617619, 
 
 [node name="Cube" type="MeshInstance3D" parent="." unique_id=572105330]
 transform = Transform3D(3.5960534, 0, 0, 0, 2.393964, 0, 0, 0, 1.7830254, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_iwvrk")
 mesh = SubResource("ArrayMesh_2dull")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube" unique_id=1581580061]
