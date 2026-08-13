@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://bu5gsf1qxxeip" path="res://textures/painting02.png" id="10_tuq0n"]
 [ext_resource type="Texture2D" uid="uid://dk60vy4qb6joj" path="res://textures/painting03.png" id="11_vppsi"]
 [ext_resource type="Texture2D" uid="uid://b4ltbdmrudfp3" path="res://textures/carpet.jpg" id="14_6wrda"]
+[ext_resource type="Texture2D" uid="uid://b65hp2768unuo" path="res://textures/piepemokk.png" id="14_12ndm"]
+[ext_resource type="PackedScene" uid="uid://do4h2xqgdyppf" path="res://scenery/window.tscn" id="16_qcw70"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlqch"]
 resource_name = "Material"
@@ -246,6 +248,9 @@ albedo_texture = ExtResource("10_tuq0n")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2me1"]
 albedo_texture = ExtResource("11_vppsi")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i67pk"]
+albedo_texture = ExtResource("14_12ndm")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12ndm"]
 albedo_color = Color(1, 0.5209756, 0.33882588, 1)
 albedo_texture = ExtResource("14_6wrda")
@@ -405,6 +410,10 @@ paintingMaterial = SubResource("StandardMaterial3D_jlmqs")
 transform = Transform3D(-0.9999999, 0, -1.2488258e-07, 0, 1.4284903, 0, 8.742276e-08, 0, -1.4284903, -6.9334598, 0, 6.141295)
 paintingMaterial = SubResource("StandardMaterial3D_j2me1")
 
+[node name="paintingframe4" parent="furniture/paintings" unique_id=115022066 instance=ExtResource("8_qnwp0")]
+transform = Transform3D(5.284853e-08, 0, -0.999, 0, 0.999, 0, 0.7, 0, 7.5422406e-08, -14.229557, 0, -14.205243)
+paintingMaterial = SubResource("StandardMaterial3D_i67pk")
+
 [node name="rugs" type="Node3D" parent="furniture" unique_id=1675249518]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="furniture/rugs" unique_id=1552866562]
@@ -426,3 +435,20 @@ mesh = SubResource("QuadMesh_qcw70")
 transform = Transform3D(7.832307, 0, 0, 0, -4.3047694e-07, 0.77540153, 0, -9.8481655, -3.389388e-08, -14.561254, -4.91245, 6.733873)
 material_override = SubResource("StandardMaterial3D_6wrda")
 mesh = SubResource("QuadMesh_qcw70")
+
+[node name="windows" type="Node3D" parent="furniture" unique_id=444586927]
+
+[node name="window" parent="furniture/windows" unique_id=295849369 instance=ExtResource("16_qcw70")]
+transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, 20.744436, -0.9819262, -0.54129046)
+
+[node name="window2" parent="furniture/windows" unique_id=525905980 instance=ExtResource("16_qcw70")]
+transform = Transform3D(-7.736916e-08, 0, -1.77, 0, 1.77, 0, 1.77, 0, -7.736916e-08, 16.350908, -0.9819262, 14.750894)
+
+[node name="window3" parent="furniture/windows" unique_id=1252011192 instance=ExtResource("16_qcw70")]
+transform = Transform3D(-7.736916e-08, 0, -1.77, 0, 1.77, 0, 1.77, 0, -7.736916e-08, 0.78008175, -0.9819262, 14.750894)
+
+[node name="window4" parent="furniture/windows" unique_id=1078843134 instance=ExtResource("16_qcw70")]
+transform = Transform3D(-7.736916e-08, 0, -1.77, 0, 1.77, 0, 1.77, 0, -7.736916e-08, -16.700663, -0.9819262, 14.750894)
+
+[node name="window5" parent="furniture/windows" unique_id=1951512015 instance=ExtResource("16_qcw70")]
+transform = Transform3D(-1.7699999, 0, 9.4927856e-08, 0, 1.77, 0, -1.5473829e-07, 0, -1.0858481, -20.72856, -0.9819262, -1.5655844)
