@@ -45,7 +45,7 @@ mesh = SubResource("BoxMesh_80vhd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.961944, 1.5, 16.136982)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=983188807]
-transform = Transform3D(0.99557036, 0.06591919, -0.0670425, 1.919877e-08, 0.7130548, 0.7011085, 0.09402159, -0.6980027, 0.70989597, -0.022856712, 2.3747716, 0)
+transform = Transform3D(0.8712139, -0.19888552, 0.44881067, 0, 0.91425395, 0.4051416, -0.4909038, -0.35296494, 0.79651064, -0.022856712, 2.3747716, 0)
 shadow_enabled = true
 
 [node name="fpphorrorhouse" parent="." unique_id=560793250 instance=ExtResource("3_cwqvt")]

@@ -306,6 +306,16 @@ mesh = SubResource("ArrayMesh_e8c6c")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="structure/Cube_002/StaticBody3D" unique_id=1078641276]
 shape = SubResource("ConcavePolygonShape3D_inj6e")
 
+[node name="Cube_006" type="MeshInstance3D" parent="structure" unique_id=1386825418]
+transform = Transform3D(7.1900954, 0, 0, 0, 4.0636764, 0, 0, 0, 6.987508, 0.72647345, -8.880831, 7.7481894)
+material_override = ExtResource("1_inj6e")
+mesh = SubResource("ArrayMesh_e8c6c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="structure/Cube_006" unique_id=1624702556]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="structure/Cube_006/StaticBody3D" unique_id=286583400]
+shape = SubResource("ConcavePolygonShape3D_inj6e")
+
 [node name="Cube_003" type="MeshInstance3D" parent="structure" unique_id=864581768]
 transform = Transform3D(5.3750806, 0, 0, 0, 5.187962, 0, 0, 0, 5.386463, -15.1243305, 0.31545544, -9.257523)
 material_override = ExtResource("1_inj6e")
@@ -364,13 +374,19 @@ omni_range = 8.462268
 [node name="furniture" type="Node3D" parent="." unique_id=490686425]
 
 [node name="table" parent="furniture" unique_id=579415119 instance=ExtResource("4_y17hn")]
-transform = Transform3D(-1.1806137e-07, 0, -3.164346, 0, 2, 0, 2.7009294, 0, -1.3831796e-07, 14.476425, -3.055051, -3.5807514)
+transform = Transform3D(-2.7009294, 0, 2.7663592e-07, 0, 2, 0, -2.3612277e-07, 0, -3.1643465, 13.538331, -3.055051, -5.4936223)
 
 [node name="chair" parent="furniture" unique_id=931717039 instance=ExtResource("5_y17hn")]
-transform = Transform3D(-6.9501105e-08, 0, -1.59, 0, 1.3177387, 0, 1.59, 0, -6.9501105e-08, 12.435448, -3.6220875, -4.9191647)
+transform = Transform3D(-1.1523514, 0, 1.0955303, 0, 1.3177384, 0, -1.0955303, 0, -1.1523514, 15.200241, -3.6220875, -8.333494)
 
 [node name="chair2" parent="furniture" unique_id=728859513 instance=ExtResource("5_y17hn")]
-transform = Transform3D(-6.9501105e-08, 0, -1.59, 0, 1.3177387, 0, 1.59, 0, -6.9501105e-08, 12.435448, -3.6220875, -2.5160322)
+transform = Transform3D(-1.5741454, 0, 0.22397816, 0, 1.3177384, 0, -0.22397816, 0, -1.5741454, 12.472585, -3.6220875, -7.8487544)
+
+[node name="chair3" parent="furniture" unique_id=101231680 instance=ExtResource("5_y17hn")]
+transform = Transform3D(1.5819526, 0, -0.15976869, 0, 1.3177383, 0, 0.15976869, 0, 1.5819526, 12.241517, -3.6220875, -3.7524376)
+
+[node name="chair4" parent="furniture" unique_id=326219819 instance=ExtResource("5_y17hn")]
+transform = Transform3D(1.59, 0, -2.7800445e-07, 0, 1.3177384, 0, 2.7800445e-07, 0, 1.59, 14.643946, -3.622087, -4.277273)
 
 [node name="drawer" parent="furniture" unique_id=966692071 instance=ExtResource("6_px1eg")]
 transform = Transform3D(-3.4531997e-08, 0, 0.79, 0, 0.79, 0, -0.79, 0, -3.4531997e-08, -3.6722765, -3.6224978, 13.272419)
@@ -422,7 +438,7 @@ material_override = SubResource("StandardMaterial3D_12ndm")
 mesh = SubResource("QuadMesh_qcw70")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="furniture/rugs" unique_id=2054387006]
-transform = Transform3D(9.281756, -0.065152444, -2.7235547e-10, 0, -4.570706e-07, 1.0000015, -0.057834003, -10.456353, -4.3710614e-08, 14.788427, -4.9124503, -3.8537056)
+transform = Transform3D(0.057833597, 10.456353, 4.3710614e-08, 2.5762047e-16, -4.570706e-07, 1.0000015, 9.281756, -0.06515198, -2.7235356e-10, 13.811286, -4.9124503, -5.18162)
 material_override = SubResource("StandardMaterial3D_qcw70")
 mesh = SubResource("QuadMesh_qcw70")
 
