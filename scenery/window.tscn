@@ -45,7 +45,7 @@ points = PackedVector3Array(-0.999963, -1, -1, 1, 0.9999998, 0.9999998, 1, 0.999
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbtal"]
 transparency = 1
-albedo_color = Color(0.8745098, 0.7176471, 0, 0.047058824)
+albedo_color = Color(0.8745098, 0.7176471, 0, 0.078431375)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbjpg"]
 
