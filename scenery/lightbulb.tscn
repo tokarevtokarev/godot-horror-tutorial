@@ -73,11 +73,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_q1sy5")
 
-[node name="lightbulb" type="Node3D" unique_id=1213104144 node_paths=PackedStringArray("lightBulb")]
+[node name="lightbulb" type="Node3D" unique_id=1213104144 node_paths=PackedStringArray("lightBulb", "lightNode")]
 script = ExtResource("1_lsval")
 onMaterial = ExtResource("2_ja88l")
 offMaterial = ExtResource("3_nrcrr")
 lightBulb = NodePath("light")
+lightNode = NodePath("OmniLight3D")
 
 [node name="light" type="MeshInstance3D" parent="." unique_id=793362048]
 material_override = ExtResource("2_ja88l")

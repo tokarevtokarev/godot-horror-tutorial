@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bfaqm5jmebb8m" path="res://textures/hair.jpg" id="19_4wdrm"]
 [ext_resource type="PackedScene" uid="uid://bkq0q6t5x1fmg" path="res://scenery/door.tscn" id="20_mjehq"]
 [ext_resource type="PackedScene" uid="uid://x21wbnstw0ru" path="res://scenery/lightswitch.tscn" id="23_b4x21"]
+[ext_resource type="PackedScene" uid="uid://b4f433vrqcuab" path="res://scenery/lamp.tscn" id="24_rspqc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlqch"]
 resource_name = "Material"
@@ -616,6 +617,20 @@ lightbulbs = [NodePath("../../lights/lightbulb5")]
 [node name="lightswitch6" parent="lightswitches" unique_id=120471762 node_paths=PackedStringArray("lightbulbs") instance=ExtResource("23_b4x21")]
 transform = Transform3D(-0.59999996, 0, 1.955048e-07, 0, 0.59999996, 0, -1.955048e-07, 0, -0.59999996, -7.9060574, -10.411578, 2.7416325)
 lightbulbs = [NodePath("../../lights/lightbulb6"), NodePath("../../lights/lightbulb7"), NodePath("../../lights/lightbulb8")]
+
+[node name="lamps" type="Node3D" parent="." unique_id=1232898344]
+
+[node name="lamp" parent="lamps" unique_id=1016496653 instance=ExtResource("24_rspqc")]
+transform = Transform3D(0.25881907, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.25881907, -2.3774824, -1.9436753, 13.271258)
+
+[node name="lamp3" parent="lamps" unique_id=83261029 instance=ExtResource("24_rspqc")]
+transform = Transform3D(0.25881907, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.25881907, -10.752982, -1.9436753, 13.271258)
+
+[node name="lamp2" parent="lamps" unique_id=1523453720 instance=ExtResource("24_rspqc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 13.517378, -1.9234853, 13.392728)
+
+[node name="lamp4" parent="lamps" unique_id=1114420879 instance=ExtResource("24_rspqc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 13.885896, -1.7963641, -5.4766054)
 
 [editable path="furniture/bed"]
 [editable path="furniture/bed2"]

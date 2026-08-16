@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b4f433vrqcuab"]
+
+[ext_resource type="Script" uid="uid://07m3v4cbymjq" path="res://general_scripts/Lamp.cs" id="1_45y45"]
+[ext_resource type="Material" uid="uid://d13qg2bjcxpfw" path="res://materials/lamp_on.tres" id="2_vd3lh"]
+[ext_resource type="Material" uid="uid://18ythf756i7x" path="res://materials/lamp_off.tres" id="3_hhesg"]
+[ext_resource type="Material" uid="uid://bqo1tkoylmih0" path="res://materials/metal.tres" id="4_r1h3y"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6v2km"]
+top_radius = 0.33
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_45y45"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nndxe"]
+height = 1.3829346
+
+[node name="lamp" type="Node3D" unique_id=1016496653 node_paths=PackedStringArray("lightBulb", "lightNode")]
+script = ExtResource("1_45y45")
+isOn = false
+onMaterial = ExtResource("2_vd3lh")
+offMaterial = ExtResource("3_hhesg")
+lightBulb = NodePath("MeshInstance3D")
+lightNode = NodePath("OmniLight3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1488686250]
+transform = Transform3D(1, 0, 0, 0, 0.34926355, 0, 0, 0, 1, 0, -0.10967696, 0)
+material_override = ExtResource("3_hhesg")
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_6v2km")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=823526373]
+transform = Transform3D(0.1, 0, 0, 0, 0.515, 0, 0, 0, 0.1, 0, -0.5663464, 0)
+material_override = ExtResource("4_r1h3y")
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_45y45")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1966935356]
+transform = Transform3D(0.2, 0, 0, 0, 0.056576464, 0, 0, 0, 0.2, 0, -1.0911663, 0)
+material_override = ExtResource("4_r1h3y")
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_45y45")
+
+[node name="lampbody" type="StaticBody3D" parent="." unique_id=1572322557]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lampbody" unique_id=324264231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4524536, 0)
+shape = SubResource("CylinderShape3D_nndxe")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1952195324]
+light_color = Color(0.8527806, 0.61403555, 0.64229566, 1)

@@ -3,7 +3,7 @@ using System;
 
 public partial class PlayerInteract : RayCast3D
 {
-	private string[] interactableNames = { "doorbody", "lightswitchbody" };
+	private string[] interactableNames = { "doorbody", "lightswitchbody", "lampbody" };
 
     public override void _PhysicsProcess(double delta)
     {
