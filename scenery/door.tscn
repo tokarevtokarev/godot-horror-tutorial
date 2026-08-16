@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://bkq0q6t5x1fmg"]
+
+[ext_resource type="Script" uid="uid://cg4w6fgx1c813" path="res://general_scripts/Door.cs" id="1_jy65v"]
+[ext_resource type="Texture2D" uid="uid://c8xfc2062q5tp" path="res://textures/door.jpg" id="2_1fsns"]
+[ext_resource type="Material" uid="uid://bqo1tkoylmih0" path="res://materials/metal.tres" id="3_m6kou"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4owcv"]
+albedo_texture = ExtResource("2_1fsns")
+uv1_scale = Vector3(3, 2, 3)
+uv1_offset = Vector3(0, 1, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t3tcx"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t3tcx"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jy65v"]
+
+[sub_resource type="Animation" id="Animation_l435u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m6kou"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1fsns"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m6kou"]
+_data = {
+&"RESET": SubResource("Animation_l435u"),
+&"close": SubResource("Animation_m6kou"),
+&"open": SubResource("Animation_1fsns")
+}
+
+[node name="door" type="Node3D" unique_id=493705923]
+script = ExtResource("1_jy65v")
+
+[node name="hinge" type="Node3D" parent="." unique_id=858103803]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="hinge" unique_id=655704011]
+transform = Transform3D(1.6568909, 0, 0, 0, 2.5665426, 0, 0, 0, 0.11753701, 0.82929564, 0, 0)
+material_override = SubResource("StandardMaterial3D_4owcv")
+mesh = SubResource("BoxMesh_t3tcx")
+
+[node name="doorbody" type="StaticBody3D" parent="hinge/MeshInstance3D" unique_id=1689540377]
+
+[node name="doorcollider" type="CollisionShape3D" parent="hinge/MeshInstance3D/doorbody" unique_id=1754291758]
+shape = SubResource("ConvexPolygonShape3D_t3tcx")
+
+[node name="knob" type="Node3D" parent="hinge" unique_id=1881071737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.82929564, 0, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="hinge/knob" unique_id=894775416]
+transform = Transform3D(0.1, 0, 0, 0, -5.617538e-09, 0.099999994, 0, -0.12851429, -4.3711386e-09, 0.6855459, 0, -0.0011233985)
+material_override = ExtResource("3_m6kou")
+mesh = SubResource("CylinderMesh_jy65v")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="hinge/knob" unique_id=1414831480]
+transform = Transform3D(0.15, 0, 0, 0, -1.0354406e-09, 0.15, 0, -0.02368812, -6.5567085e-09, 0.6855459, 0, 0.14813417)
+material_override = ExtResource("3_m6kou")
+mesh = SubResource("CylinderMesh_jy65v")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="hinge/knob" unique_id=37388931]
+transform = Transform3D(0.15, 0, 0, 0, -1.0354406e-09, 0.15, 0, -0.02368812, -6.5567085e-09, 0.6855459, 0, -0.15226471)
+material_override = ExtResource("3_m6kou")
+mesh = SubResource("CylinderMesh_jy65v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2011086436]
+libraries/ = SubResource("AnimationLibrary_m6kou")

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://x21wbnstw0ru"]
+
+[ext_resource type="Script" uid="uid://1mqv22ufv2sh" path="res://general_scripts/Lightswitch.cs" id="1_70ysk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mnalq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mnalq"]
+size = Vector3(0.78808594, 1, 0.5838623)
+
+[node name="lightswitch" type="Node3D" unique_id=1485232862 node_paths=PackedStringArray("OnNode", "OffNode")]
+script = ExtResource("1_70ysk")
+OnNode = NodePath("on")
+OffNode = NodePath("off")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=6810857]
+transform = Transform3D(0.7836085, 0, 0, 0, 1, 0, 0, 0, 0.32314348, 0, 0, 0)
+mesh = SubResource("BoxMesh_mnalq")
+
+[node name="off" type="MeshInstance3D" parent="." unique_id=405740086]
+transform = Transform3D(0.36784363, 0, 0, 0, 0.13813616, 0.3159657, 0, -0.13813616, 0.31596574, 0, 0.11456832, 0.23460993)
+mesh = SubResource("BoxMesh_mnalq")
+
+[node name="on" type="MeshInstance3D" parent="." unique_id=739754889]
+transform = Transform3D(0.36784363, 0, 0, 0, 0.13813616, -0.31596574, 0, 0.13813616, 0.3159657, 0, -0.19368921, 0.23460993)
+visible = false
+mesh = SubResource("BoxMesh_mnalq")
+
+[node name="lightswitchbody" type="StaticBody3D" parent="." unique_id=1036596556]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lightswitchbody" unique_id=2096822799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.13421631)
+shape = SubResource("BoxShape3D_mnalq")
