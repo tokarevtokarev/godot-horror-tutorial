@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bq1i6go0ofj5b"]
+
+[ext_resource type="Material" uid="uid://0uwa0i4kh4gb" path="res://materials/metal_3.tres" id="1_g2nih"]
+[ext_resource type="Material" uid="uid://dt762ms4xgm5f" path="res://materials/metal_2.tres" id="2_sc22p"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vta58"]
+radial_segments = 24
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sc22p"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_m2ndm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g2nih"]
+height = 2.3230286
+radius = 0.5996094
+
+[node name="hotWaterSystem" type="Node3D" unique_id=146722750]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1140716543]
+transform = Transform3D(1.2, 0, 0, 0, 0.083, 0, 0, 0, 1.2, 0, 0, 0)
+material_override = ExtResource("1_g2nih")
+mesh = SubResource("CylinderMesh_vta58")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=288961761]
+transform = Transform3D(1.2, 0, 0, 0, 0.083, 0, 0, 0, 1.2, 0, 2.1578877, 0)
+material_override = ExtResource("1_g2nih")
+mesh = SubResource("CylinderMesh_vta58")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=64179436]
+transform = Transform3D(1, 0, 0, 0, 1.0239484, 0, 0, 0, 1, 0, 1.0813403, 0)
+material_override = ExtResource("2_sc22p")
+mesh = SubResource("CylinderMesh_vta58")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1639296471]
+transform = Transform3D(0.1, 0, 0, 0, -2.6872776e-08, -0.1, 0, 0.61477745, -4.371139e-09, 0.52903205, 1.0813403, 0.6741919)
+material_override = ExtResource("2_sc22p")
+mesh = SubResource("CylinderMesh_vta58")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5" unique_id=451602845]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D" unique_id=1382960601]
+shape = SubResource("CylinderShape3D_sc22p")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1496613329]
+transform = Transform3D(0.17955305, 0, 0, 0, 0.318684, 0, 0, 0, 0.30380815, 0.4969377, 1.0651035, 0)
+material_override = ExtResource("1_g2nih")
+mesh = SubResource("BoxMesh_m2ndm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1411209003]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1038707775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0791779, 0)
+shape = SubResource("CylinderShape3D_g2nih")
