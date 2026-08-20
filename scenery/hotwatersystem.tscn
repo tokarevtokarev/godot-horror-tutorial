@@ -2,6 +2,7 @@
 
 [ext_resource type="Material" uid="uid://0uwa0i4kh4gb" path="res://materials/metal_3.tres" id="1_g2nih"]
 [ext_resource type="Material" uid="uid://dt762ms4xgm5f" path="res://materials/metal_2.tres" id="2_sc22p"]
+[ext_resource type="Texture2D" uid="uid://rbtf48bhgldg" path="res://textures/waterlogo.png" id="3_sc22p"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_vta58"]
 radial_segments = 24
@@ -51,3 +52,8 @@ mesh = SubResource("BoxMesh_m2ndm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1038707775]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0791779, 0)
 shape = SubResource("CylinderShape3D_g2nih")
+
+[node name="Decal" type="Decal" parent="." unique_id=900910466]
+transform = Transform3D(0.9999722, -3.2575856e-10, -0.007452487, -0.007452487, -4.3710173e-08, -0.9999722, 0, 1, -4.371139e-08, -0.013562687, 1.5454085, -0.52231395)
+size = Vector3(1.0195618, 0.8989258, 0.9321594)
+texture_albedo = ExtResource("3_sc22p")

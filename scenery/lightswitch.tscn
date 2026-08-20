@@ -5,7 +5,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_mnalq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mnalq"]
-size = Vector3(0.78808594, 1, 0.5838623)
+size = Vector3(0.78808594, 1, 0.58566284)
 
 [node name="lightswitch" type="Node3D" unique_id=1485232862 node_paths=PackedStringArray("OnNode", "OffNode")]
 script = ExtResource("1_70ysk")
@@ -28,5 +28,5 @@ mesh = SubResource("BoxMesh_mnalq")
 [node name="lightswitchbody" type="StaticBody3D" parent="." unique_id=1036596556]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="lightswitchbody" unique_id=2096822799]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.13421631)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.13331604)
 shape = SubResource("BoxShape3D_mnalq")

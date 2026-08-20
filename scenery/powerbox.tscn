@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://x1xgkk0ml2pu"]
+
+[ext_resource type="Material" uid="uid://0uwa0i4kh4gb" path="res://materials/metal_3.tres" id="1_xrb7e"]
+[ext_resource type="Material" uid="uid://dt762ms4xgm5f" path="res://materials/metal_2.tres" id="2_avy3q"]
+[ext_resource type="Texture2D" uid="uid://d388sti50esff" path="res://textures/powerlogo.png" id="3_avy3q"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tyvng"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tyvng"]
+size = Vector3(0.81121826, 1, 0.26846313)
+
+[node name="powerbox" type="Node3D" unique_id=1883731922]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1655483144]
+transform = Transform3D(0.8126162, 0, 0, 0, 1, 0, 0, 0, 0.25584322, 0, 0, 0)
+material_override = ExtResource("1_xrb7e")
+mesh = SubResource("BoxMesh_tyvng")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=822287892]
+transform = Transform3D(0.7744109, 0, 0, 0, 0.9308476, 0, 0, 0, 0.06388832, 0, 0, 0.10763934)
+material_override = ExtResource("2_avy3q")
+mesh = SubResource("BoxMesh_tyvng")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1348761380]
+transform = Transform3D(0.04829739, 0, 0, 0, 0.15335414, 0, 0, 0, 0.06388832, -0.29571405, 0, 0.12921739)
+material_override = ExtResource("1_xrb7e")
+mesh = SubResource("BoxMesh_tyvng")
+
+[node name="Decal" type="Decal" parent="." unique_id=218021848]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.2518071, 0.1088501)
+size = Vector3(0.4, 0.18229981, 0.4)
+texture_albedo = ExtResource("3_avy3q")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2056097745]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=532999278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0002746582, 0, 0.00642395)
+shape = SubResource("BoxShape3D_tyvng")
