@@ -4,9 +4,24 @@
 [ext_resource type="PackedScene" uid="uid://dmnt0yl2bixsg" path="res://player/player.tscn" id="2_hjsbj"]
 [ext_resource type="PackedScene" uid="uid://2gxnw828d1pt" path="res://scenery/fpphorrorhouse.tscn" id="3_cwqvt"]
 
+[sub_resource type="Gradient" id="Gradient_cwqvt"]
+offsets = PackedFloat32Array(0, 0.49186993, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.14908287, 0.11033367, 0.15583244, 1, 0.21120769, 0.2554638, 0.46404994, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5mrsh"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_safpt"]
+noise = SubResource("FastNoiseLite_5mrsh")
+color_ramp = SubResource("Gradient_cwqvt")
+seamless = true
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hjsbj"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_top_color = Color(0.07871356, 2.3174956e-05, 0.3164384, 1)
+sky_horizon_color = Color(0.0016433162, 0, 0.24429527, 1)
+sky_cover = SubResource("NoiseTexture2D_safpt")
+ground_bottom_color = Color(0.0048256987, 6.016344e-08, 0.08744077, 1)
+ground_horizon_color = Color(0.0016433162, 0, 0.24429527, 1)
 
 [sub_resource type="Sky" id="Sky_cwqvt"]
 sky_material = SubResource("ProceduralSkyMaterial_hjsbj")
@@ -16,7 +31,9 @@ background_mode = 2
 sky = SubResource("Sky_cwqvt")
 ambient_light_sky_contribution = 0.1
 reflected_light_source = 1
-tonemap_mode = 2
+tonemap_mode = 3
+ssao_enabled = true
+sdfgi_enabled = true
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_umreq"]
