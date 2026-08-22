@@ -94,4 +94,5 @@ mesh = SubResource("ArrayMesh_8eggn")
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1411359117]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1711464, 0)
 shadow_enabled = true
+shadow_opacity = 0.5
 omni_range = 15.0
