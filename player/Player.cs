@@ -3,17 +3,24 @@ using System;
 
 public partial class Player : CharacterBody3D
 {
-	public const float Speed = 5.0f;
+	public float Speed = 5.0f;
 	public const float JumpVelocity = 4.5f;
 
+	private CollisionShape3D collisionShape;
+
 	bool crouching = false;
+
+	public override void _Ready()
+	{
+		collisionShape = GetNode<CollisionShape3D>("CollisionShape3D");
+	}
 
     public override void _Process(double delta)
     {
         if (Input.IsActionJustPressed("crouch"))
 		{
 			crouching = !crouching;
-			
+			Speed = crouching ? 2f : 5.0f;
 		}
     }
 
@@ -56,13 +63,17 @@ public partial class Player : CharacterBody3D
 
 	private void handleCrouch()
 	{
-		if (crouching)
+		if (crouching && ((CapsuleShape3D)collisionShape.Shape).Height > 0.25)
 		{
-			// Handle crouching logic here
+			// lerp crouch height
+			float couchHeight = Mathf.Lerp(((CapsuleShape3D)collisionShape.Shape).Height, 0.25f, 1f);
+			((CapsuleShape3D)collisionShape.Shape).Height = couchHeight;
 		}
-		else
+		else if (!crouching && ((CapsuleShape3D)collisionShape.Shape).Height < 2.0)
 		{
-			// Handle standing logic here
+			// lerp stand height
+			float standHeight = Mathf.Lerp(((CapsuleShape3D)collisionShape.Shape).Height, 2.0f, 0.2f);
+			((CapsuleShape3D)collisionShape.Shape).Height = standHeight;
 		}
 	}
 }

@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://du1e7r5x0x61h"]
+
+[node name="pauseMenu" type="CanvasLayer" unique_id=1015206582]
+layer = 2
+
+[node name="backgroundColor" type="ColorRect" parent="." unique_id=443234134]
+offset_right = 383.0
+offset_bottom = 648.0
+color = Color(0.3754402, 0.10319353, 4.813075e-08, 1)
+
+[node name="borderColor" type="ColorRect" parent="." unique_id=1187617391]
+offset_right = 378.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="pauseTitle" type="RichTextLabel" parent="." unique_id=1341530006]
+offset_right = 370.0
+offset_bottom = 169.0
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "[center]PAUSED"
+
+[node name="resume" type="Button" parent="." unique_id=1636862979]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 87.0
+offset_top = -190.0
+offset_right = 288.0
+offset_bottom = -113.0
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Resume"
+
+[node name="settings" type="Button" parent="." unique_id=722970736]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 87.0
+offset_top = -96.0
+offset_right = 289.0
+offset_bottom = -19.0
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+
+[node name="controls" type="Button" parent="." unique_id=419444247]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 87.0
+offset_top = 2.0
+offset_right = 299.0
+offset_bottom = 79.0
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Controls"
+
+[node name="mainMenu" type="Button" parent="." unique_id=1508721842]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = 138.0
+offset_right = 335.0
+offset_bottom = 215.0
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Main Menu"
+
+[node name="quitGame" type="Button" parent="." unique_id=1863412881]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = 218.0
+offset_right = 335.0
+offset_bottom = 295.0
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Quit Game"

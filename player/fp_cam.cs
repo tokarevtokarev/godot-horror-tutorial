@@ -24,15 +24,6 @@ public partial class fp_cam : Node3D
             if (Input.MouseMode == Input.MouseModeEnum.Captured)
                 HandleCameraRotation(mouseMotion);
         }
-
-        // Exit mouse capture on Escape key press
-        if (@event is InputEventKey keyEvent && keyEvent.Keycode == Key.Escape && keyEvent.Pressed)
-        {
-            if (Input.MouseMode == Input.MouseModeEnum.Captured)
-                Input.MouseMode = Input.MouseModeEnum.Visible;
-            else
-                Input.MouseMode = Input.MouseModeEnum.Captured;
-        }
     }
 
     public override void _Process(double delta)
