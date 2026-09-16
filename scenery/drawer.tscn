@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dbbhdhe2kyokb" path="res://textures/floor.jpg" id="1_awt4t"]
 [ext_resource type="Material" uid="uid://bqo1tkoylmih0" path="res://materials/metal.tres" id="2_h7v1w"]
+[ext_resource type="Script" uid="uid://dftffqxu5xycy" path="res://general_scripts/Drawer.cs" id="2_k14sx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k14sx"]
 albedo_color = Color(0.5246445, 0.4453376, 0.33042625, 1)
@@ -87,6 +88,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qsfhn")
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_awt4t"]
+data = PackedVector3Array(0.9339, -0.7739, 0.94509995, -0.93399996, 1, 0.94509995, -0.93399996, -0.7739, 0.94509995, 0.9339, -0.7739, 0.94509995, 0.9339, 1, 0.94509995, -0.93399996, 1, 0.94509995, -0.93399996, -0.7739, 0.94509995, -0.93399996, 1, -0.94509995, -0.93399996, -0.7739, -0.94509995, -0.93399996, -0.7739, 0.94509995, -0.93399996, 1, 0.94509995, -0.93399996, 1, -0.94509995, -0.93399996, -0.7739, -0.94509995, 0.9339, -0.7739, 0.94509995, -0.93399996, -0.7739, 0.94509995, -0.93399996, -0.7739, -0.94509995, 0.9339, -0.7739, -0.94509995, 0.9339, -0.7739, 0.94509995, 0.9339, -0.7739, -0.94509995, 0.9339, 1, 0.94509995, 0.9339, -0.7739, 0.94509995, 0.9339, -0.7739, -0.94509995, 0.9339, 1, -0.94509995, 0.9339, 1, 0.94509995, -0.93399996, -0.7739, -0.94509995, 0.9339, 1, -0.94509995, 0.9339, -0.7739, -0.94509995, -0.93399996, -0.7739, -0.94509995, -0.93399996, 1, -0.94509995, 0.9339, 1, -0.94509995, 0.9339, 1, -0.94509995, -1, 1, -1, 1, 1, -1, -0.93399996, 1, -0.94509995, -1, 1, -1, 0.9339, 1, -0.94509995, 1, 1, -1, 0.9339, 1, 0.94509995, 0.9339, 1, -0.94509995, -1, 1, -1, -0.93399996, 1, -0.94509995, -0.93399996, 1, 0.94509995, 1, 1, 1, 0.9339, 1, 0.94509995, 1, 1, -1, -1, 1, -1, -0.93399996, 1, 0.94509995, -1, 1, 1, 0.9339, 1, 0.94509995, 1, 1, 1, -1, 1, 1, 0.9339, 1, 0.94509995, -1, 1, 1, -0.93399996, 1, 0.94509995, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7ie1"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_lg430"]
@@ -155,6 +159,43 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_osxrx")
 
+[sub_resource type="Animation" id="Animation_awt4t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h7v1w"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(2.159, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k14sx"]
+_data = {
+&"RESET": SubResource("Animation_awt4t"),
+&"open": SubResource("Animation_h7v1w")
+}
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xapl4"]
 resource_name = "Material.005"
 cull_mode = 2
@@ -192,6 +233,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_68ujp")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_h7v1w"]
+data = PackedVector3Array(0.9339, -0.7739, 0.9511, -0.93399996, 1, 0.9511, -0.93399996, -0.7739, 0.9511, 0.9339, -0.7739, 0.9511, 0.9339, 1, 0.9511, -0.93399996, 1, 0.9511, -0.93399996, -0.7739, 0.9511, -0.93399996, 1, -0.93909997, -0.93399996, -0.7739, -0.93909997, -0.93399996, -0.7739, 0.9511, -0.93399996, 1, 0.9511, -0.93399996, 1, -0.93909997, -0.93399996, -0.7739, -0.93909997, 0.9339, -0.7739, 0.9511, -0.93399996, -0.7739, 0.9511, -0.93399996, -0.7739, -0.93909997, 0.9339, -0.7739, -0.93909997, 0.9339, -0.7739, 0.9511, 0.9339, -0.7739, -0.93909997, 0.9339, 1, 0.9511, 0.9339, -0.7739, 0.9511, 0.9339, -0.7739, -0.93909997, 0.9339, 1, -0.93909997, 0.9339, 1, 0.9511, -0.93399996, -0.7739, -0.93909997, 0.9339, 1, -0.93909997, 0.9339, -0.7739, -0.93909997, -0.93399996, -0.7739, -0.93909997, -0.93399996, 1, -0.93909997, 0.9339, 1, -0.93909997, 0.9339, 1, -0.93909997, -1, 1, -1, 1, 1, -1, -0.93399996, 1, -0.93909997, -1, 1, -1, 0.9339, 1, -0.93909997, 1, 1, -1, 0.9339, 1, 0.9511, 0.9339, 1, -0.93909997, -1, 1, -1, -0.93399996, 1, -0.93909997, -0.93399996, 1, 0.9511, 1, 1, 1, 0.9339, 1, 0.9511, 1, 1, -1, -1, 1, -1, -0.93399996, 1, 0.9511, -1, 1, 1, 0.9339, 1, 0.9511, 1, 1, 1, -1, 1, 1, 0.9339, 1, 0.9511, -1, 1, 1, -0.93399996, 1, 0.9511, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akwxv"]
 
@@ -326,7 +370,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lolo8")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_funur"]
-size = Vector3(2.4436035, 2.356903, 5.823242)
+size = Vector3(2.42865, 2.356903, 5.823242)
 
 [node name="drawer" type="Node3D" unique_id=966692071]
 
@@ -336,11 +380,17 @@ material_override = SubResource("StandardMaterial3D_k14sx")
 mesh = SubResource("ArrayMesh_f1r02")
 
 [node name="slot1" type="Node3D" parent="." unique_id=1104758356]
+script = ExtResource("2_k14sx")
 
 [node name="Cube_003" type="MeshInstance3D" parent="slot1" unique_id=1518574383]
 transform = Transform3D(1.2028852, 0, 0, 0, 0.40209186, 0, 0, 0, 1.2300259, 0.034827005, 0.18442436, 1.4695765)
 material_override = SubResource("StandardMaterial3D_ci75s")
 mesh = SubResource("ArrayMesh_g7e3s")
+
+[node name="drawerSlot1Body" type="StaticBody3D" parent="slot1/Cube_003" unique_id=662361716]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="slot1/Cube_003/drawerSlot1Body" unique_id=1208642125]
+shape = SubResource("ConcavePolygonShape3D_awt4t")
 
 [node name="Cylinder" type="MeshInstance3D" parent="slot1" unique_id=549845912]
 transform = Transform3D(0, 0.13490513, 0, -0.14, 0, 0, 0, 0, 0.14, 1.3615961, 0.1762808, 1.5174677)
@@ -352,12 +402,21 @@ transform = Transform3D(0, 0.057056166, 0, -0.17842084, 0, 0, 0, 0, 0.17842084, 
 material_override = ExtResource("2_h7v1w")
 mesh = SubResource("ArrayMesh_e0wai")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="slot1" unique_id=130276476]
+libraries/ = SubResource("AnimationLibrary_k14sx")
+
 [node name="slot2" type="Node3D" parent="." unique_id=1582404582]
+script = ExtResource("2_k14sx")
 
 [node name="Cube_002" type="MeshInstance3D" parent="slot2" unique_id=1109118209]
 transform = Transform3D(1.2028852, 0, 0, 0, 0.40209186, 0, 0, 0, 1.2300259, 0.034827005, 0.18442436, -1.4831554)
 material_override = SubResource("StandardMaterial3D_ci75s")
 mesh = SubResource("ArrayMesh_mjd54")
+
+[node name="drawerSlot2Body" type="StaticBody3D" parent="slot2/Cube_002" unique_id=822108163]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="slot2/Cube_002/drawerSlot2Body" unique_id=285485256]
+shape = SubResource("ConcavePolygonShape3D_h7v1w")
 
 [node name="Cylinder_002" type="MeshInstance3D" parent="slot2" unique_id=1940513658]
 transform = Transform3D(0, 0.057056166, 0, -0.17842084, 0, 0, 0, 0, 0.17842084, 1.4411541, 0.1762808, -1.4875863)
@@ -368,6 +427,9 @@ mesh = SubResource("ArrayMesh_ulpaq")
 transform = Transform3D(0, 0.13490513, 0, -0.14, 0, 0, 0, 0, 0.14, 1.3615961, 0.1762808, -1.4875863)
 material_override = ExtResource("2_h7v1w")
 mesh = SubResource("ArrayMesh_e60s4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="slot2" unique_id=490906292]
+libraries/ = SubResource("AnimationLibrary_k14sx")
 
 [node name="Cube_001" type="MeshInstance3D" parent="." unique_id=552053577]
 transform = Transform3D(1.0911481, 0, 0, 0, 0.48192966, 0, 0, 0, 0.12397581, 0, -1.1688688, 2.698892)
@@ -382,5 +444,5 @@ mesh = SubResource("ArrayMesh_t3bap")
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=89374894]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=837490684]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45689392, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0074768066, -0.45689392, 0)
 shape = SubResource("BoxShape3D_funur")

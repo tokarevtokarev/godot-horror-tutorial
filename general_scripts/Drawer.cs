@@ -1,11 +1,11 @@
 using Godot;
 using System;
 
-public partial class Door : Node3D, InteractableObject
+public partial class Drawer : Node3D, InteractableObject
 {
 	bool opened = false;
 
-	public void ToggleDoor()
+	public void ToggleDrawer()
 	{
 		AnimationPlayer animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		if (animationPlayer.IsPlaying())
@@ -25,6 +25,6 @@ public partial class Door : Node3D, InteractableObject
 
 	public void PlayerInteract()
 	{
-		ToggleDoor();
+		ToggleDrawer();
 	}
 }

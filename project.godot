@@ -15,6 +15,10 @@ run/main_scene="uid://jjpjvqudytt8"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="FirstPersonHorror"
