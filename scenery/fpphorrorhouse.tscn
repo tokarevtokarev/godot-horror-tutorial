@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://7o1063q1ucp1" path="res://scenery/mirror.tscn" id="27_3ffu6"]
 [ext_resource type="PackedScene" uid="uid://bq1i6go0ofj5b" path="res://scenery/hotwatersystem.tscn" id="28_dq1bv"]
 [ext_resource type="PackedScene" uid="uid://x1xgkk0ml2pu" path="res://scenery/powerbox.tscn" id="29_1jtbp"]
+[ext_resource type="PackedScene" uid="uid://btwv44rxtpnsi" path="res://scenery/door_bell.tscn" id="30_wah8l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlqch"]
 resource_name = "Material"
@@ -734,6 +735,10 @@ transform = Transform3D(-2.3999999, 0, 2.0981466e-07, 0, 2.3999999, 0, -2.098146
 
 [node name="powerbox" parent="." unique_id=1883731922 instance=ExtResource("29_1jtbp")]
 transform = Transform3D(-6.119594e-08, 0, -1.4, 0, 1.4, 0, 1.4, 0, -6.119594e-08, 5.993777, -9.552625, 7.466977)
+
+[node name="doorBell" parent="." unique_id=1495182378 node_paths=PackedStringArray("door") instance=ExtResource("30_wah8l")]
+transform = Transform3D(-0.6, 0, 9.059749e-08, 0, 0.6, 0, -9.059749e-08, 0, -0.6, 9.29263, -1.7159376, -15.051467)
+door = NodePath("../doors/door2")
 
 [editable path="furniture/bed"]
 [editable path="furniture/bed2"]

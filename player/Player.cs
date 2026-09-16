@@ -6,8 +6,21 @@ public partial class Player : CharacterBody3D
 	public const float Speed = 5.0f;
 	public const float JumpVelocity = 4.5f;
 
+	bool crouching = false;
+
+    public override void _Process(double delta)
+    {
+        if (Input.IsActionJustPressed("crouch"))
+		{
+			crouching = !crouching;
+			
+		}
+    }
+
+
 	public override void _PhysicsProcess(double delta)
 	{
+		handleCrouch();
 		Vector3 velocity = Velocity;
 
 		// Add the gravity.
@@ -39,5 +52,17 @@ public partial class Player : CharacterBody3D
 
 		Velocity = velocity;
 		MoveAndSlide();
+	}
+
+	private void handleCrouch()
+	{
+		if (crouching)
+		{
+			// Handle crouching logic here
+		}
+		else
+		{
+			// Handle standing logic here
+		}
 	}
 }

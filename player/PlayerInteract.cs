@@ -5,7 +5,14 @@ public partial class PlayerInteract : RayCast3D
 {
 
     public CenterContainer crosshair;
-	private string[] interactableNames = { "doorbody", "lightswitchbody", "lampbody", "drawerSlot1Body", "drawerSlot2Body", "closetDoor1Body", "closetDoor2Body" };
+    private string[] interactableNames = { "doorbody",
+    "lightswitchbody",
+    "lampbody",
+    "drawerSlot1Body",
+    "drawerSlot2Body",
+    "closetDoor1Body",
+    "closetDoor2Body",
+    "doorBellBody" };
 
     public override void _Ready()
     {

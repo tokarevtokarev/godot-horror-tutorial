@@ -4,6 +4,7 @@ using System;
 public partial class Door : Node3D, InteractableObject
 {
 	bool opened = false;
+	public bool locked = false;
 
 	public void ToggleDoor()
 	{
@@ -25,6 +26,9 @@ public partial class Door : Node3D, InteractableObject
 
 	public void PlayerInteract()
 	{
+		if (locked)
+			return;
+
 		ToggleDoor();
 	}
 }

@@ -68,7 +68,7 @@ material_override = SubResource("StandardMaterial3D_hjsbj")
 mesh = SubResource("BoxMesh_80vhd")
 
 [node name="player" parent="." unique_id=2111338812 instance=ExtResource("2_hjsbj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.961944, 1.5, 16.136982)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.069092, 1.4999998, 5.620303)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=983188807]
 transform = Transform3D(0.8712139, -0.19888552, 0.44881067, 0, 0.91425395, 0.4051416, -0.4909038, -0.35296494, 0.79651064, -0.022856712, 2.3747716, 0)
