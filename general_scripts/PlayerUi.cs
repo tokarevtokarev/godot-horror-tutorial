@@ -11,6 +11,8 @@ public partial class PlayerUi : Control
 		pauseMenu = GetNode<CanvasLayer>("pauseMenu");
 		taskUI = GetNode<CanvasLayer>("taskUI");
 		pauseMenu.Visible = false;
+
+		setTask("Ring the doorbell");
 		
 	}
 
