@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bhaup57m3ss2b"]
+
+[node name="SafeUi" type="CanvasLayer" unique_id=832371329]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1006836601]
+offset_right = 1163.0
+offset_bottom = 657.0
+color = Color(0, 0, 0, 0.23921569)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1098607489]
+offset_left = 272.0
+offset_top = 136.0
+offset_right = 891.0
+offset_bottom = 346.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1024722451]
+offset_left = 430.0
+offset_top = 145.0
+offset_right = 735.0
+offset_bottom = 209.0
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]Safe passcode:"
+
+[node name="password" type="LineEdit" parent="." unique_id=1763316858]
+offset_left = 291.0
+offset_top = 232.0
+offset_right = 868.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 40
+placeholder_text = "XXXX"
+alignment = 1
+max_length = 4
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+
+[node name="confirm" type="Button" parent="." unique_id=834480304]
+offset_left = 601.0
+offset_top = 360.0
+offset_right = 846.0
+offset_bottom = 425.0
+theme_override_font_sizes/font_size = 40
+text = "Confirm"
+
+[node name="back" type="Button" parent="." unique_id=1727767173]
+offset_left = 318.0
+offset_top = 360.0
+offset_right = 563.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 40
+text = "Back"

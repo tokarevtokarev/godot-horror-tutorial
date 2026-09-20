@@ -75,7 +75,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.80
 transform = Transform3D(0.8712139, -0.19888552, 0.44881067, 0, 0.91425395, 0.4051416, -0.4909038, -0.35296494, 0.79651064, -0.022856712, 2.3747716, 0)
 shadow_enabled = true
 
-[node name="fpphorrorhouse" parent="." unique_id=560793250 instance=ExtResource("3_cwqvt")]
+[node name="house" parent="." unique_id=560793250 instance=ExtResource("3_cwqvt")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.516664, 2.9517767, 14.971718)
 
 [node name="taskTrigger" parent="." unique_id=287798617 instance=ExtResource("4_5mrsh")]

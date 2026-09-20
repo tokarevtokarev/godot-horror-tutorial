@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cg4spmr4h31xp" path="res://general_scripts/PlayerUi.cs" id="1_ehg4m"]
 [ext_resource type="PackedScene" uid="uid://du1e7r5x0x61h" path="res://ui/pause_menu.tscn" id="3_iwa1g"]
 [ext_resource type="PackedScene" uid="uid://b6hwar7diiy21" path="res://ui/task_ui.tscn" id="4_iwa1g"]
+[ext_resource type="PackedScene" uid="uid://bhaup57m3ss2b" path="res://ui/safe_ui.tscn" id="4_lp0io"]
 
 [node name="player_ui" type="Control" unique_id=62864111]
 process_mode = 3
@@ -25,11 +26,16 @@ offset_bottom = 648.0
 layout_mode = 2
 texture = ExtResource("1_cfom6")
 
-[node name="pauseMenu" parent="." unique_id=1015206582 instance=ExtResource("3_iwa1g")]
-
 [node name="taskUI" parent="." unique_id=1420290563 instance=ExtResource("4_iwa1g")]
 
+[node name="SafeUi" parent="." unique_id=832371329 instance=ExtResource("4_lp0io")]
+
+[node name="pauseMenu" parent="." unique_id=1015206582 instance=ExtResource("3_iwa1g")]
+
+[connection signal="pressed" from="SafeUi/confirm" to="." method="confirmPassowrd"]
+[connection signal="pressed" from="SafeUi/back" to="." method="exitSafe"]
 [connection signal="pressed" from="pauseMenu/resume" to="." method="resumeGame"]
 [connection signal="pressed" from="pauseMenu/quitGame" to="." method="quitGame"]
 
+[editable path="SafeUi"]
 [editable path="pauseMenu"]

@@ -5,6 +5,7 @@ public partial class PlayerInteract : RayCast3D
 {
 
     public CenterContainer crosshair;
+    public PlayerUi playerUi;
     private string[] interactableNames = { "doorbody",
     "lightswitchbody",
     "lampbody",
@@ -12,11 +13,13 @@ public partial class PlayerInteract : RayCast3D
     "drawerSlot2Body",
     "closetDoor1Body",
     "closetDoor2Body",
-    "doorBellBody" };
+    "doorBellBody",
+    "safeBody" };
 
     public override void _Ready()
     {
-        crosshair = GetParent().GetParent().GetNode<CenterContainer>("player_ui/CanvasLayer/crosshair");
+        playerUi = GetParent().GetParent().GetNode<PlayerUi>("player_ui");
+        crosshair = playerUi.GetNode<CenterContainer>("CanvasLayer/crosshair");
     }
 
     public override void _PhysicsProcess(double delta)
@@ -39,6 +42,17 @@ public partial class PlayerInteract : RayCast3D
         if (!Input.IsActionJustPressed("interact"))
             return;
 
+        if (hit.Name == "safeBody")
+        {
+            playerUi.openSafePasswordUI();
+            return;
+        }
+
+        handleInteractableObject(hit);
+    }
+
+    private void handleInteractableObject(Node3D hit)
+    {
         // Search for InteractableObject script in parent nodes
         Node currentNode = hit;
         while (currentNode != null)
