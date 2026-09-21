@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://npf4tj36ygbg"]
 
 [ext_resource type="Texture2D" uid="uid://dhb31x3w5nqv3" path="res://textures/wall1.jpg" id="1_j0kq0"]
+[ext_resource type="Texture2D" uid="uid://bfnu4ttrngvqt" path="res://textures/wall1_normalmap.png" id="2_gury7"]
 [ext_resource type="Material" uid="uid://dt762ms4xgm5f" path="res://materials/metal_2.tres" id="2_u0mme"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nculu"]
@@ -50,8 +51,12 @@ data = PackedVector3Array(0.9019, -0.5201, 0.8562, -0.90199995, 1, 0.8562, -0.90
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gury7"]
 albedo_color = Color(1.437, 1.437, 1.437, 1)
 albedo_texture = ExtResource("1_j0kq0")
+roughness = 0.6
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.05
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("2_gury7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_76imn"]
 

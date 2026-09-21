@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dftffqxu5xycy" path="res://general_scripts/Drawer.cs" id="2_20js4"]
 [ext_resource type="Texture2D" uid="uid://dbbhdhe2kyokb" path="res://textures/floor.jpg" id="2_ub2va"]
 [ext_resource type="Material" uid="uid://bqo1tkoylmih0" path="res://materials/metal.tres" id="3_20js4"]
+[ext_resource type="Texture2D" uid="uid://cch7r5cqol53c" path="res://textures/floor_normalmap.png" id="4_20js4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5by53"]
 resource_name = "Material"
@@ -49,6 +50,9 @@ data = PackedVector3Array(-0.9166, -0.9431, 0.9341, -0.9166, 0.9431, -0.9341, -0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ukpq"]
 albedo_color = Color(0.7982363, 0.742891, 0.84091777, 1)
 albedo_texture = ExtResource("2_ub2va")
+normal_enabled = true
+normal_scale = 0.3
+normal_texture = ExtResource("4_20js4")
 uv1_scale = Vector3(3.975, 3.99, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_osbik"]

@@ -6,6 +6,9 @@ public partial class TaskTrigger : Area3D
 	[Export]
 	public String taskText;
 
+	[Export]
+	public bool enable_code = false;
+
 	private bool triggered = false;
 	private PlayerUi playerUi;
 
@@ -26,6 +29,10 @@ public partial class TaskTrigger : Area3D
 		{
 			triggered = true;
 			playerUi.setTask(taskText);
+			if (enable_code)
+			{
+				GetTree().CurrentScene.GetNode<Node3D>("CodePaper").Visible = true;
+			}
 		}
 	}
 	

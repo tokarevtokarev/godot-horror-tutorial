@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dmnt0yl2bixsg" path="res://player/player.tscn" id="2_hjsbj"]
 [ext_resource type="PackedScene" uid="uid://2gxnw828d1pt" path="res://scenery/fpphorrorhouse.tscn" id="3_cwqvt"]
 [ext_resource type="PackedScene" uid="uid://vop04x6qpgci" path="res://scenery/task_trigger.tscn" id="4_5mrsh"]
+[ext_resource type="PackedScene" uid="uid://fjbvsucmic55" path="res://scenery/code_paper.tscn" id="5_safpt"]
 
 [sub_resource type="Gradient" id="Gradient_cwqvt"]
 offsets = PackedFloat32Array(0, 0.49186993, 1)
@@ -69,7 +70,7 @@ material_override = SubResource("StandardMaterial3D_hjsbj")
 mesh = SubResource("BoxMesh_80vhd")
 
 [node name="player" parent="." unique_id=2111338812 instance=ExtResource("2_hjsbj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.8057327, 1.4999998, 6.197338)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.8800387, 1.4999993, 5.53023)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=983188807]
 transform = Transform3D(0.8712139, -0.19888552, 0.44881067, 0, 0.91425395, 0.4051416, -0.4909038, -0.35296494, 0.79651064, -0.022856712, 2.3747716, 0)
@@ -85,3 +86,55 @@ taskText = "Search for valuables"
 [node name="taskTrigger2" parent="." unique_id=1685270275 instance=ExtResource("4_5mrsh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.923904, -2.7379112, 17.765408)
 taskText = "Get the money and leave"
+enable_code = true
+
+[node name="CodePaper" parent="." unique_id=976782326 node_paths=PackedStringArray("positions") instance=ExtResource("5_safpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2031217, 1.492084, 12.416196)
+positions = [NodePath("../CodePositions/CodeSpawn"), NodePath("../CodePositions/CodeSpawn2"), NodePath("../CodePositions/CodeSpawn3"), NodePath("../CodePositions/CodeSpawn4"), NodePath("../CodePositions/CodeSpawn5"), NodePath("../CodePositions/CodeSpawn6"), NodePath("../CodePositions/CodeSpawn7"), NodePath("../CodePositions/CodeSpawn8"), NodePath("../CodePositions/CodeSpawn9"), NodePath("../CodePositions/CodeSpawn10"), NodePath("../CodePositions/CodeSpawn11"), NodePath("../CodePositions/CodeSpawn12"), NodePath("../CodePositions/CodeSpawn13"), NodePath("../CodePositions/CodeSpawn14"), NodePath("../CodePositions/CodeSpawn15")]
+
+[node name="CodePositions" type="Node3D" parent="." unique_id=1012734759]
+
+[node name="CodeSpawn" type="Node3D" parent="CodePositions" unique_id=1311720358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.950054, 1.2202063, 17.91951)
+
+[node name="CodeSpawn2" type="Node3D" parent="CodePositions" unique_id=1798013766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.950054, 1.2202063, 19.190619)
+
+[node name="CodeSpawn3" type="Node3D" parent="CodePositions" unique_id=1515937515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3026114, 1.2202063, 21.545284)
+
+[node name="CodeSpawn4" type="Node3D" parent="CodePositions" unique_id=759217297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2106867, 1.2202063, 21.545284)
+
+[node name="CodeSpawn5" type="Node3D" parent="CodePositions" unique_id=196178569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9673033, 0.53822553, 20.610554)
+
+[node name="CodeSpawn6" type="Node3D" parent="CodePositions" unique_id=1166730908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.31694, 0.8491354, 8.556398)
+
+[node name="CodeSpawn7" type="Node3D" parent="CodePositions" unique_id=445354317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7112039, 1.2191304, 21.476345)
+
+[node name="CodeSpawn8" type="Node3D" parent="CodePositions" unique_id=2067439399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9510515, 1.2191304, 21.476345)
+
+[node name="CodeSpawn9" type="Node3D" parent="CodePositions" unique_id=1386651518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6105385, 1.2191304, 21.476345)
+
+[node name="CodeSpawn10" type="Node3D" parent="CodePositions" unique_id=75086137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.849785, 1.2191304, 21.476345)
+
+[node name="CodeSpawn11" type="Node3D" parent="CodePositions" unique_id=195486127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.968185, 1.2191303, 9.704828)
+
+[node name="CodeSpawn12" type="Node3D" parent="CodePositions" unique_id=788900521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.968185, 1.2191303, 8.538873)
+
+[node name="CodeSpawn13" type="Node3D" parent="CodePositions" unique_id=1449817759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.371605, -2.671508, 13.7427225)
+
+[node name="CodeSpawn14" type="Node3D" parent="CodePositions" unique_id=1840384969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.079581, -2.8134406, 11.9970255)
+
+[node name="CodeSpawn15" type="Node3D" parent="CodePositions" unique_id=548326175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.079581, -2.8134406, 10.718416)

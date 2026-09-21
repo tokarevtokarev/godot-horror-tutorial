@@ -2,10 +2,16 @@
 
 [ext_resource type="Script" uid="uid://cg4w6fgx1c813" path="res://general_scripts/Door.cs" id="1_jy65v"]
 [ext_resource type="Texture2D" uid="uid://c8xfc2062q5tp" path="res://textures/door.jpg" id="2_1fsns"]
+[ext_resource type="Texture2D" uid="uid://bwoik7sbbus8k" path="res://textures/door_normalmap.png" id="3_4owcv"]
 [ext_resource type="Material" uid="uid://bqo1tkoylmih0" path="res://materials/metal.tres" id="3_m6kou"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4owcv"]
+albedo_color = Color(0.6977787, 0.47582954, 0, 1)
 albedo_texture = ExtResource("2_1fsns")
+roughness = 0.8
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("3_4owcv")
 uv1_scale = Vector3(3, 2, 3)
 uv1_offset = Vector3(0, 1, 0)
 

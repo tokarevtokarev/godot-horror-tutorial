@@ -1,8 +1,12 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dt762ms4xgm5f"]
 
 [ext_resource type="Texture2D" uid="uid://dhb31x3w5nqv3" path="res://textures/wall1.jpg" id="1_klwoy"]
+[ext_resource type="Texture2D" uid="uid://bfnu4ttrngvqt" path="res://textures/wall1_normalmap.png" id="2_g00d8"]
 
 [resource]
 albedo_texture = ExtResource("1_klwoy")
 metallic = 1.0
 roughness = 0.5
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("2_g00d8")

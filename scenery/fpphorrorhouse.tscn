@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://do4h2xqgdyppf" path="res://scenery/window.tscn" id="16_qcw70"]
 [ext_resource type="PackedScene" uid="uid://c4odecs30laa4" path="res://scenery/bed.tscn" id="18_i67pk"]
 [ext_resource type="Texture2D" uid="uid://bfaqm5jmebb8m" path="res://textures/hair.jpg" id="19_4wdrm"]
+[ext_resource type="Texture2D" uid="uid://cdmiuw87c2c81" path="res://textures/carpet_normalmap.png" id="20_228ml"]
 [ext_resource type="PackedScene" uid="uid://bkq0q6t5x1fmg" path="res://scenery/door.tscn" id="20_mjehq"]
 [ext_resource type="PackedScene" uid="uid://x21wbnstw0ru" path="res://scenery/lightswitch.tscn" id="23_b4x21"]
 [ext_resource type="PackedScene" uid="uid://b4f433vrqcuab" path="res://scenery/lamp.tscn" id="24_rspqc"]
@@ -263,8 +264,6 @@ points = PackedVector3Array(1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_i67pk"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_4wdrm"]
-
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mjehq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vppsi"]
@@ -282,28 +281,40 @@ albedo_texture = ExtResource("14_12ndm")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12ndm"]
 albedo_color = Color(1, 0.5209756, 0.33882588, 1)
 albedo_texture = ExtResource("14_6wrda")
+normal_enabled = true
+normal_texture = ExtResource("20_228ml")
 
 [sub_resource type="QuadMesh" id="QuadMesh_qcw70"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcw70"]
 albedo_color = Color(0.5370537, 0.7349164, 0.5462088, 1)
 albedo_texture = ExtResource("14_6wrda")
+normal_enabled = true
+normal_texture = ExtResource("20_228ml")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnvop"]
 albedo_color = Color(0.47494674, 0.7024952, 0.8838492, 1)
 albedo_texture = ExtResource("14_6wrda")
+normal_enabled = true
+normal_texture = ExtResource("20_228ml")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wrda"]
 albedo_color = Color(0.6780229, 0.69592166, 0.4736458, 1)
 albedo_texture = ExtResource("14_6wrda")
+normal_enabled = true
+normal_texture = ExtResource("20_228ml")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ffu6"]
 albedo_color = Color(0.8764853, 0.5728506, 0.6493475, 1)
 albedo_texture = ExtResource("14_6wrda")
+normal_enabled = true
+normal_texture = ExtResource("20_228ml")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dq1bv"]
 albedo_color = Color(1, 0.6624741, 0.5424542, 1)
 albedo_texture = ExtResource("14_6wrda")
+normal_enabled = true
+normal_texture = ExtResource("20_228ml")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wdrm"]
 albedo_color = Color(0.39413527, 0.46722692, 0.35013357, 1)
@@ -420,16 +431,6 @@ mesh = SubResource("CylinderMesh_wnvop")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="structure/cellar/MeshInstance3D4/StaticBody3D" unique_id=637067146]
 shape = SubResource("CylinderShape3D_i67pk")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="structure/cellar" unique_id=1792064910]
-transform = Transform3D(2.5, 0, 0, 0, 3.818, 0, 0, 0, 2.5, 13.06212, -9.167851, 8.455721)
-material_override = ExtResource("2_k04ie")
-mesh = SubResource("CylinderMesh_wnvop")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="structure/cellar/MeshInstance3D2" unique_id=521657942]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="structure/cellar/MeshInstance3D2/StaticBody3D" unique_id=296335746]
-shape = SubResource("CylinderShape3D_4wdrm")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="structure/cellar" unique_id=350223570]
 transform = Transform3D(2.5, 0, 0, 0, 3.818, 0, 0, 0, 2.5, -13.729347, -9.167851, 8.455721)

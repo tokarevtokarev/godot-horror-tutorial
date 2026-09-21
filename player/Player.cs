@@ -3,7 +3,7 @@ using System;
 
 public partial class Player : CharacterBody3D
 {
-	public float Speed = 5.0f;
+	public float Speed = 2.5f;
 	public const float JumpVelocity = 4.5f;
 
 	private CollisionShape3D collisionShape;
@@ -20,7 +20,7 @@ public partial class Player : CharacterBody3D
         if (Input.IsActionJustPressed("crouch"))
 		{
 			crouching = !crouching;
-			Speed = crouching ? 2f : 5.0f;
+			Speed = crouching ? 1.5f : 2.5f;
 		}
     }
 

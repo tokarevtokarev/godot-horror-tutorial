@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://dgt6gqy7oupqc"]
 
 [ext_resource type="Texture2D" uid="uid://b4ltbdmrudfp3" path="res://textures/carpet.jpg" id="1_fixh1"]
+[ext_resource type="Texture2D" uid="uid://cdmiuw87c2c81" path="res://textures/carpet_normalmap.png" id="2_b1wm0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1wm0"]
 albedo_color = Color(1, 0.49019608, 0.4509804, 1)
 albedo_texture = ExtResource("1_fixh1")
+normal_enabled = true
+normal_texture = ExtResource("2_b1wm0")
 uv1_scale = Vector3(2.995, 0.905, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_d034t"]
@@ -12,6 +15,8 @@ uv1_scale = Vector3(2.995, 0.905, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mlkvg"]
 albedo_color = Color(0.3882353, 0.101960786, 0.078431375, 1)
 albedo_texture = ExtResource("1_fixh1")
+normal_enabled = true
+normal_texture = ExtResource("2_b1wm0")
 uv1_scale = Vector3(1.285, 1, 1)
 uv1_offset = Vector3(0.37, 0, 0)
 
@@ -22,6 +27,8 @@ rings = 16
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3aga"]
 albedo_color = Color(0.3882353, 0.101960786, 0.078431375, 1)
 albedo_texture = ExtResource("1_fixh1")
+normal_enabled = true
+normal_texture = ExtResource("2_b1wm0")
 uv1_scale = Vector3(1.275, 1, 1)
 uv1_offset = Vector3(0.805, 0, 0)
 

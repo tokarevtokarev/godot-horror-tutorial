@@ -1,10 +1,13 @@
 [gd_scene format=4 uid="uid://xghfvkqnvhkl"]
 
 [ext_resource type="Texture2D" uid="uid://dhb31x3w5nqv3" path="res://textures/wall1.jpg" id="1_5cap4"]
+[ext_resource type="Texture2D" uid="uid://bfnu4ttrngvqt" path="res://textures/wall1_normalmap.png" id="2_iwvrk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iwvrk"]
 albedo_color = Color(0.8431838, 0.8431839, 0.84318364, 1)
 albedo_texture = ExtResource("1_5cap4")
+normal_enabled = true
+normal_texture = ExtResource("2_iwvrk")
 uv1_scale = Vector3(3.215, 4, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8febf"]

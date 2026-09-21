@@ -6,6 +6,7 @@ public partial class PlayerUi : Control
 	private CanvasLayer pauseMenu;
 	private CanvasLayer taskUI;
 	private CanvasLayer safeUi;
+	private Node3D codePaper;
 
 	private AnimationPlayer safeAnimationPlayer;
 
@@ -31,6 +32,8 @@ public partial class PlayerUi : Control
 
 		safeAnimationPlayer = GetTree().CurrentScene.GetNode<AnimationPlayer>("house/safe/AnimationPlayer");
 
+		codePaper = GetTree().CurrentScene.GetNode<Node3D>("CodePaper");
+
 		generateSafePassword();
 	}
 
@@ -41,6 +44,8 @@ public partial class PlayerUi : Control
 		var p3 = rng.RandiRange(0, 9);
 		var p4 = rng.RandiRange(0, 9);
 		safePassword = p1.ToString() + p2.ToString() + p3.ToString() + p4.ToString();
+
+		(codePaper.GetNode<MeshInstance3D>("CodeText").Mesh as TextMesh).Text = safePassword;
 		GD.Print("Safe password: " + safePassword);
 	}
 

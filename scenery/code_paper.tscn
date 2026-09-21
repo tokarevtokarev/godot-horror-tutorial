@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://fjbvsucmic55"]
+
+[ext_resource type="Script" uid="uid://ysit8v5ua05b" path="res://general_scripts/CodePaper.cs" id="1_vvaag"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7a11i"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vvaag"]
+width = 36
+height = 56
+noise = SubResource("FastNoiseLite_7a11i")
+as_normal_map = true
+bump_strength = 12.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_web1u"]
+albedo_color = Color(0.9384497, 0.9384497, 0.9384497, 1)
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_vvaag")
+
+[sub_resource type="QuadMesh" id="QuadMesh_g01vd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dm00l"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_cnefa"]
+text = "0000"
+depth = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7a11i"]
+size = Vector3(0.231, 0.01, 0.356)
+
+[node name="CodePaper" type="RigidBody3D" unique_id=1394803086 node_paths=PackedStringArray("positions")]
+contact_monitor = true
+max_contacts_reported = 3
+script = ExtResource("1_vvaag")
+positions = []
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1193034717]
+transform = Transform3D(0.23077036, 0, 0, 0, -1.557169e-08, 1, 0, -0.35623875, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_web1u")
+mesh = SubResource("QuadMesh_g01vd")
+
+[node name="CodeText" type="MeshInstance3D" parent="." unique_id=1695363771]
+transform = Transform3D(-3.934025e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 0.9, 4.371139e-08, 1.9106855e-15, 0, 0.001, 0)
+material_override = SubResource("StandardMaterial3D_dm00l")
+mesh = SubResource("TextMesh_cnefa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1252395496]
+shape = SubResource("BoxShape3D_7a11i")

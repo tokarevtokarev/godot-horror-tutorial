@@ -2,9 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://bfaqm5jmebb8m" path="res://textures/hair.jpg" id="1_66apj"]
 [ext_resource type="Material" uid="uid://dh7p080u26sab" path="res://materials/house_material.tres" id="2_4n824"]
+[ext_resource type="Texture2D" uid="uid://cr1kp4j71npr" path="res://textures/hair_normalmap.png" id="2_7tk1s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4n824"]
 albedo_texture = ExtResource("1_66apj")
+normal_enabled = true
+normal_texture = ExtResource("2_7tk1s")
 uv1_offset = Vector3(0.51, 0, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5l60w"]
@@ -215,6 +218,8 @@ points = PackedVector3Array(-1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7tk1s"]
 albedo_color = Color(0.4983129, 0.4179812, 0.40770677, 1)
 albedo_texture = ExtResource("1_66apj")
+normal_enabled = true
+normal_texture = ExtResource("2_7tk1s")
 uv1_scale = Vector3(4.015, 4.015, 4.015)
 uv1_offset = Vector3(0.51, 0, 0)
 
@@ -261,6 +266,8 @@ shadow_mesh = SubResource("ArrayMesh_mhmql")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtaaf"]
 albedo_color = Color(0.46965402, 0.44679224, 0.29224202, 1)
 albedo_texture = ExtResource("1_66apj")
+normal_enabled = true
+normal_texture = ExtResource("2_7tk1s")
 uv1_scale = Vector3(4.015, 4.015, 4.015)
 uv1_offset = Vector3(0.51, 0, 0)
 

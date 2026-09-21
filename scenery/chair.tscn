@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://dthby4jbjftc5"]
 
 [ext_resource type="Texture2D" uid="uid://dbbhdhe2kyokb" path="res://textures/floor.jpg" id="1_athwx"]
+[ext_resource type="Texture2D" uid="uid://cch7r5cqol53c" path="res://textures/floor_normalmap.png" id="2_ktcuv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktcuv"]
 albedo_color = Color(0.6323591, 0.57897323, 0.57904893, 1)
 albedo_texture = ExtResource("1_athwx")
+normal_enabled = true
+normal_texture = ExtResource("2_ktcuv")
 uv1_scale = Vector3(5.105, 1.985, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ax2ee"]
