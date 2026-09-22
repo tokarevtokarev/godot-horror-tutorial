@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dgsi1u2ci27p5"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tflpp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y63t4"]
+emission_enabled = true
+emission = Color(0.7337145, 0.646882, 0.3167031, 1)
+emission_energy_multiplier = 6.47
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pnhfa"]
+radius = 0.6725
+height = 1.385
+
+[node name="outsidelight" type="Node3D" unique_id=853870004]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1658613339]
+transform = Transform3D(1, 0, 0, 0, 0.20230527, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_tflpp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1519270392]
+transform = Transform3D(0.7, 0, 0, 0, 0.52437234, 0, 0, 0, 0.7, 0, -0.36815402, 0)
+material_override = SubResource("StandardMaterial3D_y63t4")
+mesh = SubResource("CapsuleMesh_pnhfa")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=482773753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3972403, 0)
+light_energy = 0.6
+omni_range = 8.0

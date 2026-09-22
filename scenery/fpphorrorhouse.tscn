@@ -669,6 +669,7 @@ transform = Transform3D(2.02, 0, 0, 0, 2.02, 0, 0, 0, 2.02, -16.18132, -2.387278
 
 [node name="door2" parent="doors" unique_id=1618527360 instance=ExtResource("20_mjehq")]
 transform = Transform3D(-2.02, 0, -1.7659401e-07, 0, 2.02, 0, 1.7659401e-07, 0, -2.02, 13.206295, -2.3097723, -14.821279)
+locked = true
 
 [node name="lightswitches" type="Node3D" parent="." unique_id=1837885947]
 

@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://jjpjvqudytt8"]
 
-[ext_resource type="Texture2D" uid="uid://fgyw7ma7u1g2" path="res://icon.svg" id="1_80vhd"]
+[ext_resource type="Material" uid="uid://ee3ugeavsj1x" path="res://materials/grass_material.tres" id="1_d5x7l"]
 [ext_resource type="PackedScene" uid="uid://dmnt0yl2bixsg" path="res://player/player.tscn" id="2_hjsbj"]
+[ext_resource type="Texture2D" uid="uid://dhb31x3w5nqv3" path="res://textures/wall1.jpg" id="2_ukwr8"]
+[ext_resource type="Material" uid="uid://v70yuc75mjbc" path="res://materials/metal_fence.tres" id="2_vnv7o"]
 [ext_resource type="PackedScene" uid="uid://2gxnw828d1pt" path="res://scenery/fpphorrorhouse.tscn" id="3_cwqvt"]
+[ext_resource type="Texture2D" uid="uid://bfnu4ttrngvqt" path="res://textures/wall1_normalmap.png" id="3_pb8y7"]
+[ext_resource type="PackedScene" uid="uid://cs453277isls5" path="res://scenery/door_garden.tscn" id="3_vnv7o"]
 [ext_resource type="PackedScene" uid="uid://vop04x6qpgci" path="res://scenery/task_trigger.tscn" id="4_5mrsh"]
+[ext_resource type="PackedScene" uid="uid://dgsi1u2ci27p5" path="res://scenery/outsidelight.tscn" id="4_d5x7l"]
 [ext_resource type="PackedScene" uid="uid://fjbvsucmic55" path="res://scenery/code_paper.tscn" id="5_safpt"]
 
 [sub_resource type="Gradient" id="Gradient_cwqvt"]
@@ -48,32 +53,118 @@ adjustment_saturation = 0.8
 [sub_resource type="BoxShape3D" id="BoxShape3D_umreq"]
 size = Vector3(15, 1, 15)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hjsbj"]
-albedo_texture = ExtResource("1_80vhd")
-uv1_scale = Vector3(3, 2, 1)
-
 [sub_resource type="BoxMesh" id="BoxMesh_80vhd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hy0rb"]
+albedo_color = Color(0.49354547, 0.49354553, 0.49354535, 1)
+albedo_texture = ExtResource("2_ukwr8")
+normal_enabled = true
+normal_texture = ExtResource("3_pb8y7")
+uv1_scale = Vector3(2.975, 1.895, 1)
 
 [node name="level" type="Node3D" unique_id=394997853]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1489517519]
 environment = SubResource("Environment_5mrsh")
 
-[node name="floor" type="StaticBody3D" parent="." unique_id=17497559]
+[node name="garden" type="Node3D" parent="." unique_id=501721895]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=2080059302]
+[node name="floor" type="StaticBody3D" parent="garden" unique_id=17497559]
+transform = Transform3D(1.23, 0, 0, 0, 1, 0, 0, 0, 1.23, 1.2788627, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="garden/floor" unique_id=2080059302]
 shape = SubResource("BoxShape3D_umreq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=2083930388]
-transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_hjsbj")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="garden/floor" unique_id=2083930388]
+transform = Transform3D(15.000005, 0, 0, 0, 1, 0, 0, 0, 15.000005, 0, 0, -1.3168498)
+material_override = ExtResource("1_d5x7l")
 mesh = SubResource("BoxMesh_80vhd")
+
+[node name="floor6" type="StaticBody3D" parent="garden" unique_id=1184596925]
+transform = Transform3D(0.24637447, 0, 0, 0, 1, 0, 0, 0, 1.23, 5.231, 0.001, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="garden/floor6" unique_id=589705196]
+shape = SubResource("BoxShape3D_umreq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="garden/floor6" unique_id=612872472]
+transform = Transform3D(15.000005, 0, 0, 0, 1, 0, 0, 0, 15.000004, 0, 0, -1.3151368)
+material_override = SubResource("StandardMaterial3D_hy0rb")
+mesh = SubResource("BoxMesh_80vhd")
+
+[node name="floor2" type="StaticBody3D" parent="garden" unique_id=1540706929]
+transform = Transform3D(0.2, 0, 0, 0, 5, 0, 0, 0, 1, -8, 1.0254655, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="garden/floor2" unique_id=2039063400]
+shape = SubResource("BoxShape3D_umreq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="garden/floor2" unique_id=1443949705]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0)
+material_override = ExtResource("2_vnv7o")
+mesh = SubResource("BoxMesh_80vhd")
+
+[node name="floor3" type="StaticBody3D" parent="garden" unique_id=860941533]
+transform = Transform3D(-4.6675335e-09, 0, -1, 0, 5, 0, 0.10678072, 0, -4.371139e-08, -3.4464245, 1.0254655, -8.252119)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="garden/floor3" unique_id=37455053]
+shape = SubResource("BoxShape3D_umreq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="garden/floor3" unique_id=65585172]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, -0.7355056)
+material_override = ExtResource("2_vnv7o")
+mesh = SubResource("BoxMesh_80vhd")
+
+[node name="floor5" type="StaticBody3D" parent="garden" unique_id=1853005057]
+transform = Transform3D(-4.6675335e-09, 0, -1, 0, 5, 0, 0.10678072, 0, -4.371139e-08, 14.356319, 1.0254655, -8.252119)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="garden/floor5" unique_id=725996591]
+shape = SubResource("BoxShape3D_umreq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="garden/floor5" unique_id=24678447]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0.3895979)
+material_override = ExtResource("2_vnv7o")
+mesh = SubResource("BoxMesh_80vhd")
+
+[node name="floor4" type="StaticBody3D" parent="garden" unique_id=1837698625]
+transform = Transform3D(-0.2, 0, 8.742278e-08, 0, 5, 0, -1.7484556e-08, 0, -1, 11, 1.0254655, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="garden/floor4" unique_id=246070735]
+shape = SubResource("BoxShape3D_umreq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="garden/floor4" unique_id=1598048334]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0)
+material_override = ExtResource("2_vnv7o")
+mesh = SubResource("BoxMesh_80vhd")
+
+[node name="door" parent="garden" unique_id=493705923 instance=ExtResource("3_vnv7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.791343, 1.7832713, -7.8091083)
+locked = true
+
+[node name="outsidelight" parent="garden" unique_id=853870004 instance=ExtResource("4_d5x7l")]
+transform = Transform3D(0.59999996, 0, 0, 0, -2.6226832e-08, 0.59999996, 0, -0.59999996, -2.6226832e-08, 3.766827, 2.5927005, -7.3813615)
+
+[node name="outsidelight3" parent="garden" unique_id=834802484 instance=ExtResource("4_d5x7l")]
+transform = Transform3D(0.59999996, 0, 0, 0, -2.6226832e-08, 0.59999996, 0, -0.59999996, -2.6226832e-08, -2.8622613, 2.5927005, -7.3813615)
+
+[node name="outsidelight5" parent="garden" unique_id=2122749017 instance=ExtResource("4_d5x7l")]
+transform = Transform3D(-2.6226832e-08, -0.59999996, -2.622683e-08, 0, -2.622683e-08, 0.59999996, -0.59999996, 2.6226832e-08, 1.1464112e-15, -6.373699, 2.5927005, 0.34652305)
+
+[node name="outsidelight6" parent="garden" unique_id=805299341 instance=ExtResource("4_d5x7l")]
+transform = Transform3D(-2.6226832e-08, 0.59999996, 2.6226829e-08, 9.3176426e-23, -2.6226829e-08, 0.59999996, 0.59999996, 2.6226832e-08, 1.1464108e-15, 9.427247, 2.5927005, 0.34652305)
+
+[node name="outsidelight2" parent="garden" unique_id=200504818 instance=ExtResource("4_d5x7l")]
+transform = Transform3D(-0.59999996, -5.2453665e-08, -2.2928223e-15, 0, -2.622683e-08, 0.59999996, -5.2453665e-08, 0.59999996, 2.622683e-08, 5.182534, 3.713074, 7.398655)
+
+[node name="outsidelight4" parent="garden" unique_id=1562573525 instance=ExtResource("4_d5x7l")]
+transform = Transform3D(-0.59999996, -5.2453665e-08, -2.2928223e-15, 0, -2.622683e-08, 0.59999996, -5.2453665e-08, 0.59999996, 2.622683e-08, -2.361946, 3.713074, 7.398655)
 
 [node name="player" parent="." unique_id=2111338812 instance=ExtResource("2_hjsbj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.8800387, 1.4999993, 5.53023)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=983188807]
 transform = Transform3D(0.8712139, -0.19888552, 0.44881067, 0, 0.91425395, 0.4051416, -0.4909038, -0.35296494, 0.79651064, -0.022856712, 2.3747716, 0)
+light_energy = 0.4
+light_indirect_energy = 0.5
+light_specular = 0.5
 shadow_enabled = true
 
 [node name="house" parent="." unique_id=560793250 instance=ExtResource("3_cwqvt")]
