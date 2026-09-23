@@ -6,14 +6,12 @@ public partial class fp_cam : Node3D
     [Export(PropertyHint.Range, "0.1,20,0.1")]
     public float sensitivity = 0.2f;
 
-    private SpotLight3D flashlight;
     private const float MinPitchDeg = -90f;
     private const float MaxPitchDeg = 90f;
 
     public override void _Ready()
     {
         Input.MouseMode = Input.MouseModeEnum.Captured;
-        flashlight = GetNode<SpotLight3D>("flashlight");
     }
 
     public override void _Input(InputEvent @event)
@@ -24,21 +22,6 @@ public partial class fp_cam : Node3D
             if (Input.MouseMode == Input.MouseModeEnum.Captured)
                 HandleCameraRotation(mouseMotion);
         }
-    }
-
-    public override void _Process(double delta)
-    {
-        //check for flashlight input and call toggle flashlight function
-        if (Input.IsActionJustReleased("flashlight"))
-        {
-            ToggleFlashLight();
-        }
-    }
-
-    private void ToggleFlashLight()
-    {
-        GD.Print("Toggling flashlight");
-        flashlight.Visible = !flashlight.Visible;
     }
 
     private void HandleCameraRotation(InputEventMouseMotion mouseMotion)

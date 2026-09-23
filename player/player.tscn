@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cd6jao0adg0kc" path="res://player/Player.cs" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://8f1j1is38ya8" path="res://player/fp_cam.cs" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://doekeq4ea48bm" path="res://player/PlayerInteract.cs" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://b3npbrykp4b4x" path="res://player/fov.cs" id="3_qjkh3"]
 [ext_resource type="PackedScene" uid="uid://cc6078530fjiv" path="res://ui/player_ui.tscn" id="4_yw30f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
@@ -26,17 +27,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.681636, 0)
 script = ExtResource("2_rkbax")
 
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=1105362750]
+script = ExtResource("3_qjkh3")
+zoomSpeed = 10.0
 
 [node name="RayCast3D" type="RayCast3D" parent="head" unique_id=1092651574]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
-target_position = Vector3(0, -1.8, 0)
+target_position = Vector3(0, -2, 0)
 debug_shape_custom_color = Color(0.27337447, 0.490281, 1, 1)
 script = ExtResource("3_g1dw6")
-
-[node name="flashlight" type="SpotLight3D" parent="head" unique_id=673572662]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.47699988)
-shadow_enabled = true
-spot_range = 15.0
-spot_angle = 40.0
 
 [node name="player_ui" parent="." unique_id=62864111 instance=ExtResource("4_yw30f")]

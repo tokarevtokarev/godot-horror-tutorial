@@ -14,7 +14,9 @@ public partial class PlayerInteract : RayCast3D
     "closetDoor1Body",
     "closetDoor2Body",
     "doorBellBody",
-    "safeBody" };
+    "safeBody",
+    "trapDoorBody",
+    "key" };
 
     public override void _Ready()
     {
@@ -32,12 +34,24 @@ public partial class PlayerInteract : RayCast3D
         if (hit == null)
             return;
 
+
+        if (Input.IsActionJustPressed("pickup"))
+        {
+            GD.Print("Collidinhg with: " + hit.Name);
+        }
         if (!Array.Exists(interactableNames, element => element == hit.Name))
             return;
 
         // Here the palyer is looking at an interactable object
         // Change crosshair visibility
         crosshair.Visible = true;
+
+        if (hit.Name == "key" && Input.IsActionJustPressed("pickup"))
+        {
+            CodePaper key = (CodePaper)hit;
+            key.PickupKey();
+            return;
+        }
 
         if (!Input.IsActionJustPressed("interact"))
             return;

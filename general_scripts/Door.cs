@@ -4,6 +4,7 @@ using System;
 public partial class Door : Node3D, InteractableObject
 {
 	bool opened = false;
+	
 	[Export]
 	public bool locked = false;
 

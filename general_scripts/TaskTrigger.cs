@@ -9,6 +9,9 @@ public partial class TaskTrigger : Area3D
 	[Export]
 	public bool enable_code = false;
 
+	[Export]
+	public Node3D objectToUnHide;
+
 	private bool triggered = false;
 	private PlayerUi playerUi;
 
@@ -31,7 +34,7 @@ public partial class TaskTrigger : Area3D
 			playerUi.setTask(taskText);
 			if (enable_code)
 			{
-				GetTree().CurrentScene.GetNode<Node3D>("CodePaper").Visible = true;
+				objectToUnHide.Visible = true;
 			}
 		}
 	}

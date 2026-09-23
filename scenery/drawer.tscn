@@ -63,9 +63,6 @@ size = Vector3(2, 2, 0.06188965)
 [sub_resource type="BoxShape3D" id="BoxShape3D_keo4v"]
 size = Vector3(2, 2, 0.055541992)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_adael"]
-size = Vector3(2, 0.001, 2)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_16okq"]
 size = Vector3(2, 0.22781372, 2)
 
@@ -427,7 +424,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lolo8")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k14sx"]
-size = Vector3(2.4052734, 0.09667969, 5.8125)
+size = Vector3(2.4052734, 0.13476563, 5.8125)
 
 [node name="drawer" type="Node3D" unique_id=966692071]
 
@@ -457,10 +454,6 @@ shape = SubResource("BoxShape3D_lj0to")
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="slot1/drawerSlot1Body" unique_id=545910168]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.972229)
 shape = SubResource("BoxShape3D_keo4v")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="slot1/drawerSlot1Body" unique_id=681718831]
-transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99950016, 0)
-shape = SubResource("BoxShape3D_adael")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="slot1/drawerSlot1Body" unique_id=945470374]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.88609326, 0)
@@ -521,10 +514,6 @@ shape = SubResource("BoxShape3D_lj0to")
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.972229)
 shape = SubResource("BoxShape3D_keo4v")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="slot2/drawerSlot2Body" unique_id=2028759309]
-transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99950016, 0)
-shape = SubResource("BoxShape3D_adael")
-
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="slot2/drawerSlot2Body" unique_id=1216450933]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.88609326, 0)
 shape = SubResource("BoxShape3D_16okq")
@@ -545,7 +534,7 @@ mesh = SubResource("ArrayMesh_t3bap")
 [node name="StaticBody3D" type="AnimatableBody3D" parent="." unique_id=890314895]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=178919945]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6726077, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65356475, 0)
 shape = SubResource("BoxShape3D_k14sx")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=2099376076]

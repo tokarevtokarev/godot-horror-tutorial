@@ -44,8 +44,20 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_j3hn5")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_geffs"]
-data = PackedVector3Array(-0.9166, -0.9431, 0.9341, -0.9166, 0.9431, -0.9341, -0.9166, -0.9431, -0.9341, -0.9166, -0.9431, 0.9341, -0.9166, 0.9431, 0.9341, -0.9166, 0.9431, -0.9341, -0.9166, -0.9431, -0.9341, 1, -0.9431, 0.9341, -0.9166, -0.9431, 0.9341, -0.9166, -0.9431, -0.9341, 1, -0.9431, -0.9341, 1, -0.9431, 0.9341, -0.9166, 0.9431, -0.9341, 1, -0.9431, -0.9341, -0.9166, -0.9431, -0.9341, 1, -0.9431, -0.9341, -0.9166, 0.9431, -0.9341, 1, 0.9341, -0.9341, 1, 0.9341, -0.9341, -0.9166, 0.9431, -0.9341, 1, 0.9431, -0.9341, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 0.9341, -0.9341, 1, 1, -1, 1, 0.9431, -0.9341, 1, 1, -1, 1, 0.9341, -0.9341, 1, -1, -1, 1, -0.9431, -0.9341, 1, 0.9341, -0.9341, 1, 0.9431, -0.9341, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -0.9431, -0.9341, 1, 1, 1, 1, 0.9431, -0.9341, 1, 0.9431, 0.9341, 1, -0.9431, -0.9341, 1, -1, 1, 1, -0.9431, 0.9341, 1, 1, 1, 1, -0.9431, 0.9341, 1, -1, 1, 1, 1, 1, 1, 0.9431, 0.9341, 1, -0.9431, 0.9341, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -0.9431, 0.9341, -0.9166, 0.9431, 0.9341, -0.9166, -0.9431, 0.9341, 1, -0.9431, 0.9341, 1, 0.9431, 0.9341, -0.9166, 0.9431, 0.9341, 1, 0.9431, 0.9341, -0.9166, 0.9431, -0.9341, -0.9166, 0.9431, 0.9341, 1, 0.9431, 0.9341, 1, 0.9431, -0.9341, -0.9166, 0.9431, -0.9341)
+[sub_resource type="BoxShape3D" id="BoxShape3D_20js4"]
+size = Vector3(1.9310303, 0.057006836, 1.8713379)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ukpq"]
+size = Vector3(0.08534241, 1.9956923, 1.8713379)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3mcyy"]
+size = Vector3(0.0661087, 1.9956923, 1.9177246)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0q5xw"]
+size = Vector3(0.06757355, 1.9956923, 1.9177246)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_07bi3"]
+size = Vector3(1.9310303, 0.057006836, 1.8713379)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ukpq"]
 albedo_color = Color(0.7982363, 0.742891, 0.84091777, 1)
@@ -344,8 +356,25 @@ mesh = SubResource("ArrayMesh_q3lvj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="body" unique_id=858418982]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="body/StaticBody3D" unique_id=1122564927]
-shape = SubResource("ConcavePolygonShape3D_geffs")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="body/StaticBody3D" unique_id=350636577]
+transform = Transform3D(1, 0, 0, 0, 0.9999998, 0, 0, 0, 1, 0.0079956055, -0.9715169, 0)
+shape = SubResource("BoxShape3D_20js4")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="body/StaticBody3D" unique_id=1463710636]
+transform = Transform3D(1, 0, 0, 0, 0.9999998, 0, 0, 0, 1, -0.957281, -0.0021037543, 0)
+shape = SubResource("BoxShape3D_0ukpq")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="body/StaticBody3D" unique_id=40694900]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.9999998, 0, -1, 0, -4.371139e-08, 0.0019974713, -0.0021037543, 0.9670581)
+shape = SubResource("BoxShape3D_3mcyy")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="body/StaticBody3D" unique_id=1394683330]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.9999998, 0, -1, 0, -4.371139e-08, 0.0019974713, -0.0021037543, -0.9676275)
+shape = SubResource("BoxShape3D_0q5xw")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="body/StaticBody3D" unique_id=2079825424]
+transform = Transform3D(1, 0, 0, 0, 0.9999998, 0, 0, 0, 1, 0.0079956055, 0.97157866, 0)
+shape = SubResource("BoxShape3D_07bi3")
 
 [node name="hingeLeft" type="Node3D" parent="." unique_id=786254688]
 transform = Transform3D(0.07394303, 0, 0, 0, 3.1244793, 0, 0, 0, 1.1909155, 1.0349437, 0, 2.397048)

@@ -32,7 +32,7 @@ public partial class PlayerUi : Control
 
 		safeAnimationPlayer = GetTree().CurrentScene.GetNode<AnimationPlayer>("house/safe/AnimationPlayer");
 
-		codePaper = GetTree().CurrentScene.GetNode<Node3D>("CodePaper");
+		codePaper = GetTree().CurrentScene.GetNode<Node3D>("objective/CodePaper");
 
 		generateSafePassword();
 	}
