@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bury3fbnu1gj3"]
+
+[ext_resource type="Texture2D" uid="uid://dbbhdhe2kyokb" path="res://textures/floor.jpg" id="1_8f730"]
+[ext_resource type="Texture2D" uid="uid://cch7r5cqol53c" path="res://textures/floor_normalmap.png" id="2_ouklu"]
+
+[resource]
+albedo_color = Color(0.41663173, 0.30417496, 0.18504003, 1)
+albedo_texture = ExtResource("1_8f730")
+roughness = 0.7
+normal_enabled = true
+normal_texture = ExtResource("2_ouklu")
+uv1_scale = Vector3(0.33, 0.331, 0.083)

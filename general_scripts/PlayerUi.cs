@@ -8,6 +8,8 @@ public partial class PlayerUi : Control
 	private CanvasLayer safeUi;
 	private Node3D codePaper;
 
+	private AnimationPlayer fadePlayer;
+
 	private AnimationPlayer safeAnimationPlayer;
 
 	
@@ -29,6 +31,9 @@ public partial class PlayerUi : Control
 
 		taskUI = GetNode<CanvasLayer>("taskUI");
 		setTask("Ring the doorbell");
+
+		fadePlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+		fadePlayer.PlayBackwards("fade");
 
 		safeAnimationPlayer = GetTree().CurrentScene.GetNode<AnimationPlayer>("house/safe/AnimationPlayer");
 

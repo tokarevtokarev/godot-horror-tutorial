@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b34vp85ma1kpo"]
+
+[ext_resource type="Texture2D" uid="uid://c7q1o0lk5252h" path="res://textures/grass.jpg" id="1_apwli"]
+[ext_resource type="Texture2D" uid="uid://bi7ycbwn2sipg" path="res://textures/grass_normalmap.png" id="2_u0l5w"]
+
+[resource]
+albedo_color = Color(1.103714, 0.89008397, 0.8878268, 1)
+albedo_texture = ExtResource("1_apwli")
+normal_enabled = true
+normal_texture = ExtResource("2_u0l5w")
+uv1_scale = Vector3(2.475, 2.475, 2.475)
