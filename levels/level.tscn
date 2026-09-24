@@ -373,6 +373,7 @@ objectToUnHide = NodePath("../key")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5778503, -2.7379112, 19.987837)
 taskText = "Find the code and open the safe"
 enable_code = true
+enableEnemy = true
 objectToUnHide = NodePath("../CodePaper")
 
 [node name="taskTrigger3" parent="objective" unique_id=812057621 instance=ExtResource("4_5mrsh")]
@@ -438,8 +439,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.079581, -2.8134406, 10.7184
 [node name="EntityStuff" type="Node3D" parent="." unique_id=1785290776]
 
 [node name="enemy" parent="EntityStuff" unique_id=918337864 node_paths=PackedStringArray("patrolDestinations") instance=ExtResource("15_ta7ci")]
+process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0088413, 1.6424484, 9.909534)
-patrolDestinations = [NodePath("../destination"), NodePath("../destination2"), NodePath("../destination3"), NodePath("../destination4")]
+visible = false
+patrolDestinations = [NodePath("../destination"), NodePath("../destination2"), NodePath("../destination3"), NodePath("../destination4"), NodePath("../destination5"), NodePath("../destination6"), NodePath("../destination7")]
 
 [node name="destination" parent="EntityStuff" unique_id=1466428618 instance=ExtResource("16_lh335")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.663241, 1.9964337, 19.689806)
@@ -452,6 +455,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6178036, 1.9964339, 8.9005
 
 [node name="destination4" parent="EntityStuff" unique_id=1748574066 instance=ExtResource("16_lh335")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.355871, 1.9964339, 8.900542)
+
+[node name="destination5" parent="EntityStuff" unique_id=1247026496 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2698369, 1.9964339, 19.734222)
+
+[node name="destination6" parent="EntityStuff" unique_id=475928280 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.687741, 1.9964339, 18.675169)
+
+[node name="destination7" parent="EntityStuff" unique_id=1257852033 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.407372, 1.9964339, 9.726126)
 
 [editable path="house"]
 [editable path="house/lamps/lamp5"]

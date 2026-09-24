@@ -10,6 +10,9 @@ public partial class TaskTrigger : Area3D
 	public bool enable_code = false;
 
 	[Export]
+	public bool enableEnemy = false;
+
+	[Export]
 	public Node3D objectToUnHide;
 
 	private bool triggered = false;
@@ -35,6 +38,13 @@ public partial class TaskTrigger : Area3D
 			if (enable_code)
 			{
 				objectToUnHide.Visible = true;
+			}
+
+			if (enableEnemy)
+			{
+				Node3D enemy = GetTree().CurrentScene.GetNode<Node3D>("EntityStuff/enemy");
+				enemy.ProcessMode = ProcessModeEnum.Inherit;
+				enemy.Visible = true;
 			}
 		}
 	}
