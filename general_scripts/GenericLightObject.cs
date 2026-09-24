@@ -35,7 +35,6 @@ public partial class GenericLightObject : Node3D
 
     public void ToggleLight(bool state)
     {
-        GD.Print("Toggling light to " + state);
         isOn = state;
         if (lightBulb != null)
         {

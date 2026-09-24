@@ -126,6 +126,7 @@ public partial class PlayerUi : Control
 			safeAnimationPlayer.Play("open");
 			exitSafe();
 			isSafeOpen = true;
+			setTask("Get the money and leave");
 		}
 		else
 		{

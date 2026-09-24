@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://c2c1lbrl1dywe" path="res://scenery/tree.tscn" id="8_d7v53"]
 [ext_resource type="Script" uid="uid://cuvk12bctomdt" path="res://general_scripts/Flashlight.cs" id="8_pb8y7"]
 [ext_resource type="PackedScene" uid="uid://cwak7i0xl4bu8" path="res://scenery/key.tscn" id="12_hy0rb"]
+[ext_resource type="PackedScene" uid="uid://14ncott1tlr6" path="res://enemy.tscn" id="15_ta7ci"]
+[ext_resource type="PackedScene" uid="uid://c113741ar13er" path="res://scenery/destination.tscn" id="16_lh335"]
 
 [sub_resource type="Gradient" id="Gradient_cwqvt"]
 offsets = PackedFloat32Array(0, 0.49186993, 1)
@@ -338,7 +340,7 @@ transform = Transform3D(0.35966098, 0, -0.3824511, 0, 0.5249998, 0, 0.3824511, 0
 transform = Transform3D(0.21502525, 0, 0.23391536, 0, 0.357951, 0, -0.22512901, 0, 0.22341722, -1.5670612, 2.2427177, 3.1385756)
 
 [node name="player" parent="." unique_id=2111338812 instance=ExtResource("2_hjsbj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.4327173, 1.4999993, -6.928462)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.4327173, 1.4999993, 15.158008)
 
 [node name="flashlight" type="SpotLight3D" parent="." unique_id=1622315680]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04030782)
@@ -363,15 +365,22 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.516664, 2.9517767, 1
 
 [node name="taskTrigger" parent="objective" unique_id=287798617 node_paths=PackedStringArray("objectToUnHide") instance=ExtResource("4_5mrsh")]
 transform = Transform3D(3.1933796, 0, 0, 0, 1, 0, 0, 0, 1, 3.5656717, 1.5389266, 9.625911)
-taskText = "Search for valuables"
+taskText = "Get in the Cellar"
 enable_code = true
 objectToUnHide = NodePath("../key")
 
 [node name="taskTrigger2" parent="objective" unique_id=1685270275 node_paths=PackedStringArray("objectToUnHide") instance=ExtResource("4_5mrsh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.923904, -2.7379112, 17.765408)
-taskText = "Get the money and leave"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5778503, -2.7379112, 19.987837)
+taskText = "Find the code and open the safe"
 enable_code = true
 objectToUnHide = NodePath("../CodePaper")
+
+[node name="taskTrigger3" parent="objective" unique_id=812057621 instance=ExtResource("4_5mrsh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98736036, 1.5985779, 11.24617)
+taskText = "Finde the Cellar Key"
+
+[node name="CollisionShape3D" parent="objective/taskTrigger3" index="0" unique_id=1666202243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.20220947)
 
 [node name="CodePaper" parent="objective" unique_id=976782326 node_paths=PackedStringArray("positions") instance=ExtResource("5_safpt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2031217, 1.492084, 12.416196)
@@ -426,7 +435,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.079581, -2.8134406, 11.9970
 [node name="CodeSpawn15" type="Node3D" parent="objective/CodePositions" unique_id=548326175]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.079581, -2.8134406, 10.718416)
 
+[node name="EntityStuff" type="Node3D" parent="." unique_id=1785290776]
+
+[node name="enemy" parent="EntityStuff" unique_id=918337864 node_paths=PackedStringArray("patrolDestinations") instance=ExtResource("15_ta7ci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0088413, 1.6424484, 9.909534)
+patrolDestinations = [NodePath("../destination"), NodePath("../destination2"), NodePath("../destination3"), NodePath("../destination4")]
+
+[node name="destination" parent="EntityStuff" unique_id=1466428618 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.663241, 1.9964337, 19.689806)
+
+[node name="destination2" parent="EntityStuff" unique_id=114646453 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.380606, 1.9964339, 14.252912)
+
+[node name="destination3" parent="EntityStuff" unique_id=891352482 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6178036, 1.9964339, 8.900542)
+
+[node name="destination4" parent="EntityStuff" unique_id=1748574066 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.355871, 1.9964339, 8.900542)
+
 [editable path="house"]
-[editable path="house/furniture/bed"]
-[editable path="house/furniture/bed2"]
 [editable path="house/lamps/lamp5"]
+[editable path="house/NavigationRegion3D/furniture/bed"]
+[editable path="house/NavigationRegion3D/furniture/bed2"]
+[editable path="objective/taskTrigger3"]

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://14ncott1tlr6"]
+
+[ext_resource type="Script" uid="uid://cupvy4lmlbgau" path="res://general_scripts/Enemy.cs" id="1_7k104"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7k104"]
+albedo_color = Color(0.8967731, 0, 0.08906675, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4gyqm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qi2p4"]
+radius = 0.30615234
+
+[sub_resource type="BoxMesh" id="BoxMesh_7k104"]
+
+[node name="enemy" type="CharacterBody3D" unique_id=918337864]
+script = ExtResource("1_7k104")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=15292740]
+material_override = SubResource("StandardMaterial3D_7k104")
+mesh = SubResource("CapsuleMesh_4gyqm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=955001442]
+shape = SubResource("CapsuleShape3D_qi2p4")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1088914862]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1979426622]
+transform = Transform3D(0.34649235, 0, 0, 0, 0.09676696, 0, 0, 0, 0.16462868, 0, 0.54361993, -0.45840162)
+mesh = SubResource("BoxMesh_7k104")

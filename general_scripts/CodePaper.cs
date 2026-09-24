@@ -25,8 +25,9 @@ public partial class CodePaper : RigidBody3D
 	public void PickupKey()
 	{
 		doorToUnlock.locked = false;
+		PlayerUi playerUi = GetTree().CurrentScene.GetNode<PlayerUi>("player/player_ui");
+		playerUi.setTask("Find the safe");
 		QueueFree();
-		
 	}
 
 }
