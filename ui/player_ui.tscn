@@ -52,6 +52,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ehg4m")
 
+[node name="fadeui" type="CanvasLayer" parent="." unique_id=1176889844]
+
+[node name="ColorRect" type="ColorRect" parent="fadeui" unique_id=1860518190]
+offset_right = 1174.0
+offset_bottom = 660.0
+color = Color(0, 0, 0, 0)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1662076074]
 
 [node name="crosshair" type="CenterContainer" parent="CanvasLayer" unique_id=1815183903]
@@ -67,13 +74,6 @@ texture = ExtResource("1_cfom6")
 [node name="SafeUi" parent="." unique_id=832371329 instance=ExtResource("4_lp0io")]
 
 [node name="pauseMenu" parent="." unique_id=1015206582 instance=ExtResource("3_iwa1g")]
-
-[node name="fadeui" type="CanvasLayer" parent="." unique_id=1176889844]
-
-[node name="ColorRect" type="ColorRect" parent="fadeui" unique_id=1860518190]
-offset_right = 1174.0
-offset_bottom = 660.0
-color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1430971885]
 libraries/ = SubResource("AnimationLibrary_hff70")
