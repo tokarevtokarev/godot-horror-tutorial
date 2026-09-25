@@ -43,7 +43,7 @@ public partial class Door : Node3D, InteractableObject
 
 	public void EnemyOpenDoor(Node3D body)
 	{
-		if (body is not Enemy || locked || animationPlayer.CurrentAnimation == "open")
+		if (body is not Enemy || locked || animationPlayer.CurrentAnimation == "open" || opened)
 			return;
 
 		opened = true;
@@ -52,7 +52,7 @@ public partial class Door : Node3D, InteractableObject
 
 	public void EnemyCloseDoor(Node3D body)
 	{
-		if (body is not Enemy || locked || animationPlayer.CurrentAnimation == "open")
+		if (body is not Enemy || locked || animationPlayer.CurrentAnimation == "open" || !opened)
 			return;
 
 		opened = false;

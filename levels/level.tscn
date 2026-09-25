@@ -442,7 +442,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.079581, -2.8134406, 10.7184
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0088413, 1.6424484, 9.909534)
 visible = false
-patrolDestinations = [NodePath("../destination"), NodePath("../destination2"), NodePath("../destination3"), NodePath("../destination4"), NodePath("../destination5"), NodePath("../destination6"), NodePath("../destination7")]
+patrolDestinations = [NodePath("../destination"), NodePath("../destination2"), NodePath("../destination3"), NodePath("../destination4"), NodePath("../destination5"), NodePath("../destination6"), NodePath("../destination7"), NodePath("../destination8"), NodePath("../destination9"), NodePath("../destination10"), NodePath("../destination11"), NodePath("../destination12"), NodePath("../destination13"), NodePath("../destination14"), NodePath("../destination15"), NodePath("../destination16")]
 
 [node name="destination" parent="EntityStuff" unique_id=1466428618 instance=ExtResource("16_lh335")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.663241, 1.9964337, 19.689806)
@@ -465,8 +465,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.687741, 1.9964339, 18.6751
 [node name="destination7" parent="EntityStuff" unique_id=1257852033 instance=ExtResource("16_lh335")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.407372, 1.9964339, 9.726126)
 
+[node name="destination8" parent="EntityStuff" unique_id=1983062418 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.407372, -2.685136, 9.139)
+
+[node name="destination9" parent="EntityStuff" unique_id=1275413953 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6744523, -2.6851358, 19.041948)
+
+[node name="destination10" parent="EntityStuff" unique_id=31357881 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.507583, -2.6851358, 20.680948)
+
+[node name="destination11" parent="EntityStuff" unique_id=1204326918 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.125063, -2.6851358, 20.90162)
+
+[node name="destination12" parent="EntityStuff" unique_id=1876990250 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0444285, -2.6851358, 18.449211)
+
+[node name="destination13" parent="EntityStuff" unique_id=1089120157 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9902364, -2.6851358, 10.5504265)
+
+[node name="destination14" parent="EntityStuff" unique_id=1071825205 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0316973, -2.6851358, 11.528438)
+
+[node name="destination15" parent="EntityStuff" unique_id=1435990784 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91483593, -2.6851358, 8.833817)
+
+[node name="destination16" parent="EntityStuff" unique_id=517871812 instance=ExtResource("16_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4304876, -2.6851358, 19.84319)
+
 [editable path="house"]
 [editable path="house/lamps/lamp5"]
 [editable path="house/NavigationRegion3D/furniture/bed"]
 [editable path="house/NavigationRegion3D/furniture/bed2"]
 [editable path="objective/taskTrigger3"]
+[editable path="EntityStuff/destination7"]
+[editable path="EntityStuff/destination8"]
+[editable path="EntityStuff/destination16"]

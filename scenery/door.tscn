@@ -59,7 +59,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m6kou"]
-size = Vector3(1.6149902, 1, 1.5644379)
+size = Vector3(1.6149902, 1, 2.827629)
 
 [node name="door" type="Node3D" unique_id=493705923]
 script = ExtResource("1_jy65v")
@@ -72,6 +72,8 @@ material_override = SubResource("StandardMaterial3D_4owcv")
 mesh = SubResource("BoxMesh_t3tcx")
 
 [node name="doorbody" type="StaticBody3D" parent="hinge/MeshInstance3D" unique_id=1689540377]
+collision_layer = 2
+collision_mask = 2
 
 [node name="doorcollider" type="CollisionShape3D" parent="hinge/MeshInstance3D/doorbody" unique_id=1754291758]
 shape = SubResource("ConvexPolygonShape3D_t3tcx")
@@ -100,7 +102,7 @@ libraries/ = SubResource("AnimationLibrary_m6kou")
 [node name="aitrigger" type="Area3D" parent="." unique_id=1549389709]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="aitrigger" unique_id=1271232902]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8448545, 0, -0.007972717)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8448545, 0, -0.6395683)
 shape = SubResource("BoxShape3D_m6kou")
 
 [connection signal="body_entered" from="aitrigger" to="." method="EnemyOpenDoor"]

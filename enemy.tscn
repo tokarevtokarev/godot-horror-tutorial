@@ -8,11 +8,12 @@ albedo_color = Color(0.8967731, 0, 0.08906675, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4gyqm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qi2p4"]
-radius = 0.30615234
+radius = 0.5004883
 
 [sub_resource type="BoxMesh" id="BoxMesh_7k104"]
 
 [node name="enemy" type="CharacterBody3D" unique_id=918337864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_7k104")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=15292740]
@@ -23,7 +24,36 @@ mesh = SubResource("CapsuleMesh_4gyqm")
 shape = SubResource("CapsuleShape3D_qi2p4")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1088914862]
+avoidance_enabled = true
+radius = 1.5
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1979426622]
 transform = Transform3D(0.34649235, 0, 0, 0, 0.09676696, 0, 0, 0, 0.16462868, 0, 0.54361993, -0.45840162)
 mesh = SubResource("BoxMesh_7k104")
+
+[node name="chasecast" type="RayCast3D" parent="." unique_id=1313529338]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.23778236, 0)
+target_position = Vector3(0, -10, 0)
+debug_shape_custom_color = Color(0.29249913, 0.59664685, 0, 1)
+
+[node name="chasecast2" type="RayCast3D" parent="." unique_id=519398150]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.23778236, 0)
+target_position = Vector3(5, -10, 0)
+debug_shape_custom_color = Color(0.29249913, 0.59664685, 0, 1)
+
+[node name="chasecast4" type="RayCast3D" parent="." unique_id=428113561]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.23778236, 0)
+target_position = Vector3(2.5, -10, 0)
+debug_shape_custom_color = Color(0.29249913, 0.59664685, 0, 1)
+
+[node name="chasecast5" type="RayCast3D" parent="." unique_id=900739109]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.23778236, 0)
+target_position = Vector3(-2.5, -10, 0)
+debug_shape_custom_color = Color(0.29249913, 0.59664685, 0, 1)
+
+[node name="chasecast3" type="RayCast3D" parent="." unique_id=1799747235]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.23778236, 0)
+target_position = Vector3(-5, -10, 0)
+debug_shape_custom_color = Color(0.29249913, 0.59664685, 0, 1)
+
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="computeVelocity"]

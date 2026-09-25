@@ -13,6 +13,8 @@ radius = 0.3
 radius = 0.3
 
 [node name="player" type="CharacterBody3D" unique_id=2111338812]
+collision_layer = 3
+collision_mask = 3
 floor_constant_speed = true
 script = ExtResource("1_oul6g")
 
@@ -33,7 +35,9 @@ zoomSpeed = 10.0
 [node name="RayCast3D" type="RayCast3D" parent="head" unique_id=1092651574]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 target_position = Vector3(0, -2, 0)
+collision_mask = 3
 debug_shape_custom_color = Color(0.27337447, 0.490281, 1, 1)
+debug_shape_thickness = 3
 script = ExtResource("3_g1dw6")
 
 [node name="player_ui" parent="." unique_id=62864111 instance=ExtResource("4_yw30f")]
