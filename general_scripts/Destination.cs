@@ -27,7 +27,6 @@ public partial class Destination : Node3D
 			enemy.stopEnemy();
 			int secondsToWait = rng.RandiRange(0, 10);
 			await ToSignal(GetTree().CreateTimer(secondsToWait, false), SceneTreeTimer.SignalName.Timeout);
-			GD.Print("Enemy picking next destination.");
 			enemy.pickDestination();
 		}
 	}
