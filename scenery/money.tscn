@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cdaucd4tqkm7p"]
+
+[ext_resource type="Texture2D" uid="uid://c2prpy0rhbxqa" path="res://textures/money.png" id="1_7mn07"]
+[ext_resource type="Script" uid="uid://cuy3vn3gtwteo" path="res://general_scripts/Money.cs" id="1_pxluk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxluk"]
+albedo_texture = ExtResource("1_7mn07")
+uv1_scale = Vector3(12, 14, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_304t3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x5a71"]
+albedo_texture = ExtResource("1_7mn07")
+uv1_scale = Vector3(12, 40, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7mn07"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="money" type="Node3D" unique_id=386446203]
+script = ExtResource("1_pxluk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1799211616]
+transform = Transform3D(1, 0, 0, 0, 0.39471352, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_pxluk")
+mesh = SubResource("BoxMesh_304t3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1545079014]
+transform = Transform3D(1.0183905, 0, 0, 0, 0.384781, 0, 0, 0, 1.0106218, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_x5a71")
+mesh = SubResource("BoxMesh_304t3")
+
+[node name="moneyBody" type="StaticBody3D" parent="." unique_id=1726459368]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="moneyBody" unique_id=681060126]
+transform = Transform3D(1, 0, 0, 0, 0.39471352, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_7mn07")

@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://6w64ow67havp" path="res://scenery/safe.tscn" id="31_poeq2"]
 [ext_resource type="Script" uid="uid://cg4w6fgx1c813" path="res://general_scripts/Door.cs" id="33_7gasw"]
 [ext_resource type="Material" uid="uid://0uwa0i4kh4gb" path="res://materials/metal_3.tres" id="33_228ml"]
+[ext_resource type="PackedScene" uid="uid://cdaucd4tqkm7p" path="res://scenery/money.tscn" id="35_fylth"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7gasw"]
 
@@ -821,6 +822,9 @@ transform = Transform3D(-2.3999999, 0, 2.0981466e-07, 0, 2.3999999, 0, -2.098146
 
 [node name="powerbox" parent="NavigationRegion3D/furniture" unique_id=1883731922 instance=ExtResource("29_1jtbp")]
 transform = Transform3D(-6.119594e-08, 0, -1.4, 0, 1.4, 0, 1.4, 0, -6.119594e-08, 5.993777, -9.552625, 7.466977)
+
+[node name="money" parent="." unique_id=386446203 instance=ExtResource("35_fylth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.53962, -12.535833, 12.792677)
 
 [editable path="lamps/lamp5"]
 [editable path="NavigationRegion3D/furniture/bed"]

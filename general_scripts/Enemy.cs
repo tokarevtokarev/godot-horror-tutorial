@@ -19,6 +19,7 @@ public partial class Enemy : CharacterBody3D
 	private RayCast3D chaseCast3;
 	private RayCast3D chaseCast4;
 	private RayCast3D chaseCast5;
+	private AnimationPlayer monsterAnim;
 
 	private RandomNumberGenerator rng = new RandomNumberGenerator();
 
@@ -43,7 +44,10 @@ public partial class Enemy : CharacterBody3D
 		chaseCast3 = GetNode<RayCast3D>("chasecast3");
 		chaseCast4 = GetNode<RayCast3D>("chasecast4");
 		chaseCast5 = GetNode<RayCast3D>("chasecast5");
-
+		monsterAnim = GetNode<AnimationPlayer>("monster/AnimationPlayer");
+		monsterAnim.Play("idle");
+		monsterAnim.SpeedScale = 1;
+		
 		pickDestination();
 	}
 
@@ -116,6 +120,8 @@ public partial class Enemy : CharacterBody3D
 		if (chasing)
 			return;
 
+		monsterAnim.Play("walk");
+		monsterAnim.SpeedScale = 1;
 		int chance = rng.RandiRange(0, patrolDestinations.Length - 1);
 		destination = patrolDestinations[chance];
 		if (chance == destinationValue)
@@ -145,6 +151,8 @@ public partial class Enemy : CharacterBody3D
 				chasing = true;
 				idle = false;
 				destination = player;
+				monsterAnim.Play("chase");
+				monsterAnim.SpeedScale = 2;
 			}
 		}
 	}
@@ -153,5 +161,7 @@ public partial class Enemy : CharacterBody3D
 	{
 		GD.Print("Enemy stopped.");
 		idle = true;
+		monsterAnim.Play("idle");
+		monsterAnim.SpeedScale = 1;
 	}
 }

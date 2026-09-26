@@ -46,6 +46,8 @@ public partial class TaskTrigger : Area3D
 				enemy.ProcessMode = ProcessModeEnum.Inherit;
 				enemy.Visible = true;
 			}
+
+			QueueFree();
 		}
 	}
 	

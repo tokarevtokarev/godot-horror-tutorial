@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://14ncott1tlr6"]
 
 [ext_resource type="Script" uid="uid://cupvy4lmlbgau" path="res://general_scripts/Enemy.cs" id="1_7k104"]
+[ext_resource type="PackedScene" uid="uid://cvsvkttdjb0la" path="res://scenery/monster.tscn" id="2_4gyqm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7k104"]
 albedo_color = Color(0.8967731, 0, 0.08906675, 1)
@@ -17,6 +18,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_7k104")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=15292740]
+visible = false
 material_override = SubResource("StandardMaterial3D_7k104")
 mesh = SubResource("CapsuleMesh_4gyqm")
 
@@ -29,6 +31,7 @@ radius = 1.5
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1979426622]
 transform = Transform3D(0.34649235, 0, 0, 0, 0.09676696, 0, 0, 0, 0.16462868, 0, 0.54361993, -0.45840162)
+visible = false
 mesh = SubResource("BoxMesh_7k104")
 
 [node name="chasecast" type="RayCast3D" parent="." unique_id=1313529338]
@@ -55,5 +58,8 @@ debug_shape_custom_color = Color(0.29249913, 0.59664685, 0, 1)
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.23778236, 0)
 target_position = Vector3(-5, -10, 0)
 debug_shape_custom_color = Color(0.29249913, 0.59664685, 0, 1)
+
+[node name="monster" parent="." unique_id=1375317513 instance=ExtResource("2_4gyqm")]
+transform = Transform3D(-0.35, 0, -5.284853e-08, 0, 0.35, 0, 5.284853e-08, 0, -0.35, 0, -0.25216925, 0)
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="computeVelocity"]

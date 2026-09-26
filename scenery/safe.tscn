@@ -36,7 +36,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_87tf3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n70rx"]
-size = Vector3(2.0013123, 1.9943848, 1.9980469)
+size = Vector3(1.9980469, 2.0002441, 0.12200928)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bb42x"]
 
@@ -173,6 +173,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_k3fjn")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sului"]
+points = PackedVector3Array(1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1)
+
 [sub_resource type="Animation" id="Animation_n70rx"]
 length = 0.001
 tracks/0/type = "value"
@@ -218,8 +221,24 @@ mesh = SubResource("ArrayMesh_joa0n")
 
 [node name="safeBody" type="StaticBody3D" parent="." unique_id=838211737]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="safeBody" unique_id=1678309029]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00065612793, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="safeBody" unique_id=388416776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.93984985)
+shape = SubResource("BoxShape3D_n70rx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="safeBody" unique_id=210897012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.94017255)
+shape = SubResource("BoxShape3D_n70rx")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="safeBody" unique_id=1343588158]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.9395724, 0, -0.0017244816)
+shape = SubResource("BoxShape3D_n70rx")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="safeBody" unique_id=1912459971]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0015853047, -0.9127424, 0.002335608)
+shape = SubResource("BoxShape3D_n70rx")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="safeBody" unique_id=1469112568]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -0.0022383332, 0.94014406, 0.002335608)
 shape = SubResource("BoxShape3D_n70rx")
 
 [node name="hinge" type="Node3D" parent="." unique_id=1805141832]
@@ -244,6 +263,12 @@ mesh = SubResource("ArrayMesh_lg5fr")
 transform = Transform3D(0.11133667, 0, 0, 0, 0.14102353, 0, 0, 0, 0.16929536, 2.1034698, -0.09853466, -1.6232048)
 material_override = SubResource("StandardMaterial3D_t21tk")
 mesh = SubResource("ArrayMesh_1gtru")
+
+[node name="safeBody" type="StaticBody3D" parent="hinge" unique_id=433630084]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hinge/safeBody" unique_id=173583796]
+transform = Transform3D(1, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000002, 0, 0, -1.0005801)
+shape = SubResource("ConvexPolygonShape3D_sului")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1177239133]
 libraries/ = SubResource("AnimationLibrary_n6xfs")

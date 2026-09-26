@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cwak7i0xl4bu8" path="res://scenery/key.tscn" id="12_hy0rb"]
 [ext_resource type="PackedScene" uid="uid://14ncott1tlr6" path="res://enemy.tscn" id="15_ta7ci"]
 [ext_resource type="PackedScene" uid="uid://c113741ar13er" path="res://scenery/destination.tscn" id="16_lh335"]
+[ext_resource type="PackedScene" uid="uid://bibm8tnw2q7o" path="res://scenery/scene_change_trigger.tscn" id="17_lh335"]
 
 [sub_resource type="Gradient" id="Gradient_cwqvt"]
 offsets = PackedFloat32Array(0, 0.49186993, 1)
@@ -340,7 +341,7 @@ transform = Transform3D(0.35966098, 0, -0.3824511, 0, 0.5249998, 0, 0.3824511, 0
 transform = Transform3D(0.21502525, 0, 0.23391536, 0, 0.357951, 0, -0.22512901, 0, 0.22341722, -1.5670612, 2.2427177, 3.1385756)
 
 [node name="player" parent="." unique_id=2111338812 instance=ExtResource("2_hjsbj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.4327173, 1.4999993, 15.158008)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.4341273, 1.4999993, -6.6184607)
 
 [node name="flashlight" type="SpotLight3D" parent="." unique_id=1622315680]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04030782)
@@ -492,6 +493,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91483593, -2.6851358, 8.83
 [node name="destination16" parent="EntityStuff" unique_id=517871812 instance=ExtResource("16_lh335")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4304876, -2.6851358, 19.84319)
 
+[node name="endingTrigger" parent="." unique_id=148409540 instance=ExtResource("17_lh335")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5635753, 1.7775697, -6.298092)
+sceneName = "ui/ending"
+
 [editable path="house"]
 [editable path="house/lamps/lamp5"]
 [editable path="house/NavigationRegion3D/furniture/bed"]
@@ -500,3 +505,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4304876, -2.6851358, 19.843
 [editable path="EntityStuff/destination7"]
 [editable path="EntityStuff/destination8"]
 [editable path="EntityStuff/destination16"]
+[editable path="endingTrigger"]

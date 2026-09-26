@@ -16,7 +16,8 @@ public partial class PlayerInteract : RayCast3D
     "doorBellBody",
     "safeBody",
     "trapDoorBody",
-    "key" };
+    "key",
+    "moneyBody" };
 
     public override void _Ready()
     {
@@ -48,8 +49,13 @@ public partial class PlayerInteract : RayCast3D
 
         if (hit.Name == "key" && Input.IsActionJustPressed("pickup"))
         {
-            CodePaper key = (CodePaper)hit;
-            key.PickupKey();
+            handleKeyInteraction(hit);
+            return;
+        }
+
+        if (hit.Name == "moneyBody" && Input.IsActionJustPressed("pickup"))
+        {
+            handleMoneyInteraction(hit);
             return;
         }
 
@@ -63,6 +69,21 @@ public partial class PlayerInteract : RayCast3D
         }
 
         handleInteractableObject(hit);
+    }
+
+    private void handleKeyInteraction(Node3D hit)
+    {
+        CodePaper key = (CodePaper)hit;
+        key.PickupKey();
+    }
+
+    private void handleMoneyInteraction(Node3D hit)
+    {
+        hit.GetParent().QueueFree();
+        playerUi.setTask("Get out");
+        Area3D endingTrigger = GetTree().CurrentScene.GetNode<Area3D>("endingTrigger");
+        CollisionShape3D shape = endingTrigger.GetNode<CollisionShape3D>("CollisionShape3D");
+        shape.Disabled = false;
     }
 
     private void handleInteractableObject(Node3D hit)
