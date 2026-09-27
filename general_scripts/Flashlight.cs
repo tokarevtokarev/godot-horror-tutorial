@@ -6,6 +6,8 @@ public partial class Flashlight : SpotLight3D
 	[Export (PropertyHint.Range, "0.1,20,0.1")]
 	private float rotationSpeed = 5f;
 
+	[Export]
+	private AudioStreamPlayer3D toggleSound;
 
 	private fp_cam playerCam;
 	// Called when the node enters the scene tree for the first time.
@@ -40,7 +42,7 @@ public partial class Flashlight : SpotLight3D
 
 	private void ToggleFlashLight()
     {
-        GD.Print("Toggling flashlight");
+        toggleSound.Play();
         Visible = !Visible;
     }
 }

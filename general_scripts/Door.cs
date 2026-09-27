@@ -14,6 +14,9 @@ public partial class Door : Node3D, InteractableObject
 	[Export]
 	private AudioStreamPlayer3D closeSound;
 
+	[Export]
+	private AudioStreamPlayer3D lockedSound;
+
 	private AnimationPlayer animationPlayer;
 
 	public override void _Ready()
@@ -54,7 +57,11 @@ public partial class Door : Node3D, InteractableObject
 	public void PlayerInteract()
 	{
 		if (locked)
+		{
+			lockedSound.Play();
 			return;
+		}
+
 
 		ToggleDoor();
 	}

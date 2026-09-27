@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://d16rqt2pk2hx2" path="res://scenery/bush.tscn" id="7_mxp4k"]
 [ext_resource type="PackedScene" uid="uid://c2c1lbrl1dywe" path="res://scenery/tree.tscn" id="8_d7v53"]
 [ext_resource type="Script" uid="uid://cuvk12bctomdt" path="res://general_scripts/Flashlight.cs" id="8_pb8y7"]
+[ext_resource type="AudioStream" uid="uid://dku8hk2s7g36h" path="res://sounds/button.wav" id="11_368ro"]
 [ext_resource type="PackedScene" uid="uid://cwak7i0xl4bu8" path="res://scenery/key.tscn" id="12_hy0rb"]
 [ext_resource type="PackedScene" uid="uid://14ncott1tlr6" path="res://enemy.tscn" id="15_ta7ci"]
 [ext_resource type="PackedScene" uid="uid://c113741ar13er" path="res://scenery/destination.tscn" id="16_lh335"]
@@ -344,13 +345,18 @@ transform = Transform3D(0.21502525, 0, 0.23391536, 0, 0.357951, 0, -0.22512901, 
 [node name="player" parent="." unique_id=2111338812 instance=ExtResource("2_hjsbj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.996129, 1.4999995, 3.3436384)
 
-[node name="flashlight" type="SpotLight3D" parent="." unique_id=1622315680]
+[node name="flashlight" type="SpotLight3D" parent="." unique_id=1622315680 node_paths=PackedStringArray("toggleSound")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04030782)
 shadow_enabled = true
 shadow_blur = 2.239
 spot_range = 15.0
 spot_angle = 37.0
 script = ExtResource("8_pb8y7")
+toggleSound = NodePath("toggle")
+
+[node name="toggle" type="AudioStreamPlayer3D" parent="flashlight" unique_id=2121290042]
+stream = ExtResource("11_368ro")
+pitch_scale = 3.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=983188807]
 transform = Transform3D(0.8712139, -0.19888552, 0.44881067, 0, 0.91425395, 0.4051416, -0.4909038, -0.35296494, 0.79651064, -0.022856712, 2.3747716, 0)

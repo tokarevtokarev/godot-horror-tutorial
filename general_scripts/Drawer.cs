@@ -3,6 +3,13 @@ using System;
 
 public partial class Drawer : Node3D, InteractableObject
 {
+
+	[Export]
+	private AudioStreamPlayer3D openSound;
+
+	[Export]
+	private AudioStreamPlayer3D closeSound;
+
 	bool opened = false;
 
 	public void ToggleDrawer()
@@ -16,10 +23,12 @@ public partial class Drawer : Node3D, InteractableObject
 		if (opened)
 		{
 			animationPlayer.Play("open");
+			openSound.Play();
 		}
 		else
 		{
 			animationPlayer.PlayBackwards("open");
+			closeSound.Play();
 		}
 	}
 

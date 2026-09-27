@@ -15,6 +15,9 @@ public partial class Lightswitch : Node3D, InteractableObject
 	[Export]
 	private Lightbulb[] lightbulbs = new Lightbulb[0];
 
+	[Export]
+	public AudioStreamPlayer3D toggleSound;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -33,6 +36,7 @@ public partial class Lightswitch : Node3D, InteractableObject
 		isOn = !isOn;
 		OnNode.Visible = isOn;
 		OffNode.Visible = !isOn;
+		toggleSound.Play();
 	}
 
 	private void ToggleLights()

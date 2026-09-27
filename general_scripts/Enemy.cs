@@ -103,7 +103,6 @@ public partial class Enemy : CharacterBody3D
 		chasePlayer(chaseCast3);
 		chasePlayer(chaseCast4);
 		chasePlayer(chaseCast5);
-		GD.Print("_PhysicsProcess");
 		if (destination != null)
 		{
 

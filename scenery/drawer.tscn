@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cch7r5cqol53c" path="res://textures/floor_normalmap.png" id="2_ci75s"]
 [ext_resource type="Material" uid="uid://bqo1tkoylmih0" path="res://materials/metal.tres" id="2_h7v1w"]
 [ext_resource type="Script" uid="uid://dftffqxu5xycy" path="res://general_scripts/Drawer.cs" id="2_k14sx"]
+[ext_resource type="AudioStream" uid="uid://dgwfxweux7doy" path="res://sounds/drawer_open.wav" id="5_a4qxk"]
+[ext_resource type="AudioStream" uid="uid://deylpr4pkoa5p" path="res://sounds/drawer_close.wav" id="6_lj0to"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k14sx"]
 albedo_color = Color(0.5246445, 0.4453376, 0.33042625, 1)
@@ -433,8 +435,10 @@ transform = Transform3D(1.2028852, 0, 0, 0, 0.72080517, 0, 0, 0, 2.906058, 0, 0,
 material_override = SubResource("StandardMaterial3D_k14sx")
 mesh = SubResource("ArrayMesh_f1r02")
 
-[node name="slot1" type="Node3D" parent="." unique_id=1104758356]
+[node name="slot1" type="Node3D" parent="." unique_id=1104758356 node_paths=PackedStringArray("openSound", "closeSound")]
 script = ExtResource("2_k14sx")
+openSound = NodePath("open")
+closeSound = NodePath("close")
 
 [node name="drawerSlot1Body" type="AnimatableBody3D" parent="slot1" unique_id=1129099444]
 transform = Transform3D(1.2028852, 0, 0, 0, 0.40209186, 0, 0, 0, 1.2300259, 0.034827005, 0.18442436, 1.4695765)
@@ -477,8 +481,21 @@ mesh = SubResource("ArrayMesh_g7e3s")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="slot1" unique_id=130276476]
 libraries/ = SubResource("AnimationLibrary_k14sx")
 
-[node name="slot2" type="Node3D" parent="." unique_id=1582404582]
+[node name="open" type="AudioStreamPlayer3D" parent="slot1" unique_id=911673520]
+stream = ExtResource("5_a4qxk")
+max_distance = 30.0
+bus = &"sfx"
+
+[node name="close" type="AudioStreamPlayer3D" parent="slot1" unique_id=1376454987]
+stream = ExtResource("6_lj0to")
+pitch_scale = 2.0
+max_distance = 30.0
+bus = &"sfx"
+
+[node name="slot2" type="Node3D" parent="." unique_id=1582404582 node_paths=PackedStringArray("openSound", "closeSound")]
 script = ExtResource("2_k14sx")
+openSound = NodePath("open")
+closeSound = NodePath("close")
 
 [node name="drawerSlot2Body" type="AnimatableBody3D" parent="slot2" unique_id=1615312420]
 transform = Transform3D(1.2028852, 0, 0, 0, 0.40209186, 0, 0, 0, 1.2300259, 0.034827005, 0.18442436, -1.4831554)
@@ -520,6 +537,16 @@ shape = SubResource("BoxShape3D_16okq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="slot2" unique_id=1662631304]
 libraries/ = SubResource("AnimationLibrary_lj0to")
+
+[node name="open" type="AudioStreamPlayer3D" parent="slot2" unique_id=2063338231]
+stream = ExtResource("5_a4qxk")
+max_distance = 30.0
+bus = &"sfx"
+
+[node name="close" type="AudioStreamPlayer3D" parent="slot2" unique_id=116305272]
+stream = ExtResource("6_lj0to")
+max_distance = 30.0
+bus = &"sfx"
 
 [node name="Cube_001" type="MeshInstance3D" parent="." unique_id=552053577]
 transform = Transform3D(1.0911481, 0, 0, 0, 0.48192966, 0, 0, 0, 0.12397581, 0, -1.1688688, 2.698892)
