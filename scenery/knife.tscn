@@ -1,0 +1,110 @@
+[gd_scene format=4 uid="uid://cafksdxisnl65"]
+
+[ext_resource type="Texture2D" uid="uid://dbbhdhe2kyokb" path="res://textures/floor.jpg" id="1_rhomu"]
+[ext_resource type="Texture2D" uid="uid://cch7r5cqol53c" path="res://textures/floor_normalmap.png" id="2_1di5d"]
+[ext_resource type="Texture2D" uid="uid://dhb31x3w5nqv3" path="res://textures/wall1.jpg" id="3_0ugma"]
+[ext_resource type="Texture2D" uid="uid://bfnu4ttrngvqt" path="res://textures/wall1_normalmap.png" id="4_conq3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bbt6"]
+albedo_color = Color(0.31535673, 0.13100657, 0.09613738, 1)
+albedo_texture = ExtResource("1_rhomu")
+roughness = 0.7
+normal_enabled = true
+normal_texture = ExtResource("2_1di5d")
+uv1_scale = Vector3(3.975, 3.99, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4x7ti"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2atxh"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAD///////8AAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_clpa3"]
+resource_name = "knife_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/5//f//f/z//3/9//5//P/9f/z//nwAA/5//P/9fAAD/X////5//v/+f////X/+//x//f/9f/z//X/9//x//P/9f/3//n/8//5//f/9f/z//X/+//5//f/+f/7//X/9/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_4x7ti"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA//8AAP///////wAA//8AAP///////////////wAA////vwAA//////+//////////78AAAAA////vwAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVAAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7///wAAAABU1f///////1TV/////wAAVNX//wAA//9U1QAAAAAAAP///////wAA//8AAP//AAD/////AAAAAP///3//v/9//7//f/+//3//v/////////////////////9U1VTVVNVU1VTVVNVU1VTVAAD/fwAA/38AAP9/AAD/f6oqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_2atxh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1h8uj"]
+albedo_texture = ExtResource("3_0ugma")
+metallic = 1.0
+roughness = 0.32
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("4_conq3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ujls4"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2mlpr"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 1.976004, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAAAEAAEAAwACAAUAAQAFAAIABgAAAAMABgAEAAAABgADAAUABAAHAAEABAAGAAcAAQAHAAUABgAFAAcA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAP//AAAAAP////8AAP//hmn//wAA//8AAAAAAAAAAAAA//8AAP//hmkAAAAAAAAAAAAAAAAAAP//AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jd1kg"]
+resource_name = "knife_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 1.976004, 2),
+"attribute_data": PackedByteArray("/1//PzqfAAAQev8//18AAP9f//86n/+/Op////9f/7//H/9//1//P/9f/3//H/8//1//fxB6/z8Qev9//1//P/9f/78Qev9/Op//v/9f/3+VlbLzU3NMzFNzsvOVlUzM"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_ujls4"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//8AAP///78AAP//////v///hmn///+/AAAAAP///78AAAAA//9U1QAA//8AAFTVAAD/////VNUAAAAAAABU1QAAAAAAAP+///8AAP///7///wAAAAD/vwAAAAD///+///8AAAAAVNX//4Zp//9U1f//hmkAAFTV//8AAP//VNUAAAAAAAD/////hmkAAP//AAD//wAA/////wAAAAD//wAA/////xEP//+GaQAAEQ///4Zp//8RDwAA//8AABEP/////////////////////1TVVNVU1VTVVNVU1VTVVNUAAP9/AAD/fwAA/38AAP9/qiqqKqoqqiqqKqoqqiqqKv+//7//v/+//7//v/+//79nODAPZzgwD2c4MA9nODAP")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_2mlpr")
+
+[node name="knife" type="Node3D" unique_id=807523541]
+
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=493360470]
+transform = Transform3D(0.28759974, 0, 0, 0, 0.9045963, 0, 0, 0, 0.20094767, 0, -0.23577261, 0)
+material_override = SubResource("StandardMaterial3D_8bbt6")
+mesh = SubResource("ArrayMesh_clpa3")
+
+[node name="Cube_001" type="MeshInstance3D" parent="." unique_id=1254752386]
+transform = Transform3D(0.28759974, 0, 0, 0, 1.319152, 0, 0, 0, 0.03406935, 0, 1.943176, 0)
+material_override = SubResource("StandardMaterial3D_1h8uj")
+mesh = SubResource("ArrayMesh_jd1kg")

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cr1kp4j71npr" path="res://textures/hair_normalmap.png" id="2_b2qrt"]
 [ext_resource type="Texture2D" uid="uid://c7q1o0lk5252h" path="res://textures/grass.jpg" id="3_f31lu"]
 [ext_resource type="Texture2D" uid="uid://bi7ycbwn2sipg" path="res://textures/grass_normalmap.png" id="4_823hg"]
+[ext_resource type="PackedScene" uid="uid://cafksdxisnl65" path="res://scenery/knife.tscn" id="5_823hg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_862pq"]
 resource_name = "Material.006"
@@ -167,7 +168,7 @@ albedo_color = Color(0.8891303, 0.8719231, 0.9063355, 1)
 roughness = 0.037688434
 emission_enabled = true
 emission = Color(0.5242874, 0.4096849, 0.41707098, 1)
-emission_energy_multiplier = 6.93
+emission_energy_multiplier = 16.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5n58b"]
 _surfaces = [{
@@ -649,6 +650,30 @@ tracks/9/keys = {
 "update": 0,
 "values": [Color(0.5242874, 0.4096849, 0.41707098, 1)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("head/Sphere_009:mesh:surface_0/material:albedo_color")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.8891303, 0.8719231, 0.9063355, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("body/shoulderLeft/elbow/jumpscareCamera:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.33338982, 1.9888636, 1.1783751)]
+}
 
 [sub_resource type="Animation" id="Animation_i7cy6"]
 resource_name = "chase"
@@ -876,6 +901,154 @@ tracks/8/keys = {
 "values": [Color(0.5242874, 0.4096849, 0.41707098, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_gw57p"]
+resource_name = "jumpscare"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.23, 0.31, 0.4, 0.5, 0.51, 0.57, 0.62, 0.67, 0.73, 0.8, 0.85, 0.9, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.15013745, -0.03992876, -0.0059754103), Vector3(0.11502062, -0.003153586, -0.0015574591), Vector3(0.0657564, -0.033834357, -0.0027166377), Vector3(0.018772082, -0.0053516473, -0.0019125929), Vector3(-0.03580563, -0.08304298, 0.0021435043), Vector3(-0.0865945, 0, 0), Vector3(-0.09041964, 0.0066462015, -0.00017155158), Vector3(-0.1053941, -0.037551664, 0.006860614), Vector3(-0.11135216, 0.022763815, 0.0012767516), Vector3(-0.110692196, -0.07161528, 0.012304366), Vector3(-0.104336135, -0.07413099, 0.013025399), Vector3(-0.08892783, -0.09820463, 0.014443268), Vector3(-0.07560254, -0.03907, 0.008791279), Vector3(-0.059790827, -0.075445555, 0.008777398), Vector3(-0.028483758, 0, 0), Vector3(-0.028483758, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("body/shoulderRight:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.3, 2.6, 3, 3.2, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.92516416), Vector3(0.40315363, -7.074571e-09, 0.9251642), Vector3(0.40315363, -7.074571e-09, 0.9251642), Vector3(-0.2370165, 0.44858617, 0.9650423), Vector3(0.691523, -0.29518598, 0.7691143), Vector3(-0.5786636, 0.7364149, 0.84852093), Vector3(0.38689762, -0.059002206, 0.49914822), Vector3(0.2161065, 0.9284959, -0.79525703)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("body/shoulderRight/elbow:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.3, 2.6, 3, 3.2, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.37800333), Vector3(-0.34997064, 1.1659261, 0.14589176), Vector3(-0.34997064, 1.1659261, 0.14589176), Vector3(-0.3410029, 1.1054021, 0.16639426), Vector3(-0.2308652, 0.6334553, 0.30203325), Vector3(-0.08528249, 0.2169847, 0.36870873), Vector3(-0.12240233, 0.314972, 0.358542), Vector3(-0.12755643, 0.40219006, 0.054011405)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("body/shoulderLeft:rotation")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.78171605, -1.2896874, -0.20068924), Vector3(-0.8199144, -1.6065154, 0.23713918), Vector3(-0.8199144, -1.6065154, 0.23713917)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("body/shoulderLeft/elbow:rotation")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.38814905, -0.88275677, 0.009386539), Vector3(-0.38814905, -0.88275677, 0.009386539)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("head/Sphere_008:scale")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.254, 0.441, 0.247), Vector3(0.364, 0.441, 0.247)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("head/Sphere_009:scale")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.254, 0.441, 0.247), Vector3(0.364, 0.441, 0.247)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("head/Sphere_009:mesh:surface_0/material:emission")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.5242874, 0.4096849, 0.41707098, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("head/Sphere_008:mesh:surface_0/material:emission")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.99999994, 0.19787237, 0.105302386, 1), Color(1, 0.21708623, 0.10946474, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("head/Sphere_009:mesh:surface_0/material:albedo_color")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.8891303, 0.8719231, 0.9063355, 1), Color(0.8299054, 0.08877396, 0, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("body/shoulderLeft/elbow/jumpscareCamera:rotation")
+tracks/11/interp = 2
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(1, 1.5, 2, 2.2, 2.4, 2.6, 2.8, 3.1, 3.2, 3.24, 3.3, 3.36, 3.44),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.33338982, 1.9888636, 1.1783751), Vector3(-0.43807206, 1.6626108, 1.3022351), Vector3(-0.43807206, 1.6626108, 1.3022351), Vector3(-0.28255567, 2.111105, 1.1412666), Vector3(-0.28255567, 2.111105, 1.1412666), Vector3(-0.4152551, 1.7477325, 1.2669888), Vector3(-0.30764252, 2.0525684, 1.1582968), Vector3(-0.30764252, 2.0525684, 1.1582968), Vector3(-0.6650833, 1.855216, 1.2927115), Vector3(-0.6650833, 1.855216, 1.2927115), Vector3(-0.22318064, 2.0537837, 1.1463964), Vector3(-0.22318064, 2.0537837, 1.1463964), Vector3(-0.11100626, 1.7862557, 0.7814736)]
+}
+
 [sub_resource type="Animation" id="Animation_nr060"]
 resource_name = "walk"
 length = 2.0
@@ -1006,13 +1179,14 @@ _data = {
 &"RESET": SubResource("Animation_f31lu"),
 &"chase": SubResource("Animation_i7cy6"),
 &"idle": SubResource("Animation_823hg"),
+&"jumpscare": SubResource("Animation_gw57p"),
 &"walk": SubResource("Animation_nr060")
 }
 
 [node name="monster" type="Node3D" unique_id=1375317513]
 
 [node name="head" type="Node3D" parent="." unique_id=395650954]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 2.0103292, 0)
+transform = Transform3D(0.9999994, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999995, 0, 2.0103292, 0)
 
 [node name="Sphere_007" type="MeshInstance3D" parent="head" unique_id=759175342]
 transform = Transform3D(0.70789963, 0, 0, 0, 0.9129367, 0, 0, 0, 0.70789963, 0, 0.8776827, 0)
@@ -1050,32 +1224,38 @@ transform = Transform3D(1, 0, 0, 0, 2.2514257, 0, 0, 0, 1, 0, -1.6981344, 0)
 mesh = SubResource("ArrayMesh_nx0ce")
 
 [node name="shoulderRight" type="Node3D" parent="body" unique_id=181245323]
-transform = Transform3D(0.6017034, -0.79871947, 0, 0.7987194, 0.6017034, 0, 0, 0, 0.9999997, -0.71011186, -0.05262041, 0)
+transform = Transform3D(0.6017033, -0.79871964, 0, 0.7987193, 0.6017035, 0, 0, 0, 0.9999995, -0.71011186, -0.05262041, 0)
 
 [node name="Sphere_001" type="MeshInstance3D" parent="body/shoulderRight" unique_id=1635138355]
 transform = Transform3D(-0.006309937, 0.8463785, -0.017478487, -0.37601557, -0.015803117, -0.015223216, -0.015530605, 0.038737886, 0.3756746, -0.5575197, 0.0075314045, 0.05190889)
 mesh = SubResource("ArrayMesh_cqgo7")
 
 [node name="elbow" type="Node3D" parent="body/shoulderRight" unique_id=1976005592]
-transform = Transform3D(0.92940307, -0.3690655, 0, 0.36906537, 0.92940336, 0, 0, 0, 0.9999998, -1.3503306, 0, 0)
+transform = Transform3D(0.92940295, -0.36906546, 0, 0.36906534, 0.9294033, 0, 0, 0, 0.9999998, -1.3503306, 0, 0)
 
 [node name="Sphere_002" type="MeshInstance3D" parent="body/shoulderRight/elbow" unique_id=1505869303]
 transform = Transform3D(-0.0055823326, 0.74878716, -0.015463133, -0.3326592, -0.013980856, -0.013467909, -0.013739853, 0.03427123, 0.3323576, -0.47980714, 0.015516043, -0.0069784224)
 mesh = SubResource("ArrayMesh_m324g")
 
-[node name="Sphere_003" type="MeshInstance3D" parent="body/shoulderRight/elbow" unique_id=310001362]
-transform = Transform3D(0.2944982, 0.08486863, -0.014247985, -0.08544495, 0.29441476, -0.012409232, 0.01023963, 0.015879044, 0.30623177, -1.3059223, -0.00077450275, -0.044930473)
+[node name="hand" type="Node3D" parent="body/shoulderRight/elbow" unique_id=1836742031]
+transform = Transform3D(0.29449823, 0.08486864, -0.014247986, -0.08544494, 0.29441476, -0.012409233, 0.01023963, 0.015879044, 0.30623177, -1.3059223, -0.00077462196, -0.044930473)
+
+[node name="Sphere_003" type="MeshInstance3D" parent="body/shoulderRight/elbow/hand" unique_id=310001362]
+transform = Transform3D(1, 7.799827e-09, -3.7252903e-09, -2.142042e-08, 1, 3.7252903e-09, 3.7252903e-09, -3.7252903e-09, 1, 0, 0, -1.4901161e-08)
 mesh = SubResource("ArrayMesh_ak0t2")
 
+[node name="knife" parent="body/shoulderRight/elbow/hand" unique_id=807523541 instance=ExtResource("5_823hg")]
+transform = Transform3D(-1.3229654, -0.32174107, -0.32595253, -0.38671288, 0.25088495, 1.3219341, -0.24538846, 1.3392308, -0.32595253, -0.53557783, -0.07850715, 0.2587045)
+
 [node name="shoulderLeft" type="Node3D" parent="body" unique_id=1284850591]
-transform = Transform3D(0.69546115, 0.7185632, 0, -0.7185632, 0.6954612, 0, 0, 0, 0.9999998, 0.71, -0.052134395, 0)
+transform = Transform3D(0.6954612, 0.7185632, 0, -0.7185632, 0.69546115, 0, 0, 0, 0.9999998, 0.71, -0.052134395, 0)
 
 [node name="Sphere_006" type="MeshInstance3D" parent="body/shoulderLeft" unique_id=174782908]
 transform = Transform3D(-0.006309937, -0.84637845, 0.017478552, 0.37601557, -0.015803123, -0.0152232135, 0.015530605, 0.038738035, 0.37567458, 0.51232713, 0.007045388, 0.05190889)
 mesh = SubResource("ArrayMesh_4kfqi")
 
 [node name="elbow" type="Node3D" parent="body/shoulderLeft" unique_id=410161477]
-transform = Transform3D(0.8838226, 0.46782157, 0, -0.46782172, 0.8838223, 0, 0, 0, 0.9999998, 1.3499999, 0, 0)
+transform = Transform3D(0.88382256, 0.46782154, 0, -0.46782166, 0.88382226, 0, 0, 0, 0.9999998, 1.3499999, 0, 0)
 
 [node name="Sphere_004" type="MeshInstance3D" parent="body/shoulderLeft/elbow" unique_id=1403783799]
 transform = Transform3D(-0.2942699, -0.08592967, -0.012496139, 0.08146111, -0.28847948, 0.065410614, -0.030068988, 0.059418492, 0.29949987, 1.2610605, -0.001260519, -0.044930473)
@@ -1084,6 +1264,9 @@ mesh = SubResource("ArrayMesh_uhqq0")
 [node name="Sphere_005" type="MeshInstance3D" parent="body/shoulderLeft/elbow" unique_id=1050838531]
 transform = Transform3D(-0.0055823387, -0.7487871, 0.015463191, 0.33265957, -0.013980861, -0.013467906, 0.013739868, 0.034271363, 0.33235756, 0.43494534, 0.015030026, -0.0069784224)
 mesh = SubResource("ArrayMesh_sv201")
+
+[node name="jumpscareCamera" type="Camera3D" parent="body/shoulderLeft/elbow" unique_id=482756490]
+transform = Transform3D(-0.43159434, 0.26076365, 0.86355615, 0.8731102, 0.36136988, 0.32724816, -0.2267287, 0.8952179, -0.38364032, 1.946366, 0.107079156, 0.65410227)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=234742555]
 libraries/ = SubResource("AnimationLibrary_nr060")

@@ -39,6 +39,14 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0
 target_position = Vector3(0, -10, 0)
 debug_shape_custom_color = Color(0.29249913, 0.59664685, 0, 1)
 
+[node name="killcastRotation" type="Node3D" parent="." unique_id=1913076624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.39323092, 0)
+
+[node name="killcast" type="RayCast3D" parent="killcastRotation" unique_id=1205502054]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+enabled = false
+debug_shape_custom_color = Color(0.29249913, 0.59664685, 0, 1)
+
 [node name="chasecast2" type="RayCast3D" parent="." unique_id=519398150]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.23778236, 0)
 target_position = Vector3(5, -10, 0)
@@ -62,4 +70,18 @@ debug_shape_custom_color = Color(0.29249913, 0.59664685, 0, 1)
 [node name="monster" parent="." unique_id=1375317513 instance=ExtResource("2_4gyqm")]
 transform = Transform3D(-0.35, 0, -5.284853e-08, 0, 0.35, 0, 5.284853e-08, 0, -0.35, 0, -0.25216925, 0)
 
+[node name="head" parent="monster" index="0" unique_id=395650954]
+transform = Transform3D(0.9999994, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999946, 0, 2.0103292, 0)
+
+[node name="shoulderRight" parent="monster/body" parent_id_path=PackedInt32Array(1375317513, 1365937745) index="1" unique_id=181245323]
+transform = Transform3D(0.60170335, -0.79871964, 0, 0.7987194, 0.6017035, 0, 0, 0, 0.99999976, -0.71011186, -0.05262041, 0)
+
+[node name="elbow" parent="monster/body/shoulderRight" index="1" unique_id=1976005592]
+transform = Transform3D(0.92940295, -0.3690655, 0, 0.3690653, 0.92940336, 0, 0, 0, 0.9999997, -1.3503306, 0, 0)
+
+[node name="shoulderLeft" parent="monster/body" parent_id_path=PackedInt32Array(1375317513, 1365937745) index="2" unique_id=1284850591]
+transform = Transform3D(0.6954611, 0.7185632, 0, -0.71856314, 0.69546115, 0, 0, 0, 0.9999998, 0.71, -0.052134395, 0)
+
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="computeVelocity"]
+
+[editable path="monster"]

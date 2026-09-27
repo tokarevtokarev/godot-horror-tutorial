@@ -19,6 +19,8 @@ public partial class Enemy : CharacterBody3D
 	private RayCast3D chaseCast3;
 	private RayCast3D chaseCast4;
 	private RayCast3D chaseCast5;
+	private RayCast3D killCast;
+	private Node3D killCastRotation;
 	private AnimationPlayer monsterAnim;
 
 	private RandomNumberGenerator rng = new RandomNumberGenerator();
@@ -33,6 +35,7 @@ public partial class Enemy : CharacterBody3D
 	private float wantedSpeed;
 
 	private bool idle = false;
+	private bool killed = false;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -44,16 +47,21 @@ public partial class Enemy : CharacterBody3D
 		chaseCast3 = GetNode<RayCast3D>("chasecast3");
 		chaseCast4 = GetNode<RayCast3D>("chasecast4");
 		chaseCast5 = GetNode<RayCast3D>("chasecast5");
+		killCast = GetNode<RayCast3D>("killcastRotation/killcast");
+		killCastRotation = GetNode<Node3D>("killcastRotation");
 		monsterAnim = GetNode<AnimationPlayer>("monster/AnimationPlayer");
 		monsterAnim.Play("idle");
 		monsterAnim.SpeedScale = 1;
-		
+
 		pickDestination();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		if (killed)
+			return;
+
 		if (chasing)
 		{
 			if (chaseTimer < 15.0f)
@@ -65,6 +73,11 @@ public partial class Enemy : CharacterBody3D
 				GD.Print("Enemy aborted chasing.");
 				chaseTimer = 0f;
 				chasing = false;
+				if (killCast.Enabled)
+				{
+					killCast.Enabled = false;
+
+				}
 				pickDestination();
 			}
 		}
@@ -77,12 +90,20 @@ public partial class Enemy : CharacterBody3D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		if (killed)
+			return;
+
+		if (chasing)
+		{
+			killPlayer();
+		}
+
 		chasePlayer(chaseCast);
 		chasePlayer(chaseCast2);
 		chasePlayer(chaseCast3);
 		chasePlayer(chaseCast4);
 		chasePlayer(chaseCast5);
-
+		GD.Print("_PhysicsProcess");
 		if (destination != null)
 		{
 
@@ -110,6 +131,9 @@ public partial class Enemy : CharacterBody3D
 
 	public void computeVelocity(Vector3 safeVelocity)
 	{
+		if (killed)
+			return;
+
 		Velocity = Velocity.MoveToward(safeVelocity, 0.25f);
 		MoveAndSlide();
 	}
@@ -117,7 +141,7 @@ public partial class Enemy : CharacterBody3D
 	public void pickDestination()
 	{
 		GD.Print("Enemy picking next destination.");
-		if (chasing)
+		if (chasing || killed)
 			return;
 
 		monsterAnim.Play("walk");
@@ -163,5 +187,34 @@ public partial class Enemy : CharacterBody3D
 		idle = true;
 		monsterAnim.Play("idle");
 		monsterAnim.SpeedScale = 1;
+	}
+
+	public void killPlayer()
+	{
+		if (!killCast.Enabled)
+		{
+			killCast.Enabled = true;
+
+		}
+		killCastRotation.LookAt(player.GlobalTransform.Origin);
+		if (killCast.IsColliding())
+		{
+			var hit = killCast.GetCollider();
+			if (hit is Node3D && (hit as Node3D).Name == "player" && !killed)
+			{
+				killed = true;
+				GetNode<Camera3D>("monster/body/shoulderLeft/elbow/jumpscareCamera").Current = true;
+				monsterAnim.Play("jumpscare");
+				monsterAnim.SpeedScale = 1;
+				player.ProcessMode = ProcessModeEnum.Disabled;
+				endGame();
+			}
+		}
+	}
+
+	public async void endGame()
+	{
+		await ToSignal(GetTree().CreateTimer(4.0, false), SceneTreeTimer.SignalName.Timeout);
+		GetTree().ChangeSceneToFile("res://ui/death.tscn");
 	}
 }

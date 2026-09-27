@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cf3tikjlx7jkn"]
+
+[ext_resource type="Script" uid="uid://cql5j86dhu15u" path="res://general_scripts/Death.cs" id="1_xcntk"]
+
+[sub_resource type="Animation" id="Animation_alp5b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l2v3n"]
+resource_name = "death"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rjfiy"]
+_data = {
+&"RESET": SubResource("Animation_alp5b"),
+&"death": SubResource("Animation_l2v3n")
+}
+
+[node name="death" type="Control" unique_id=1532017800]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xcntk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299251520]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=872995447]
+offset_right = 1170.0
+offset_bottom = 662.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1631603462]
+modulate = Color(1, 1, 1, 0)
+offset_top = 267.0
+offset_right = 1157.0
+offset_bottom = 476.0
+theme_override_font_sizes/normal_font_size = 120
+bbcode_enabled = true
+text = "[center]YOU DIED"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1045592919]
+libraries/ = SubResource("AnimationLibrary_rjfiy")

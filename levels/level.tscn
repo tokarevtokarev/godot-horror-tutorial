@@ -341,7 +341,7 @@ transform = Transform3D(0.35966098, 0, -0.3824511, 0, 0.5249998, 0, 0.3824511, 0
 transform = Transform3D(0.21502525, 0, 0.23391536, 0, 0.357951, 0, -0.22512901, 0, 0.22341722, -1.5670612, 2.2427177, 3.1385756)
 
 [node name="player" parent="." unique_id=2111338812 instance=ExtResource("2_hjsbj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.4341273, 1.4999993, -6.6184607)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.1238012, 1.4999995, 12.265733)
 
 [node name="flashlight" type="SpotLight3D" parent="." unique_id=1622315680]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04030782)
@@ -440,9 +440,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.079581, -2.8134406, 10.7184
 [node name="EntityStuff" type="Node3D" parent="." unique_id=1785290776]
 
 [node name="enemy" parent="EntityStuff" unique_id=918337864 node_paths=PackedStringArray("patrolDestinations") instance=ExtResource("15_ta7ci")]
-process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0088413, 1.6424484, 9.909534)
-visible = false
 patrolDestinations = [NodePath("../destination"), NodePath("../destination2"), NodePath("../destination3"), NodePath("../destination4"), NodePath("../destination5"), NodePath("../destination6"), NodePath("../destination7"), NodePath("../destination8"), NodePath("../destination9"), NodePath("../destination10"), NodePath("../destination11"), NodePath("../destination12"), NodePath("../destination13"), NodePath("../destination14"), NodePath("../destination15"), NodePath("../destination16")]
 
 [node name="destination" parent="EntityStuff" unique_id=1466428618 instance=ExtResource("16_lh335")]
