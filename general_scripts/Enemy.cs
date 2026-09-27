@@ -12,6 +12,15 @@ public partial class Enemy : CharacterBody3D
 	[Export(PropertyHint.Range, "0.1,20,0.1")]
 	private float chasingSpeed = 4.0f;
 
+	[Export]
+	private AudioStream[] footstepSounds;
+
+	[Export]
+	private AudioStreamPlayer3D feetSound;
+
+	[Export]
+	private Timer footstepTimer;
+
 	private Player player;
 	private NavigationAgent3D navAgent;
 	private RayCast3D chaseCast;
@@ -93,6 +102,7 @@ public partial class Enemy : CharacterBody3D
 		if (killed)
 			return;
 
+		footSteps();
 		if (chasing)
 		{
 			killPlayer();
@@ -215,5 +225,17 @@ public partial class Enemy : CharacterBody3D
 	{
 		await ToSignal(GetTree().CreateTimer(4.0, false), SceneTreeTimer.SignalName.Timeout);
 		GetTree().ChangeSceneToFile("res://ui/death.tscn");
+	}
+
+	private async void footSteps()
+	{
+		if (!footstepTimer.IsStopped())
+		{
+			return;
+		}
+		footstepTimer.Start();
+
+		feetSound.Stream = footstepSounds[rng.RandiRange(0, footstepSounds.Length - 1)];
+		feetSound.Play();
 	}
 }

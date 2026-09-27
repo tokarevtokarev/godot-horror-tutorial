@@ -71,6 +71,15 @@ normal_enabled = true
 normal_texture = ExtResource("3_pb8y7")
 uv1_scale = Vector3(2.975, 1.895, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_368ro"]
+size = Vector3(0.7849293, 1.3760986, 1.4036865)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ca7f"]
+size = Vector3(2.572239, 1, 2.84021)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kogck"]
+size = Vector3(5.701309, 1, 3.4919434)
+
 [node name="level" type="Node3D" unique_id=394997853]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1489517519]
@@ -343,7 +352,7 @@ transform = Transform3D(0.35966098, 0, -0.3824511, 0, 0.5249998, 0, 0.3824511, 0
 transform = Transform3D(0.21502525, 0, 0.23391536, 0, 0.357951, 0, -0.22512901, 0, 0.22341722, -1.5670612, 2.2427177, 3.1385756)
 
 [node name="player" parent="." unique_id=2111338812 instance=ExtResource("2_hjsbj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.996129, 1.4999995, 3.3436384)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.787047, 1.4999995, 15.302046)
 
 [node name="flashlight" type="SpotLight3D" parent="." unique_id=1622315680 node_paths=PackedStringArray("toggleSound")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04030782)
@@ -377,6 +386,10 @@ taskText = "Get in the Cellar"
 enable_code = true
 objectToUnHide = NodePath("../key")
 
+[node name="CollisionShape3D" parent="objective/taskTrigger" index="0" unique_id=1666202243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38540208, 0.18804932, -1.0441284)
+shape = SubResource("BoxShape3D_368ro")
+
 [node name="taskTrigger2" parent="objective" unique_id=1685270275 node_paths=PackedStringArray("objectToUnHide") instance=ExtResource("4_5mrsh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5778503, -2.7379112, 19.987837)
 taskText = "Find the code and open the safe"
@@ -384,12 +397,17 @@ enable_code = true
 enableEnemy = true
 objectToUnHide = NodePath("../CodePaper")
 
+[node name="CollisionShape3D" parent="objective/taskTrigger2" index="0" unique_id=1666202243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06922722, 0, 0.3258667)
+shape = SubResource("BoxShape3D_3ca7f")
+
 [node name="taskTrigger3" parent="objective" unique_id=812057621 instance=ExtResource("4_5mrsh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98736036, 1.5985779, 11.24617)
 taskText = "Finde the Cellar Key"
 
 [node name="CollisionShape3D" parent="objective/taskTrigger3" index="0" unique_id=1666202243]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.20220947)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1260605, 0, 0.20220947)
+shape = SubResource("BoxShape3D_kogck")
 
 [node name="CodePaper" parent="objective" unique_id=976782326 node_paths=PackedStringArray("positions") instance=ExtResource("5_safpt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2031217, 1.492084, 12.416196)
@@ -589,6 +607,8 @@ bus = &"sfx"
 [editable path="house/lamps/lamp5"]
 [editable path="house/NavigationRegion3D/furniture/bed"]
 [editable path="house/NavigationRegion3D/furniture/bed2"]
+[editable path="objective/taskTrigger"]
+[editable path="objective/taskTrigger2"]
 [editable path="objective/taskTrigger3"]
 [editable path="EntityStuff/destination7"]
 [editable path="EntityStuff/destination8"]

@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cupvy4lmlbgau" path="res://general_scripts/Enemy.cs" id="1_7k104"]
 [ext_resource type="PackedScene" uid="uid://cvsvkttdjb0la" path="res://scenery/monster.tscn" id="2_4gyqm"]
+[ext_resource type="AudioStream" uid="uid://xagqqgtnyj8c" path="res://sounds/footstep3.wav" id="3_epg4t"]
+[ext_resource type="AudioStream" uid="uid://c21ba7sytvbin" path="res://sounds/footstep1.wav" id="3_qi2p4"]
+[ext_resource type="AudioStream" uid="uid://bpmhjyvonh6c5" path="res://sounds/footstep2.wav" id="4_3yqyl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7k104"]
 albedo_color = Color(0.8967731, 0, 0.08906675, 1)
@@ -13,9 +16,12 @@ radius = 0.5004883
 
 [sub_resource type="BoxMesh" id="BoxMesh_7k104"]
 
-[node name="enemy" type="CharacterBody3D" unique_id=918337864]
+[node name="enemy" type="CharacterBody3D" unique_id=918337864 node_paths=PackedStringArray("feetSound", "footstepTimer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_7k104")
+footstepSounds = Array[AudioStream]([ExtResource("3_qi2p4"), ExtResource("3_epg4t"), ExtResource("4_3yqyl")])
+feetSound = NodePath("feet")
+footstepTimer = NodePath("footstepTimer")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=15292740]
 visible = false
@@ -80,7 +86,20 @@ transform = Transform3D(0.60170335, -0.79871964, 0, 0.7987194, 0.6017035, 0, 0, 
 transform = Transform3D(0.92940295, -0.3690655, 0, 0.3690653, 0.92940336, 0, 0, 0, 0.9999997, -1.3503306, 0, 0)
 
 [node name="shoulderLeft" parent="monster/body" parent_id_path=PackedInt32Array(1375317513, 1365937745) index="2" unique_id=1284850591]
-transform = Transform3D(0.6954611, 0.7185632, 0, -0.71856314, 0.69546115, 0, 0, 0, 0.9999998, 0.71, -0.052134395, 0)
+transform = Transform3D(0.69546103, 0.7185632, 0, -0.7185631, 0.69546115, 0, 0, 0, 0.9999998, 0.71, -0.052134395, 0)
+
+[node name="feet" type="AudioStreamPlayer3D" parent="." unique_id=1980559940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9077555, 0)
+stream = ExtResource("3_qi2p4")
+volume_db = -14.0
+pitch_scale = 0.9
+max_distance = 30.0
+bus = &"sfx"
+
+[node name="footstepTimer" type="Timer" parent="." unique_id=624947715]
+wait_time = 0.4
+one_shot = true
+autostart = true
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="computeVelocity"]
 
