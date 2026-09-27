@@ -11,6 +11,7 @@ public partial class PlayerUi : Control
 	private AnimationPlayer fadePlayer;
 
 	private AnimationPlayer safeAnimationPlayer;
+	private AudioStreamPlayer3D safeToggleSound;
 
 	
 	private RandomNumberGenerator rng = new RandomNumberGenerator();
@@ -36,6 +37,7 @@ public partial class PlayerUi : Control
 		fadePlayer.PlayBackwards("fade");
 
 		safeAnimationPlayer = GetTree().CurrentScene.GetNode<AnimationPlayer>("house/safe/AnimationPlayer");
+		safeToggleSound = GetTree().CurrentScene.GetNode<AudioStreamPlayer3D>("house/safe/hinge/open");
 
 		codePaper = GetTree().CurrentScene.GetNode<Node3D>("objective/CodePaper");
 
@@ -124,6 +126,7 @@ public partial class PlayerUi : Control
 		if (passwordInput.Text == safePassword)
 		{
 			safeAnimationPlayer.Play("open");
+			safeToggleSound.Play();
 			exitSafe();
 			isSafeOpen = true;
 			setTask("Get the money and leave");

@@ -448,7 +448,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.079581, -2.8134406, 10.7184
 
 [node name="enemy" parent="EntityStuff" unique_id=918337864 node_paths=PackedStringArray("patrolDestinations") instance=ExtResource("15_ta7ci")]
 process_mode = 4
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0088413, 1.6424484, 9.909534)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.109931, 1.6424484, 8.706967)
 visible = false
 patrolDestinations = [NodePath("../destination"), NodePath("../destination2"), NodePath("../destination3"), NodePath("../destination4"), NodePath("../destination5"), NodePath("../destination6"), NodePath("../destination7"), NodePath("../destination8"), NodePath("../destination9"), NodePath("../destination10"), NodePath("../destination11"), NodePath("../destination12"), NodePath("../destination13"), NodePath("../destination14"), NodePath("../destination15"), NodePath("../destination16")]
 

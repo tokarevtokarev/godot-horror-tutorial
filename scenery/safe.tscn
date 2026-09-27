@@ -2,6 +2,7 @@
 
 [ext_resource type="Material" uid="uid://0uwa0i4kh4gb" path="res://materials/metal_3.tres" id="1_n70rx"]
 [ext_resource type="Material" uid="uid://dt762ms4xgm5f" path="res://materials/metal_2.tres" id="2_sului"]
+[ext_resource type="AudioStream" uid="uid://txwv5662w51s" path="res://sounds/door_open.wav" id="3_sului"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxxcy"]
 
@@ -269,6 +270,11 @@ mesh = SubResource("ArrayMesh_1gtru")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hinge/safeBody" unique_id=173583796]
 transform = Transform3D(1, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000002, 0, 0, -1.0005801)
 shape = SubResource("ConvexPolygonShape3D_sului")
+
+[node name="open" type="AudioStreamPlayer3D" parent="hinge" unique_id=1160654802]
+transform = Transform3D(13.398463, 0, 0, 0, 1.1145564, 0, 0, 0, 1.10324, 0, 0, -1.5130413)
+stream = ExtResource("3_sului")
+pitch_scale = 0.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1177239133]
 libraries/ = SubResource("AnimationLibrary_n6xfs")

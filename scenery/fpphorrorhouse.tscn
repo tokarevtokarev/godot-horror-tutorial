@@ -12,9 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://dgt6gqy7oupqc" path="res://scenery/couch.tscn" id="7_dxeng"]
 [ext_resource type="PackedScene" uid="uid://bk60h5160y0dq" path="res://scenery/closet.tscn" id="8_jlmqs"]
 [ext_resource type="PackedScene" uid="uid://xkqiebwxvsxj" path="res://scenery/paintingframe.tscn" id="8_qnwp0"]
+[ext_resource type="AudioStream" uid="uid://txwv5662w51s" path="res://sounds/door_open.wav" id="9_d6rvp"]
 [ext_resource type="PackedScene" uid="uid://gxaa8yearyvo" path="res://scenery/tv.tscn" id="9_j2me1"]
 [ext_resource type="Texture2D" uid="uid://b4snvfb28xgqj" path="res://textures/painting01.png" id="9_tuq0n"]
 [ext_resource type="Texture2D" uid="uid://bu5gsf1qxxeip" path="res://textures/painting02.png" id="10_tuq0n"]
+[ext_resource type="AudioStream" uid="uid://dnidl0s54r3ga" path="res://sounds/door_close.wav" id="10_ugfci"]
+[ext_resource type="AudioStream" uid="uid://qfhncnygkd10" path="res://sounds/locked.wav" id="11_3hbwd"]
 [ext_resource type="Texture2D" uid="uid://dk60vy4qb6joj" path="res://textures/painting03.png" id="11_vppsi"]
 [ext_resource type="Texture2D" uid="uid://b4ltbdmrudfp3" path="res://textures/carpet.jpg" id="14_6wrda"]
 [ext_resource type="Texture2D" uid="uid://b65hp2768unuo" path="res://textures/piepemokk.png" id="14_12ndm"]
@@ -497,10 +500,13 @@ door = NodePath("../doors/door2")
 [node name="safe" parent="." unique_id=1215505418 instance=ExtResource("31_poeq2")]
 transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, 17.66544, -11.715093, 13.13781)
 
-[node name="trapdoor" type="Node3D" parent="." unique_id=1360753341]
+[node name="trapdoor" type="Node3D" parent="." unique_id=1360753341 node_paths=PackedStringArray("openSound", "closeSound", "lockedSound")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.284645, -5.088884, -7.4276185)
 script = ExtResource("33_7gasw")
 locked = true
+openSound = NodePath("hinge/open")
+closeSound = NodePath("hinge/close")
+lockedSound = NodePath("hinge/locked")
 
 [node name="hinge" type="Node3D" parent="trapdoor" unique_id=1897635893]
 transform = Transform3D(7.776448, 0, 0, 0, 0.15822363, 0, 0, 0, 5.7934427, 0.13010764, 0.25308847, -2.496179)
@@ -516,6 +522,27 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="trapdoor/hinge/MeshInstance3D/trapDoorBody" unique_id=820071819]
 shape = SubResource("ConvexPolygonShape3D_fylth")
+
+[node name="open" type="AudioStreamPlayer3D" parent="trapdoor/hinge" unique_id=61941722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.812862, 0, 0)
+stream = ExtResource("9_d6rvp")
+pitch_scale = 0.6
+max_distance = 30.0
+bus = &"sfx"
+
+[node name="close" type="AudioStreamPlayer3D" parent="trapdoor/hinge" unique_id=365932328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.812862, 0, 0)
+stream = ExtResource("10_ugfci")
+pitch_scale = 0.8
+max_distance = 30.0
+bus = &"sfx"
+
+[node name="locked" type="AudioStreamPlayer3D" parent="trapdoor/hinge" unique_id=605389034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.812862, 0, 0)
+stream = ExtResource("11_3hbwd")
+pitch_scale = 2.0
+max_distance = 30.0
+bus = &"sfx"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="trapdoor" unique_id=201757530]
 libraries/ = SubResource("AnimationLibrary_d6rvp")
