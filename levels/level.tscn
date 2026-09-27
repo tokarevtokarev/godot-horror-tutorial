@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://14ncott1tlr6" path="res://enemy.tscn" id="15_ta7ci"]
 [ext_resource type="PackedScene" uid="uid://c113741ar13er" path="res://scenery/destination.tscn" id="16_lh335"]
 [ext_resource type="PackedScene" uid="uid://bibm8tnw2q7o" path="res://scenery/scene_change_trigger.tscn" id="17_lh335"]
+[ext_resource type="AudioStream" uid="uid://6o6eva34xmjl" path="res://sounds/wind.wav" id="18_u6cys"]
 
 [sub_resource type="Gradient" id="Gradient_cwqvt"]
 offsets = PackedFloat32Array(0, 0.49186993, 1)
@@ -341,7 +342,7 @@ transform = Transform3D(0.35966098, 0, -0.3824511, 0, 0.5249998, 0, 0.3824511, 0
 transform = Transform3D(0.21502525, 0, 0.23391536, 0, 0.357951, 0, -0.22512901, 0, 0.22341722, -1.5670612, 2.2427177, 3.1385756)
 
 [node name="player" parent="." unique_id=2111338812 instance=ExtResource("2_hjsbj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.1238012, 1.4999995, 12.265733)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.996129, 1.4999995, 3.3436384)
 
 [node name="flashlight" type="SpotLight3D" parent="." unique_id=1622315680]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04030782)
@@ -440,7 +441,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.079581, -2.8134406, 10.7184
 [node name="EntityStuff" type="Node3D" parent="." unique_id=1785290776]
 
 [node name="enemy" parent="EntityStuff" unique_id=918337864 node_paths=PackedStringArray("patrolDestinations") instance=ExtResource("15_ta7ci")]
+process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0088413, 1.6424484, 9.909534)
+visible = false
 patrolDestinations = [NodePath("../destination"), NodePath("../destination2"), NodePath("../destination3"), NodePath("../destination4"), NodePath("../destination5"), NodePath("../destination6"), NodePath("../destination7"), NodePath("../destination8"), NodePath("../destination9"), NodePath("../destination10"), NodePath("../destination11"), NodePath("../destination12"), NodePath("../destination13"), NodePath("../destination14"), NodePath("../destination15"), NodePath("../destination16")]
 
 [node name="destination" parent="EntityStuff" unique_id=1466428618 instance=ExtResource("16_lh335")]
@@ -494,6 +497,87 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4304876, -2.6851358, 19.843
 [node name="endingTrigger" parent="." unique_id=148409540 instance=ExtResource("17_lh335")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5635753, 1.7775697, -6.298092)
 sceneName = "ui/ending"
+
+[node name="sounds" type="Node3D" parent="." unique_id=1463770977]
+
+[node name="wind1" type="AudioStreamPlayer3D" parent="sounds" unique_id=812878835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.305973, 3.0658216, 3.5517454)
+stream = ExtResource("18_u6cys")
+volume_db = -15.0
+unit_size = 30.0
+autoplay = true
+max_distance = 250.0
+bus = &"sfx"
+
+[node name="wind2" type="AudioStreamPlayer3D" parent="sounds" unique_id=190328726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.201496, 3.0658216, 20.516235)
+stream = ExtResource("18_u6cys")
+volume_db = -15.0
+unit_size = 30.0
+pitch_scale = 0.6
+autoplay = true
+max_distance = 250.0
+bus = &"sfx"
+
+[node name="wind3" type="AudioStreamPlayer3D" parent="sounds" unique_id=390244796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.154006, 3.0658216, 31.927979)
+stream = ExtResource("18_u6cys")
+volume_db = -15.0
+unit_size = 30.0
+pitch_scale = 1.2
+autoplay = true
+max_distance = 250.0
+bus = &"sfx"
+
+[node name="wind4" type="AudioStreamPlayer3D" parent="sounds" unique_id=876446031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.552604, 3.0658216, 35.01191)
+stream = ExtResource("18_u6cys")
+volume_db = -15.0
+unit_size = 30.0
+pitch_scale = 0.8
+autoplay = true
+max_distance = 250.0
+bus = &"sfx"
+
+[node name="wind5" type="AudioStreamPlayer3D" parent="sounds" unique_id=706551032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.25278, 3.0658216, 22.341015)
+stream = ExtResource("18_u6cys")
+volume_db = -15.0
+unit_size = 30.0
+pitch_scale = 1.25
+autoplay = true
+max_distance = 250.0
+bus = &"sfx"
+
+[node name="wind6" type="AudioStreamPlayer3D" parent="sounds" unique_id=1810757620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.757559, 3.0658216, 1.4632444)
+stream = ExtResource("18_u6cys")
+volume_db = -15.0
+unit_size = 30.0
+pitch_scale = 0.75
+autoplay = true
+max_distance = 250.0
+bus = &"sfx"
+
+[node name="wind7" type="AudioStreamPlayer3D" parent="sounds" unique_id=1177475727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.188726, 3.0658216, -17.566952)
+stream = ExtResource("18_u6cys")
+volume_db = -15.0
+unit_size = 30.0
+pitch_scale = 1.1
+autoplay = true
+max_distance = 250.0
+bus = &"sfx"
+
+[node name="wind8" type="AudioStreamPlayer3D" parent="sounds" unique_id=615584170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.575733, 3.0658216, -22.037182)
+stream = ExtResource("18_u6cys")
+volume_db = -15.0
+unit_size = 30.0
+pitch_scale = 0.9
+autoplay = true
+max_distance = 250.0
+bus = &"sfx"
 
 [editable path="house"]
 [editable path="house/lamps/lamp5"]

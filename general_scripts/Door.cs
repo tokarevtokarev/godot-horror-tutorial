@@ -8,6 +8,12 @@ public partial class Door : Node3D, InteractableObject
 	[Export]
 	public bool locked = false;
 
+	[Export]
+	private AudioStreamPlayer3D openSound;
+
+	[Export]
+	private AudioStreamPlayer3D closeSound;
+
 	private AnimationPlayer animationPlayer;
 
 	public override void _Ready()
@@ -25,12 +31,24 @@ public partial class Door : Node3D, InteractableObject
 		opened = !opened;
 		if (opened)
 		{
-			animationPlayer.Play("open");
+			openDoor();
 		}
 		else
 		{
-			animationPlayer.PlayBackwards("open");
+			closeDoor();
 		}
+	}
+
+	private void openDoor()
+	{
+		animationPlayer.Play("open");
+		openSound.Play();
+	}
+
+	private void closeDoor()
+	{
+		animationPlayer.PlayBackwards("open");
+		closeSound.Play();
 	}
 
 	public void PlayerInteract()
@@ -47,7 +65,7 @@ public partial class Door : Node3D, InteractableObject
 			return;
 
 		opened = true;
-		animationPlayer.Play("open");
+		openDoor();
 	}
 
 	public void EnemyCloseDoor(Node3D body)
@@ -56,6 +74,6 @@ public partial class Door : Node3D, InteractableObject
 			return;
 
 		opened = false;
-		animationPlayer.PlayBackwards("open");
+		closeDoor();
 	}
 }

@@ -3,6 +3,17 @@ using System;
 
 public partial class Player : CharacterBody3D
 {
+	[Export]
+	private AudioStream[] footstepSounds;
+
+	[Export]
+	private AudioStreamPlayer3D feetSound;
+
+	[Export]
+	private Timer footstepTimer;
+
+	private RandomNumberGenerator rng = new RandomNumberGenerator();
+
 	public float Speed = 2.5f;
 	public const float JumpVelocity = 4.5f;
 
@@ -15,14 +26,14 @@ public partial class Player : CharacterBody3D
 		collisionShape = GetNode<CollisionShape3D>("CollisionShape3D");
 	}
 
-    public override void _Process(double delta)
-    {
-        if (Input.IsActionJustPressed("crouch"))
+	public override void _Process(double delta)
+	{
+		if (Input.IsActionJustPressed("crouch"))
 		{
 			crouching = !crouching;
 			Speed = crouching ? 1.5f : 2.5f;
 		}
-    }
+	}
 
 
 	public override void _PhysicsProcess(double delta)
@@ -47,6 +58,7 @@ public partial class Player : CharacterBody3D
 		Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
 		if (direction != Vector3.Zero)
 		{
+			footSteps();
 			velocity.X = direction.X * Speed;
 			velocity.Z = direction.Z * Speed;
 		}
@@ -74,5 +86,17 @@ public partial class Player : CharacterBody3D
 			float standHeight = Mathf.Lerp(((CapsuleShape3D)collisionShape.Shape).Height, 2.0f, 0.2f);
 			((CapsuleShape3D)collisionShape.Shape).Height = standHeight;
 		}
+	}
+
+	private async void footSteps()
+	{
+		if (!footstepTimer.IsStopped())
+		{
+			return;
+		}
+		footstepTimer.Start();
+
+		feetSound.Stream = footstepSounds[rng.RandiRange(0, footstepSounds.Length - 1)];
+		feetSound.Play();
 	}
 }

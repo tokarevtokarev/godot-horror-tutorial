@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c8xfc2062q5tp" path="res://textures/door.jpg" id="2_1fsns"]
 [ext_resource type="Texture2D" uid="uid://bwoik7sbbus8k" path="res://textures/door_normalmap.png" id="3_4owcv"]
 [ext_resource type="Material" uid="uid://bqo1tkoylmih0" path="res://materials/metal.tres" id="3_m6kou"]
+[ext_resource type="AudioStream" uid="uid://txwv5662w51s" path="res://sounds/door_open.wav" id="5_ogd0u"]
+[ext_resource type="AudioStream" uid="uid://dnidl0s54r3ga" path="res://sounds/door_close.wav" id="6_ekvfs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4owcv"]
 albedo_color = Color(0.6977787, 0.47582954, 0, 1)
@@ -61,8 +63,10 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_m6kou"]
 size = Vector3(1.6149902, 1, 2.827629)
 
-[node name="door" type="Node3D" unique_id=493705923]
+[node name="door" type="Node3D" unique_id=493705923 node_paths=PackedStringArray("openSound", "closeSound")]
 script = ExtResource("1_jy65v")
+openSound = NodePath("hinge/open")
+closeSound = NodePath("hinge/close")
 
 [node name="hinge" type="Node3D" parent="." unique_id=858103803]
 
@@ -95,6 +99,20 @@ mesh = SubResource("CylinderMesh_jy65v")
 transform = Transform3D(0.15, 0, 0, 0, -1.0354406e-09, 0.15, 0, -0.02368812, -6.5567085e-09, 0.6855459, 0, -0.15226471)
 material_override = ExtResource("3_m6kou")
 mesh = SubResource("CylinderMesh_jy65v")
+
+[node name="open" type="AudioStreamPlayer3D" parent="hinge" unique_id=1233324995]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.812862, 0, 0)
+stream = ExtResource("5_ogd0u")
+pitch_scale = 1.6
+max_distance = 30.0
+bus = &"sfx"
+
+[node name="close" type="AudioStreamPlayer3D" parent="hinge" unique_id=670841136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.812862, 0, 0)
+stream = ExtResource("6_ekvfs")
+pitch_scale = 1.3
+max_distance = 30.0
+bus = &"sfx"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2011086436]
 libraries/ = SubResource("AnimationLibrary_m6kou")

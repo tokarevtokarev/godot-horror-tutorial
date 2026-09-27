@@ -6,6 +6,12 @@ public partial class DoorBell : Node3D, InteractableObject
 	[Export]
 	public Door door;
 
+	[Export]
+	private AudioStreamPlayer3D buttonSound;
+
+	[Export]
+	private AudioStreamPlayer3D bellSound;
+
 	private PlayerUi playerUi;
 
 	public int timesRung = 0;
@@ -29,10 +35,13 @@ public partial class DoorBell : Node3D, InteractableObject
 
 		timesRung++;
 		animationPlayer.Play("press");
+		buttonSound.Play();
+		await ToSignal(GetTree().CreateTimer(0.5f, false), SceneTreeTimer.SignalName.Timeout);
+		bellSound.Play();
 
-		if (timesRung >= 3)
+		if (timesRung >= 2)
 		{
-			await ToSignal(GetTree().CreateTimer(4.0f, false), SceneTreeTimer.SignalName.Timeout);
+			await ToSignal(GetTree().CreateTimer(3.0f, false), SceneTreeTimer.SignalName.Timeout);
 			door.locked = false;
 			playerUi.setTask("Enter the house");
 		}

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c2c1lbrl1dywe" path="res://scenery/tree.tscn" id="3_456nu"]
 [ext_resource type="PackedScene" uid="uid://d16rqt2pk2hx2" path="res://scenery/bush.tscn" id="3_cp14p"]
 [ext_resource type="PackedScene" uid="uid://bkrtw0m2a2r4e" path="res://ui/cutsceneui.tscn" id="6_p11e0"]
+[ext_resource type="AudioStream" uid="uid://6o6eva34xmjl" path="res://sounds/wind.wav" id="7_6df4h"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0bdu8"]
 
@@ -593,3 +594,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.269, 1.506, -56.471)
 libraries/ = SubResource("AnimationLibrary_6df4h")
 
 [node name="cutsceneui" parent="." unique_id=193659994 instance=ExtResource("6_p11e0")]
+
+[node name="wind1" type="AudioStreamPlayer3D" parent="." unique_id=1506410004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7451425, 3.0658216, -47.155834)
+stream = ExtResource("7_6df4h")
+volume_db = 2.0
+unit_size = 30.0
+autoplay = true
+max_distance = 500.0
+bus = &"sfx"
+
+[node name="wind2" type="AudioStreamPlayer3D" parent="." unique_id=1904829926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7503347, 3.0658188, 16.109772)
+stream = ExtResource("7_6df4h")
+volume_db = 2.0
+unit_size = 30.0
+pitch_scale = 0.8
+autoplay = true
+max_distance = 500.0
+bus = &"sfx"
+
+[node name="wind3" type="AudioStreamPlayer3D" parent="." unique_id=60468288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.139853, 3.0658178, -8.721439)
+stream = ExtResource("7_6df4h")
+volume_db = 1.5
+unit_size = 30.0
+pitch_scale = 1.2
+autoplay = true
+max_distance = 500.0
+bus = &"sfx"
+
+[node name="wind4" type="AudioStreamPlayer3D" parent="." unique_id=2133797999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.641838, 3.0658178, -7.990611)
+stream = ExtResource("7_6df4h")
+volume_db = 1.25
+unit_size = 30.0
+pitch_scale = 1.2
+autoplay = true
+max_distance = 500.0
+bus = &"sfx"
