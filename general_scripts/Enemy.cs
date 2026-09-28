@@ -19,6 +19,9 @@ public partial class Enemy : CharacterBody3D
 	private AudioStreamPlayer3D feetSound;
 
 	[Export]
+	private AudioStreamPlayer3D stabbingSound;
+
+	[Export]
 	private Timer footstepTimer;
 
 	private Player player;
@@ -102,7 +105,6 @@ public partial class Enemy : CharacterBody3D
 		if (killed)
 			return;
 
-		footSteps();
 		if (chasing)
 		{
 			killPlayer();
@@ -133,6 +135,7 @@ public partial class Enemy : CharacterBody3D
 				var tmpRotation = GlobalRotationDegrees;
 				tmpRotation.Y = Mathf.RadToDeg(lookDir);
 				GlobalRotationDegrees = tmpRotation;
+				footSteps();
 			}
 
 		}
@@ -212,13 +215,20 @@ public partial class Enemy : CharacterBody3D
 			if (hit is Node3D && (hit as Node3D).Name == "player" && !killed)
 			{
 				killed = true;
-				GetNode<Camera3D>("monster/body/shoulderLeft/elbow/jumpscareCamera").Current = true;
-				monsterAnim.Play("jumpscare");
-				monsterAnim.SpeedScale = 1;
-				player.ProcessMode = ProcessModeEnum.Disabled;
+				playCutscene();
 				endGame();
 			}
 		}
+	}
+
+	private async void playCutscene()
+	{
+		GetNode<Camera3D>("monster/body/shoulderLeft/elbow/jumpscareCamera").Current = true;
+		monsterAnim.Play("jumpscare");
+		monsterAnim.SpeedScale = 1;
+		player.ProcessMode = ProcessModeEnum.Disabled;
+		await ToSignal(GetTree().CreateTimer(2.2, false), SceneTreeTimer.SignalName.Timeout);
+		stabbingSound.Play();
 	}
 
 	public async void endGame()
@@ -233,8 +243,10 @@ public partial class Enemy : CharacterBody3D
 		{
 			return;
 		}
+		footstepTimer.WaitTime = chasing ? 0.3f : 0.7f;
 		footstepTimer.Start();
 
+		feetSound.VolumeDb = chasing ? 10f : -14f;
 		feetSound.Stream = footstepSounds[rng.RandiRange(0, footstepSounds.Length - 1)];
 		feetSound.Play();
 	}
