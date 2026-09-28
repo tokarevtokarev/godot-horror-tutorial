@@ -674,6 +674,18 @@ tracks/11/keys = {
 "update": 0,
 "values": [Vector3(-0.33338982, 1.9888636, 1.1783751)]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SpotLight3D:light_energy")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_i7cy6"]
 resource_name = "chase"
@@ -1048,6 +1060,18 @@ tracks/11/keys = {
 "update": 0,
 "values": [Vector3(-0.33338982, 1.9888636, 1.1783751), Vector3(-0.43807206, 1.6626108, 1.3022351), Vector3(-0.43807206, 1.6626108, 1.3022351), Vector3(-0.28255567, 2.111105, 1.1412666), Vector3(-0.28255567, 2.111105, 1.1412666), Vector3(-0.4152551, 1.7477325, 1.2669888), Vector3(-0.30764252, 2.0525684, 1.1582968), Vector3(-0.30764252, 2.0525684, 1.1582968), Vector3(-0.6650833, 1.855216, 1.2927115), Vector3(-0.6650833, 1.855216, 1.2927115), Vector3(-0.22318064, 2.0537837, 1.1463964), Vector3(-0.22318064, 2.0537837, 1.1463964), Vector3(-0.11100626, 1.7862557, 0.7814736)]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SpotLight3D:light_energy")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 12.145]
+}
 
 [sub_resource type="Animation" id="Animation_nr060"]
 resource_name = "walk"
@@ -1224,14 +1248,14 @@ transform = Transform3D(1, 0, 0, 0, 2.2514257, 0, 0, 0, 1, 0, -1.6981344, 0)
 mesh = SubResource("ArrayMesh_nx0ce")
 
 [node name="shoulderRight" type="Node3D" parent="body" unique_id=181245323]
-transform = Transform3D(0.6017033, -0.79871964, 0, 0.7987193, 0.6017035, 0, 0, 0, 0.9999995, -0.71011186, -0.05262041, 0)
+transform = Transform3D(0.6017032, -0.79871964, 0, 0.7987192, 0.6017035, 0, 0, 0, 0.9999995, -0.71011186, -0.05262041, 0)
 
 [node name="Sphere_001" type="MeshInstance3D" parent="body/shoulderRight" unique_id=1635138355]
 transform = Transform3D(-0.006309937, 0.8463785, -0.017478487, -0.37601557, -0.015803117, -0.015223216, -0.015530605, 0.038737886, 0.3756746, -0.5575197, 0.0075314045, 0.05190889)
 mesh = SubResource("ArrayMesh_cqgo7")
 
 [node name="elbow" type="Node3D" parent="body/shoulderRight" unique_id=1976005592]
-transform = Transform3D(0.92940295, -0.36906546, 0, 0.36906534, 0.9294033, 0, 0, 0, 0.9999998, -1.3503306, 0, 0)
+transform = Transform3D(0.92940295, -0.36906546, 0, 0.3690653, 0.92940325, 0, 0, 0, 0.9999998, -1.3503306, 0, 0)
 
 [node name="Sphere_002" type="MeshInstance3D" parent="body/shoulderRight/elbow" unique_id=1505869303]
 transform = Transform3D(-0.0055823326, 0.74878716, -0.015463133, -0.3326592, -0.013980856, -0.013467909, -0.013739853, 0.03427123, 0.3323576, -0.47980714, 0.015516043, -0.0069784224)
@@ -1248,7 +1272,7 @@ mesh = SubResource("ArrayMesh_ak0t2")
 transform = Transform3D(-1.3229654, -0.32174107, -0.32595253, -0.38671288, 0.25088495, 1.3219341, -0.24538846, 1.3392308, -0.32595253, -0.53557783, -0.07850715, 0.2587045)
 
 [node name="shoulderLeft" type="Node3D" parent="body" unique_id=1284850591]
-transform = Transform3D(0.6954612, 0.7185632, 0, -0.7185632, 0.69546115, 0, 0, 0, 0.9999998, 0.71, -0.052134395, 0)
+transform = Transform3D(0.69546115, 0.7185632, 0, -0.7185632, 0.69546115, 0, 0, 0, 0.9999998, 0.71, -0.052134395, 0)
 
 [node name="Sphere_006" type="MeshInstance3D" parent="body/shoulderLeft" unique_id=174782908]
 transform = Transform3D(-0.006309937, -0.84637845, 0.017478552, 0.37601557, -0.015803123, -0.0152232135, 0.015530605, 0.038738035, 0.37567458, 0.51232713, 0.007045388, 0.05190889)
@@ -1271,3 +1295,9 @@ transform = Transform3D(-0.43159434, 0.26076365, 0.86355615, 0.8731102, 0.361369
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=234742555]
 libraries/ = SubResource("AnimationLibrary_nr060")
 blend_times = [&"chase", &"idle", 0.3, &"chase", &"walk", 0.3, &"idle", &"chase", 0.3, &"idle", &"walk", 0.3, &"walk", &"chase", 0.3, &"walk", &"idle", 0.3]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=222546138]
+transform = Transform3D(1, 0, 0, 0, 0.9590968, 0.28307807, 0, -0.28307807, 0.9590968, 0, 4.2652125, 5.2176476)
+light_color = Color(0.8233254, 0.319263, 0, 1)
+light_energy = 0.0
+spot_range = 30.0

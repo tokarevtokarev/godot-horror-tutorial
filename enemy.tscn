@@ -104,6 +104,7 @@ bus = &"sfx"
 [node name="stabbing" type="AudioStreamPlayer3D" parent="." unique_id=1551147421]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9077555, 0)
 stream = ExtResource("6_3yqyl")
+volume_db = -8.0
 pitch_scale = 1.2
 max_distance = 30.0
 bus = &"sfx"
